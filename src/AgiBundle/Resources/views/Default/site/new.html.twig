@@ -1,0 +1,132 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} Ajouter site {% endblock %}
+
+{% block body %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            <small></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-university"></i> Sites</a></li>
+            <li class="active">Enregistrer</li>
+        </ol>
+
+        {% if erreur is defined %}
+
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="box box-danger box-solid" style="margin-bottom: 0px;">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Erreur</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                            class="fa fa-times"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            {{ erreur }}
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+
+        {% if success is defined %}
+
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="box box-success box-solid" style="margin-bottom: 0px;">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Succès</h3>
+
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                                            class="fa fa-times"></i></button>
+                            </div>
+                            <!-- /.box-tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            {{ success }}
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <section class="content">
+
+
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">
+                    <i class="fa fa-university"></i>
+                    Enregistrer un site
+                </h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                        <i class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip"
+                            title="Remove">
+                        <i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+
+                {{ form_start(form) }}
+
+                <div class="form-group col-md-3">
+                    {{ form_row(form.nomSite) }}
+                </div>
+
+                <div class="col-md-2">
+                    {{ form_row(form.heureOuvJour) }}
+                </div>
+
+                <div class="col-md-2">
+                    {{ form_row(form.heureFermJour) }}
+                </div>
+
+                <div class="col-md-2">
+                    {{ form_row(form.heureOuvNuit) }}
+                </div>
+
+                <div class="col-md-2">
+                    {{ form_row(form.heureFermNuit) }}
+                </div>
+
+                <div class="form-group col-md-1">
+                    <button type="submit"  class="btn btn-danger marTop25px">Enregistrer</button>
+                </div>
+
+                {{ form_end(form) }}
+
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                {#Footer#}
+            </div>
+            <!-- /.box-footer-->
+        </div>
+    </section>
+
+
+{% endblock %}

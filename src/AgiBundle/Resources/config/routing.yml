@@ -1,0 +1,83 @@
+agi_homepage:
+    path:     /
+    defaults: { _controller: AgiBundle:Agi:index }
+
+ajouter_agent:
+    path:     /agent
+    defaults: { _controller: AgiBundle:Agent:ajouter }
+
+modifier_agent:
+    path:     /agent/edit/{id}
+    defaults: { _controller: AgiBundle:Agent:modifier }
+
+supprimer_agent:
+    path:     /agent/delete/{id}
+    defaults: { _controller: AgiBundle:Agent:supprimer }
+
+liste_agent_actif:
+    path:     /agents/actif
+    defaults: { _controller: AgiBundle:Agent:listerActif }
+
+liste_agent_supprime:
+    path:     /agents/delete
+    defaults: { _controller: AgiBundle:Agent:listerSupprime }
+
+operation_enregistrement_agent:
+    path:     /agent/details/{id}
+    defaults: { _controller: AgiBundle:Agent:details }
+
+ajouter_site:
+    path:     /site
+    defaults: { _controller: AgiBundle:Site:ajouter }
+
+modifier_site:
+    path:     /site/edit/{id}
+    defaults: { _controller: AgiBundle:Site:modifier }
+
+supprimer_site:
+    path:     /site/delete/{id}
+    defaults: { _controller: AgiBundle:Site:supprimer }
+
+planning_site:
+    path:     /site/planning/{id}
+    defaults: { _controller: AgiBundle:Site:planning }
+
+liste_site_actif:
+    path:     /sites/actif
+    defaults: { _controller: AgiBundle:Site:listerActif }
+
+liste_site_supprime:
+    path:     /sites/delete
+    defaults: { _controller: AgiBundle:Site:listerSupprime }
+
+operation_enregistrement_site:
+    path:     /site/details/{id}
+    defaults: { _controller: AgiBundle:Site:details }
+
+site_enregistrer_vacation:
+    path:     /site/save/vacation/{id}
+    defaults: { _controller: AgiBundle:Vacation:enregistrer }
+
+site_modifier_vacation:
+    path:     /vacation/edit/{id}
+    defaults: { _controller: AgiBundle:Vacation:modifier }
+
+site_supprimer_vacation:
+    path:     /vacation/delete/{id}
+    defaults: { _controller: AgiBundle:Vacation:supprimer }
+
+liste_sites_vacations_actives:
+    path:     /sites/vacations/actives
+    defaults: { _controller: AgiBundle:Vacation:listerActif }
+
+liste_sites_vacations_supprimes:
+    path:     /sites/vacations/supprimes
+    defaults: { _controller: AgiBundle:Vacation:listerSupprime }
+
+configurer_heure:
+    path:     /config_heure
+    defaults: { _controller: AgiBundle:HeurePanier:configurerHeure }
+
+modifier_config_heure:
+    path:     /config_heure/edit/{id}
+    defaults: { _controller: AgiBundle:HeurePanier:modifierHeure }
