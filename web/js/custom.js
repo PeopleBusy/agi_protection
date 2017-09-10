@@ -24,11 +24,13 @@ $(function() {
     $("#btnactualiserHours").click(function () {
         $("#submitVacationForm").show();
         $("#divRefreshVacationHours").hide();
-        calculerHeurePanier();
-        calculerHeureNuit();
+
+        calculerHeures();
+        //calculerHeurePanier();
+        /*calculerHeureNuit();
         calculerHeureJour();
 
-        calculerHeureDimanche();
+        calculerHeureDimanche();*/
 
     })
 
@@ -91,6 +93,7 @@ $(function() {
 init();
 
 function init(){
+
     $("#submitVacationForm").hide();
 
     if($("#agibundle_agent_typeContrat").val() === 'CDI'){
@@ -104,6 +107,19 @@ function init(){
     $("#datepicker3").removeAttr('required');
 
     $(".timepicker").removeAttr('required');
+
+    var d = new Date();
+    var j = d.getDate();
+    var m = d.getMonth() + 1;
+    var y = d.getFullYear();
+
+    $('#agibundle_vacation_heureDebVac_date_day').val(j);
+    $('#agibundle_vacation_heureDebVac_date_month').val(m);
+    $('#agibundle_vacation_heureDebVac_date_year').val(y);
+
+    $('#agibundle_vacation_heureFinVac_date_day').val(j);
+    $('#agibundle_vacation_heureFinVac_date_month').val(m);
+    $('#agibundle_vacation_heureFinVac_date_year').val(y);
 
 }
 
@@ -125,10 +141,21 @@ function calculerHeurePanier() {
     var dateDebVac = stringToDate(concatenerDate(dateDebJour, dateDebMois, dateDebYear, heureDebHour, heureDebMinute));
     var dateFinVac = stringToDate(concatenerDate(dateFinJour, dateFinMois, dateFinYear, heureFinHour, heureFinMinute));
 
-    var diff = dateFinVac.valueOf() - dateDebVac.valueOf();
-    var diffInHours = diff/1000/60/60;
+    var diff = dateFinVac.getTime() - dateDebVac.getTime();//in ms
 
-    var heurePanier = 0;
+    console.log(dateFinVac.getTime());
+    console.log(dateDebVac.getTime());
+
+    var secDiff = diff / 1000; //in s
+    var minDiff = diff / 60 / 1000; //in minutes
+    var hDiff = diff / 3600 / 1000; //in hours
+    var humanReadable = {};
+    humanReadable.hours = Math.floor(hDiff);
+    humanReadable.minutes = minDiff - 60 * humanReadable.hours;
+
+    //console.log(humanReadable);
+
+    /*var heurePanier = 0;
     if(diffInHours % 6 === 0){
         heurePanier = diffInHours / 6;
     }else if(diffInHours > 6){
@@ -138,17 +165,70 @@ function calculerHeurePanier() {
     if(heurePanier < 0){
         heurePanier = 0;
     }
-    $('#heure_panier').val(heurePanier);
+    $('#heure_panier').val(heurePanier);*/
 
 
+}
+
+function diffDateInHoursAndMinutes(dd, df) {
+    var diff = dd.getTime() - df.getTime();//in ms
+
+    var secDiff = diff / 1000; //in s
+    var minDiff = diff / 60 / 1000; //in minutes
+    var hDiff = diff / 3600 / 1000; //in hours
+    heure = Math.floor(hDiff);
+    minute = minDiff - 60 * heure;
+
+    if(heure.toString().length === 1)
+        heure = '0' + heure;
+
+    if(minute.toString().length === 1)
+        minute = '0' + minute;
+
+    return heure + ":" + minute;
+}
+
+function addTimes(start, end) {
+    times = [];
+    times1 = start.split(':');
+    times2 = end.split(':');
+
+    for (var i = 0; i < 3; i++) {
+        times1[i] = (isNaN(parseInt(times1[i]))) ? 0 : parseInt(times1[i]);
+        times2[i] = (isNaN(parseInt(times2[i]))) ? 0 : parseInt(times2[i]);
+        times[i] = times1[i] + times2[i];
+    }
+
+    var seconds = times[2];
+    var minutes = times[1];
+    var hours = times[0];
+
+    if (seconds % 60 === 0) {
+        hours += seconds / 60;
+    }
+
+    if (minutes % 60 === 0) {
+        res = minutes / 60;
+        hours += res;
+        minutes = minutes - (60 * res);
+    }
+
+    if( minutes >= 60) {
+        hours += 1;
+        minutes = minutes - 60;
+    }
+
+    if(hours.toString().length === 1)
+        hours = '0' + hours;
+
+    if(minutes.toString().length === 1)
+        minutes = '0' + minutes;
+
+    return hours + ':' + minutes;
 }
 
 function concatenerDate(day, month, year, hour, minute) {
     return day + "/" + month + "/" + year + " " + hour + ":" + minute;
-}
-
-function concatenerHeureMinute(hour, minute) {
-    return hour + ":" + minute;
 }
 
 function stringToDate(dStr) {
@@ -165,102 +245,87 @@ function formaterTime(time) {
     return time;
 }
 
-function calculerHeureJour() {
-
+function calculerHeures() {
+    var dateDebJour = formaterTime($("#agibundle_vacation_heureDebVac_date_day").val());
+    var dateDebMois = formaterTime($("#agibundle_vacation_heureDebVac_date_month").val());
+    var dateDebYear= formaterTime($("#agibundle_vacation_heureDebVac_date_year").val());
     var heureDebHour = formaterTime($("#agibundle_vacation_heureDebVac_time_hour").val());
-    var heureDebMinute = parseInt($("#agibundle_vacation_heureDebVac_time_minute").val());
+    var heureDebMinute = formaterTime($("#agibundle_vacation_heureDebVac_time_minute").val());
 
-    if(heureDebHour.split(':')[0] === "00"){
-        heureDebHour = 24;
-    }else {
-        heureDebHour = parseInt(heureDebHour.split(':')[0]);
-    }
 
-    var heureJourDeb = $('#heureJour').data('debut');
-    if(heureJourDeb.split(':')[0] === "00"){
-        heureJourDeb = 24;
-    }else {
-        heureJourDeb = parseInt(heureJourDeb.split(':')[0]);
-    }
-
-    var heureJourFin = $('#heureJour').data('fin');
-    if(heureJourFin.split(':')[0] === "00"){
-        heureJourFin = 24;
-    }else {
-        heureJourFin = parseInt(heureJourFin.split(':')[0]);
-    }
-
-    var nbheureJour = 0;
-
-    if(heureDebHour >= heureJourDeb && heureDebHour <= heureJourFin){
-        nbheureJour = 1;
-        $("#heure_jour").val(nbheureJour);
-    }
-
-    if(heureDebHour > heureJourFin){
-        nbheureJour = 0;
-        $("#heure_nuit").val(1);
-        $("#heure_jour").val(0);
-    }else {
-        nbheureJour = 0;
-        if(heureDebMinute > 0){
-            $("#heure_nuit").val(1);
-        }else {
-            $("#heure_nuit").val(0);
-        }
-    }
-
-    if(heureDebHour < heureJourDeb){
-        $("#heure_nuit").val(1);
-    }
-
-}
-
-function calculerHeureNuit() {
-
+    var dateFinJour = formaterTime($("#agibundle_vacation_heureFinVac_date_day").val());
+    var dateFinMois = formaterTime($("#agibundle_vacation_heureFinVac_date_month").val());
+    var dateFinYear = formaterTime($("#agibundle_vacation_heureFinVac_date_year").val());
     var heureFinHour = formaterTime($("#agibundle_vacation_heureFinVac_time_hour").val());
-    var heureFinMinute = parseInt($("#agibundle_vacation_heureFinVac_time_minute").val());
+    var heureFinMinute = formaterTime($("#agibundle_vacation_heureFinVac_time_minute").val());
 
-    if(heureFinHour.split(':')[0] === "00"){
-        heureFinHour = 24;
-    }else {
-        heureFinHour = parseInt(heureFinHour.split(':')[0]);
-    }
+    var dateDebVac = stringToDate(concatenerDate(dateDebJour, dateDebMois, dateDebYear, heureDebHour, heureDebMinute));
+    var dateFinVac = stringToDate(concatenerDate(dateFinJour, dateFinMois, dateFinYear, heureFinHour, heureFinMinute));
 
-    var heureNuitDeb = $('#heureNuit').data('debut');
+    var heureJourDeb = $('#heureJour').data('debut').split(':');
 
-    if(heureNuitDeb.split(':')[0] === "00"){
-        heureNuitDeb = 24;
-    }else {
-        heureNuitDeb = parseInt(heureNuitDeb.split(':')[0]);
-    }
+    var heureJourFin = $('#heureJour').data('fin').split(':');
 
-    var nbheureNuit = 0;
+    var dateDebJourDiff = stringToDate(concatenerDate(dateDebJour, dateDebMois, dateDebYear, heureJourDeb[0], heureJourDeb[1]));
+    var dateFinJourDiff = stringToDate(concatenerDate(dateDebJour, dateDebMois, dateDebYear, heureJourFin[0], heureJourFin[1]));
 
-    if(heureFinHour > heureNuitDeb){
-        nbheureNuit = 1;
-    }else {
-        if(heureFinMinute > 0){
-            nbheureNuit = 1;
-        }else {
-            nbheureNuit = 0;
+
+    var nbHeureJour = 0, nbHeureNuit = 0;
+    if(dateDebVac < dateDebJourDiff){ //Heure debut avant 6h
+        //il a begin avant 6h
+        nbHeureNuit = diffDateInHoursAndMinutes(dateDebJourDiff, dateDebVac);
+
+        if(dateFinVac < dateFinJourDiff || dateFinVac.valueOf() === dateFinJourDiff.valueOf()){
+            nbHeureJour = diffDateInHoursAndMinutes(dateFinVac, dateDebJourDiff);
+        }else if(dateFinVac > dateFinJourDiff){
+            nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebJourDiff);
+            var hm = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
+            nbHeureNuit = addTimes(nbHeureNuit+':00', hm+':00');
         }
+
+
+    }else if(dateDebVac.valueOf() === dateDebJourDiff.valueOf() && (dateFinVac < dateFinJourDiff || dateFinVac.valueOf() === dateFinJourDiff.valueOf())) {
+        //il a begin a 6h et fini pas apres 21h
+        nbHeureJour = diffDateInHoursAndMinutes(dateFinVac, dateDebVac);
+
+    } else if(dateDebVac.valueOf() === dateDebJourDiff.valueOf() && dateFinVac > dateFinJourDiff) {
+        //il a begin a 6h et fini apres 21h
+        nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
+        nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
+
+
+    }   else {
+
+        //il a begin apres 6h
+        if(dateFinVac < dateFinJourDiff || dateFinVac.valueOf() === dateFinJourDiff.valueOf()){
+            //il fini avant pas apres 21h
+            nbHeureJour = diffDateInHoursAndMinutes(dateFinVac, dateDebVac);
+
+        }else if(dateFinVac > dateFinJourDiff){
+            //il fini apres 21h
+            nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
+            nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
+
+        }
+
     }
 
-    $("#heure_jour").val(1);
-    $("#heure_nuit").val(nbheureNuit);
+    $("#heure_nuit").val(nbHeureNuit);
+    $("#heure_jour").val(nbHeureJour);
 
-}
+    var nbHeurePanier = 0;
+    if(nbHeureNuit === 0 || nbHeureNuit === '0'){
+        nbHeureNuit = '00:00';
+    }
 
-function calculerHeureDimanche() {
-    
-}
-
-function calculer() {
-    var heureJourDeb = $('#heureJour').data('debut'); var heureJourFin = $('#heureJour').data('fin');
-    var heureNuitDeb = $('#heureNuit').data('debut'); var heureNuitFin = $('#heureNuit').data('fin');
-    var heureDimancheDeb = $('#heureDimanche').data('debut'); var heureDimancheFin = $('#heureDimanche').data('fin');
-
+    if(nbHeureJour === 0 || nbHeureJour === '0'){
+        nbHeureJour = '00:00';
+    }
+    var totalHeure = addTimes(nbHeureNuit, nbHeureJour);
+    if(parseInt(totalHeure.split(':')[0]) > 6 || (parseInt(totalHeure.split(':')[0]) === 6 && parseInt(totalHeure.split(':')[1]) > 0)){
+        nbHeurePanier = 1;
+    }
+    $('#heure_panier').val(nbHeurePanier);
 
 }
 

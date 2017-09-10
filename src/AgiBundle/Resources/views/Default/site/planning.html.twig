@@ -134,7 +134,7 @@
                 navLinks: true, // can click day/week names to navigate views
                 eventLimit: true, // allow "more" link when too many events
                 events: {
-                    url: 'get-events.php',
+                    url: '{{ path("afficher_planning_site") }}',
                     error: function() {
                         $('#script-warning').show();
                     }

@@ -88,9 +88,9 @@
 
                 {{ form_start(form) }}
 
-                <input type="hidden" data-debut="{{ heureJour.heureDebut|date('H:i:s') }}" data-fin="{{ heureJour.heureFin|date('H:i:s') }}" id="heureJour" name="heureJour"/>
-                <input type="hidden" data-debut="{{ heureNuit.heureDebut|date('H:i:s') }}" data-fin="{{ heureNuit.heureFin|date('H:i:s') }}" id="heureNuit" name="heureNuit"/>
-                <input type="hidden" data-debut="{{ heureDimanche.heureDebut|date('H:i:s') }}" data-fin="{{ heureDimanche.heureFin|date('H:i:s') }}" id="heureDimanche" name="heureDimanche"/>
+                <input type="hidden" data-debut="{{ heureJour.heureDebut|date('H:i') }}" data-fin="{{ heureJour.heureFin|date('H:i') }}" id="heureJour" name="heureJour"/>
+                <input type="hidden" data-debut="{{ heureNuit.heureDebut|date('H:i') }}" data-fin="{{ heureNuit.heureFin|date('H:i') }}" id="heureNuit" name="heureNuit"/>
+                <input type="hidden" data-debut="{{ heureDimanche.heureDebut|date('H:i') }}" data-fin="{{ heureDimanche.heureFin|date('H:i') }}" id="heureDimanche" name="heureDimanche"/>
 
                 <div class="col-md-2">
                     <label>Site:</label>

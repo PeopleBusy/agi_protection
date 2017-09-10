@@ -11,6 +11,8 @@ use AgiBundle\Form\SiteType;
 use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
 use \DateTimeImmutable;
+use AgiBundle\EventCalendar\Event;
+use Symfony\Component\HttpFoundation\Response;
 
 class SiteController extends Controller
 {
@@ -269,6 +271,16 @@ class SiteController extends Controller
 
 
         return $this->render('AgiBundle:Default:site/planning.html.twig', array('site' => $site));
+
+    }
+
+
+    public function displayPlanningAction(Request $request)
+    {
+        if($request->isXmlHttpRequest()){
+
+        }
+        return new Response("Ceci n'est pas une requete AJAX!", 400);
 
     }
 
