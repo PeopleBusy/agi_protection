@@ -8,10 +8,12 @@ use AgiBundle\Entity\Operation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use AgiBundle\Form\SiteType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
+use \DateTimeZone;
 use \DateTimeImmutable;
-use AgiBundle\EventCalendar\Event;
+use AgiBundle\EventCalendar\EventCalendar;
 use Symfony\Component\HttpFoundation\Response;
 
 class SiteController extends Controller
@@ -35,25 +37,25 @@ class SiteController extends Controller
             $houvN = $site->getHeureOuvNuit();
             $hfermN = $site->getHeureFermNuit();
 
-            if($houvj !== null){
+            if ($houvj !== null) {
                 $site->setHeureOuvJour($houvj);
             }
 
-            if($hfermj !== null){
+            if ($hfermj !== null) {
                 $site->setHeureFermJour($hfermj);
-            }else{
+            } else {
                 $site->setHeureFermJour(null);
             }
 
-            if($houvN !== null){
+            if ($houvN !== null) {
                 $site->setHeureOuvNuit($houvN);
-            }else{
+            } else {
                 $site->setHeureOuvNuit(null);
             }
 
-            if($hfermN !== null){
+            if ($hfermN !== null) {
                 $site->setHeureFermNuit($hfermN);
-            }else{
+            } else {
                 $site->setHeureFermNuit(null);
             }
 
@@ -121,25 +123,25 @@ class SiteController extends Controller
             $houvN = $site->getHeureOuvNuit();
             $hfermN = $site->getHeureFermNuit();
 
-            if($houvj !== null){
+            if ($houvj !== null) {
                 $site->setHeureOuvJour($houvj);
             }
 
-            if($hfermj !== null){
+            if ($hfermj !== null) {
                 $site->setHeureFermJour($hfermj);
-            }else{
+            } else {
                 $site->setHeureFermJour(null);
             }
 
-            if($houvN !== null){
+            if ($houvN !== null) {
                 $site->setHeureOuvNuit($houvN);
-            }else{
+            } else {
                 $site->setHeureOuvNuit(null);
             }
 
-            if($hfermN !== null){
+            if ($hfermN !== null) {
                 $site->setHeureFermNuit($hfermN);
-            }else{
+            } else {
                 $site->setHeureFermNuit(null);
             }
 
@@ -165,7 +167,7 @@ class SiteController extends Controller
 
         }
 
-        return $this->render('AgiBundle:Default:site/edit.html.twig', array('form' => $form->createView(),'site' => $site));
+        return $this->render('AgiBundle:Default:site/edit.html.twig', array('form' => $form->createView(), 'site' => $site));
 
     }
 
@@ -221,7 +223,7 @@ class SiteController extends Controller
 
         }
 
-        return $this->render('AgiBundle:Default:site/delete.html.twig', array('form' => $form->createView(),'site' => $site));
+        return $this->render('AgiBundle:Default:site/delete.html.twig', array('form' => $form->createView(), 'site' => $site));
 
     }
 
@@ -242,7 +244,6 @@ class SiteController extends Controller
             ->getRepository('AgiBundle:Site');
 
         $sites = $repository->findSites('0');
-
 
 
         return $this->render('AgiBundle:Default:site/list.html.twig', array('sites' => $sites, 'actif' => 0));
@@ -275,13 +276,66 @@ class SiteController extends Controller
     }
 
 
-    public function displayPlanningAction(Request $request)
+    public function displayPlanningAction(Request $request, $id)
     {
-        if($request->isXmlHttpRequest()){
+        if ($request->isXmlHttpRequest()) {
+            //return new JsonResponse(array('data' => json_encode(data)));
+            $range_start = $this->parseDateTime($request->get('start'));
+            $range_end = $this->parseDateTime($request->get('end'));
 
+
+            $timezone = null;
+            if ($request->get('timezone') != null) {
+                $timezone = new DateTimeZone($request->get('timezone'));
+            }
+
+            // Read and parse our events JSON file into an array of event data arrays.
+            $json = file_get_contents(dirname(dirname(dirname(dirname(__FILE__)))) . '/web/json/events.json');
+            $input_arrays = json_decode($json, true);
+
+            // Accumulate an output array of event data arrays.
+            $output_arrays = array();
+            foreach ($input_arrays as $array) {
+
+                // Convert the input array into a useful Event object
+                /*$event = new EventCalendar($array, $timezone);
+
+                // If the event is in-bounds, add it to the output
+                if ($event->isWithinDayRange($range_start, $range_end)) {
+                    $output_arrays[] = $event->toArray();
+                }*/
+            }
+
+            return new JsonResponse(array('id' => json_encode($input_arrays)));
         }
         return new Response("Ceci n'est pas une requete AJAX!", 400);
 
+    }
+
+    // Date Utilities
+    //----------------------------------------------------------------------------------------------
+
+
+    // Parses a string into a DateTime object, optionally forced into the given timezone.
+    function parseDateTime($string, $timezone=null) {
+        $date = new DateTime(
+            $string,
+            $timezone ? $timezone : new DateTimeZone('UTC')
+        // Used only when the string is ambiguous.
+        // Ignored if string has a timezone offset in it.
+        );
+        if ($timezone) {
+            // If our timezone was ignored above, force it.
+            $date->setTimezone($timezone);
+        }
+        return $date;
+    }
+
+
+    // Takes the year/month/date values of the given DateTime and converts them to a new DateTime,
+    // but in UTC.
+    function stripTime($datetime) {
+        return new DateTime($datetime->format('Y-m-d'));
     }
 
 }

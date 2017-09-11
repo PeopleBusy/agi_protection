@@ -139,6 +139,11 @@
                     <input type="text" name="heure_nuit" readonly="true" value="{{ vacation.heureNuit }}" class="form-control" id="heure_nuit">
                 </div>
 
+                <div class="col-md-1">
+                    <label>Heure dimanche:</label>
+                    <input type="text" name="heure_dimanche" value="{{ vacation.heureDimanche }}" readonly="true" class="form-control" id="heure_dimanche">
+                </div>
+
                 <div class="form-group col-md-1" id="divRefreshVacationHours">
                     <button type="button" class="btn btn-success marTop25px" id="btnactualiserHours">
                         <i class="fa fa-refresh"></i>
@@ -146,8 +151,8 @@
                     </button>
                 </div>
 
-                <div class="form-group col-md-1" id="submitVacationForm">
-                    <button type="submit" class="btn btn-danger marTop25px">Enregistrer</button>
+                <div class="form-group col-md-1 hide" id="submitVacationForm">
+                    <button type="submit" class="btn btn-danger marTop25px">Modifier</button>
                 </div>
 
                 {{ form_end(form) }}

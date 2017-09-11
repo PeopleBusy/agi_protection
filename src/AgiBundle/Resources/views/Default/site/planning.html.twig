@@ -99,7 +99,7 @@
                 <div class="col-md-12" id='calendar'>
 
 
-                </divcl>
+                </div>
 
             </div>
             <!-- /.box-body -->
@@ -134,7 +134,10 @@
                 navLinks: true, // can click day/week names to navigate views
                 eventLimit: true, // allow "more" link when too many events
                 events: {
-                    url: '{{ path("afficher_planning_site") }}',
+                    url: '{{ path("afficher_planning_site", {'id': site.id}) }}',
+                    success: function(data) {
+                        console.log(data);
+                    },
                     error: function() {
                         $('#script-warning').show();
                     }

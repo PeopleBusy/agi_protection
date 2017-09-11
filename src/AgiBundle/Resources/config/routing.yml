@@ -43,7 +43,7 @@ planning_site:
     defaults: { _controller: AgiBundle:Site:planning }
 
 afficher_planning_site:
-    path:     /site/display_planning/
+    path:     /site/display_planning/{id}
     defaults: { _controller: AgiBundle:Site:displayPlanning }
 
 liste_site_actif:

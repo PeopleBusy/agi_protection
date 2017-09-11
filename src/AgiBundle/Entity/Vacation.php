@@ -52,14 +52,14 @@ class Vacation
     /**
      * @var int
      *
-     * @ORM\Column(name="heure_dimanche", type="smallint")
+     * @ORM\Column(name="heure_dimanche", type="string")
      */
     private $heureDimanche;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="heure_ferie", type="smallint")
+     * @ORM\Column(name="heure_ferie", type="string")
      */
     private $heureFerie;
 

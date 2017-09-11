@@ -312,7 +312,7 @@ class VacationController extends Controller
 
 
 
-        return $this->render('AgiBundle:Default:vacation/edit.html.twig', array('form' => $form->createView(),'site' => $site,
+        return $this->render('AgiBundle:Default:vacation/delete.html.twig', array('form' => $form->createView(), 'vacation' => $vacation,'site' => $site,
             'agent' => $agent, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
 
     }

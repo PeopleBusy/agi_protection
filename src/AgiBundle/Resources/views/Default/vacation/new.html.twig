@@ -145,7 +145,7 @@
                     </button>
                 </div>
 
-                <div class="form-group col-md-1" id="submitVacationForm">
+                <div class="form-group col-md-1 hide" id="submitVacationForm">
                     <button type="submit" class="btn btn-danger marTop25px">Enregistrer</button>
                 </div>
 
@@ -161,4 +161,23 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(function () {
+            var d = new Date();
+            var j = d.getDate();
+            var m = d.getMonth() + 1;
+            var y = d.getFullYear();
+
+            $('#agibundle_vacation_heureDebVac_date_day').val(j);
+            $('#agibundle_vacation_heureDebVac_date_month').val(m);
+            $('#agibundle_vacation_heureDebVac_date_year').val(y);
+
+            $('#agibundle_vacation_heureFinVac_date_day').val(j);
+            $('#agibundle_vacation_heureFinVac_date_month').val(m);
+            $('#agibundle_vacation_heureFinVac_date_year').val(y);
+        });
+    </script>
 {% endblock %}

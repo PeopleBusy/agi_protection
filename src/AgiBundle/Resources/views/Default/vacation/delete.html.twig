@@ -90,9 +90,9 @@
 
                 {{ form_start(form) }}
 
-                <input type="hidden" data-debut="{{ heureJour.heureDebut|date('H:i:s') }}" data-fin="{{ heureJour.heureFin|date('H:i:s') }}" id="heureJour" name="heureJour"/>
-                <input type="hidden" data-debut="{{ heureNuit.heureDebut|date('H:i:s') }}" data-fin="{{ heureNuit.heureFin|date('H:i:s') }}" id="heureNuit" name="heureNuit"/>
-                <input type="hidden" data-debut="{{ heureDimanche.heureDebut|date('H:i:s') }}" data-fin="{{ heureDimanche.heureFin|date('H:i:s') }}" id="heureDimanche" name="heureDimanche"/>
+                <input type="hidden" data-debut="{{ heureJour.heureDebut|date('H:i') }}" data-fin="{{ heureJour.heureFin|date('H:i') }}" id="heureJour" name="heureJour"/>
+                <input type="hidden" data-debut="{{ heureNuit.heureDebut|date('H:i') }}" data-fin="{{ heureNuit.heureFin|date('H:i') }}" id="heureNuit" name="heureNuit"/>
+                <input type="hidden" data-debut="{{ heureDimanche.heureDebut|date('H:i') }}" data-fin="{{ heureDimanche.heureFin|date('H:i') }}" id="heureDimanche" name="heureDimanche"/>
 
                 <div class="col-md-2">
                     <label>Site:</label>
@@ -118,16 +118,6 @@
                     </select>
                 </div>
 
-                <div class="form-group col-md-2">
-                    <label>Date vacation:</label>
-                    <div class="input-group date">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="text" name="date_vacation" value="{{ vacation.dateVacation|date('d/m/Y') }}" required="true" class="form-control pull-right" id="datepicker4">
-                    </div>
-                </div>
-
                 <div class="col-md-2">
                     {{ form_row(form.heureDebVac) }}
                 </div>
@@ -139,6 +129,21 @@
                 <div class="col-md-1">
                     <label>Heure panier:</label>
                     <input type="text" name="heure_panier" value="{{ vacation.heurePanier }}" readonly="true" class="form-control" id="heure_panier">
+                </div>
+
+                <div class="col-md-1">
+                    <label>Heure jour:</label>
+                    <input type="text" name="heure_jour" readonly="true" value="{{ vacation.heureJour }}" class="form-control" id="heure_jour">
+                </div>
+
+                <div class="col-md-1">
+                    <label>Heure nuit:</label>
+                    <input type="text" name="heure_nuit" readonly="true" value="{{ vacation.heureNuit }}" class="form-control" id="heure_nuit">
+                </div>
+
+                <div class="col-md-1">
+                    <label>Heure dimanche:</label>
+                    <input type="text" name="heure_dimanche" value="{{ vacation.heureDimanche }}" readonly="true" class="form-control" id="heure_dimanche">
                 </div>
 
                 <div class="form-group col-md-1">
