@@ -113,9 +113,6 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('bower_components/moment/moment.js') }}"></script>
-    <script src="{{ asset('bower_components/fullcalendar/dist/fullcalendar.min.js') }}"></script>
-    <script src="{{ asset('bower_components/fullcalendar/dist/locale/fr.js') }}"></script>
     <script>
 
         $(document).ready(function() {
@@ -126,7 +123,7 @@
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'month,agendaWeek'
+                    right: 'month,agendaWeek,agendaDay'
                 },
                 defaultDate: todayDate,
                 locale: 'fr',
@@ -138,7 +135,8 @@
                     success: function(data) {
                         console.log(data);
                     },
-                    error: function() {
+                    error: function(error) {
+                        console.log(error);
                         $('#script-warning').show();
                     }
                 },

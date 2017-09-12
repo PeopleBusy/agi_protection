@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
 use \DateTimeZone;
 use \DateTimeImmutable;
-use AgiBundle\EventCalendar\EventCalendar;
 use Symfony\Component\HttpFoundation\Response;
 
 class SiteController extends Controller
@@ -279,63 +278,25 @@ class SiteController extends Controller
     public function displayPlanningAction(Request $request, $id)
     {
         if ($request->isXmlHttpRequest()) {
-            //return new JsonResponse(array('data' => json_encode(data)));
-            $range_start = $this->parseDateTime($request->get('start'));
-            $range_end = $this->parseDateTime($request->get('end'));
+            $repository = $this->getDoctrine()
+                ->getRepository('AgiBundle:Vacation');
 
-
-            $timezone = null;
-            if ($request->get('timezone') != null) {
-                $timezone = new DateTimeZone($request->get('timezone'));
+            $vac_array = array();
+            $vacations = $repository->findVacationsForCalendar($id);
+            foreach ($vacations as $v){
+                $e = array();
+                $e['id'] = $v->getId();
+                $e['title'] = $v->getAgent()->getNom() . " " . $v->getAgent()->getPrenom();
+                $e['start'] = $v->getHeureDebVac()->format('Y-m-d H:i:s');
+                $e['end'] = $v->getHeureFinVac()->format('Y-m-d H:i:s');
+                $e['allDay'] = false;
+                array_push($vac_array, $e);
             }
 
-            // Read and parse our events JSON file into an array of event data arrays.
-            $json = file_get_contents(dirname(dirname(dirname(dirname(__FILE__)))) . '/web/json/events.json');
-            $input_arrays = json_decode($json, true);
-
-            // Accumulate an output array of event data arrays.
-            $output_arrays = array();
-            foreach ($input_arrays as $array) {
-
-                // Convert the input array into a useful Event object
-                /*$event = new EventCalendar($array, $timezone);
-
-                // If the event is in-bounds, add it to the output
-                if ($event->isWithinDayRange($range_start, $range_end)) {
-                    $output_arrays[] = $event->toArray();
-                }*/
-            }
-
-            return new JsonResponse(array('id' => json_encode($input_arrays)));
+            return new JsonResponse($vac_array);
         }
         return new Response("Ceci n'est pas une requete AJAX!", 400);
 
-    }
-
-    // Date Utilities
-    //----------------------------------------------------------------------------------------------
-
-
-    // Parses a string into a DateTime object, optionally forced into the given timezone.
-    function parseDateTime($string, $timezone=null) {
-        $date = new DateTime(
-            $string,
-            $timezone ? $timezone : new DateTimeZone('UTC')
-        // Used only when the string is ambiguous.
-        // Ignored if string has a timezone offset in it.
-        );
-        if ($timezone) {
-            // If our timezone was ignored above, force it.
-            $date->setTimezone($timezone);
-        }
-        return $date;
-    }
-
-
-    // Takes the year/month/date values of the given DateTime and converts them to a new DateTime,
-    // but in UTC.
-    function stripTime($datetime) {
-        return new DateTime($datetime->format('Y-m-d'));
     }
 
 }
