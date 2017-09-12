@@ -49,4 +49,30 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
+    public function findVacationsBySite($id){
+
+        $qb = $this->createQueryBuilder('v');
+        $qb->select('v')
+            ->where('v.site = :id')
+            ->setParameter('id', $id);
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+
+    }
+
+    public function findVacationsByAgent($id){
+
+        $qb = $this->createQueryBuilder('v');
+        $qb->select('v')
+            ->where('v.agent = :id')
+            ->setParameter('id', $id);
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+
+    }
+
 }

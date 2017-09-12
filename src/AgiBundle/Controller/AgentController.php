@@ -276,8 +276,6 @@ class AgentController extends Controller
 
     }
 
-//https://gist.github.com/FabianSchmick/adcf75c439abda7e4342bca2dfa6e1e0
-
     public function rechercherAction(Request $request)
     {
         if($request->isXmlHttpRequest()){
@@ -293,6 +291,117 @@ class AgentController extends Controller
 
         }
 
+
+    }
+
+    public function recapitulatifAction($id)
+    {
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AgiBundle:Vacation');
+
+        $vacations = $repository->findVacationsByAgent($id);
+
+        $thp = 0; $thj = 0; $thn = 0; $thd = 0; $thf = 0;
+        $thjH = 0; $thjM = 0;
+        $thnH = 0; $thnM = 0;
+        $thdH = 0; $thdM = 0;
+        foreach ($vacations as $v){
+            $thp += $v->getHeurePanier();
+            $thf += $v->getHeureFerie();
+
+            if($v->getHeureJour() == '0'){
+                $thjH += 0;
+                $thjM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureJour())[0]);
+                $m = intval(mbsplit(":", $v->getHeureJour())[1]);
+                $thjH += $h;
+                $thjM += $m;
+            }
+
+            if($v->getHeureNuit() == '0'){
+                $thnH += 0;
+                $thnM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureNuit())[0]);
+                $m = intval(mbsplit(":", $v->getHeureNuit())[1]);
+                $thnH += $h;
+                $thnM += $m;
+            }
+
+            if($v->getHeureDimanche() == '0'){
+                $thdH += 0;
+                $thdM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureDimanche())[0]);
+                $m = intval(mbsplit(":", $v->getHeureDimanche())[1]);
+                $thdH += $h;
+                $thdM += $m;
+            }
+
+        }
+
+        if($thjM >= 60){
+            $thjH += ($thjM / 60);
+            $thjM = ($thjM % 60);
+        }
+        if($thjH < 10){
+            $thjH = '0' . $thjH;
+        }
+        if($thjM < 10){
+            $thjM = '0' . $thjM;
+        }
+        $thj = $thjH . ':' . $thjM;
+        if($thjH == "00" && $thjM == "00"){
+            $thj = 0;
+        }
+
+
+
+        if($thnM >= 60){
+            $thnH += ($thnM / 60);
+            $thnM = ($thnM % 60);
+        }
+        if($thnH < 10){
+            $thnH = '0' . $thnH;
+        }
+        if($thnM < 10){
+            $thnM = '0' . $thnM;
+        }
+        $thn = $thnH . ':' . $thnM;
+        if($thnH == "00" && $thnM == "00"){
+            $thn = 0;
+        }
+
+
+
+
+        if($thdM >= 60){
+            $thdH += ($thdM / 60);
+            $thdM = ($thdM % 60);
+        }
+        if($thdH < 10){
+            $thdH = '0' . $thdH;
+        }
+        if($thdM < 10){
+            $thdM = '0' . $thdM;
+        }
+        $thd = $thdH . ':' . $thdM;
+        if($thdH == "00" && $thdM == "00"){
+            $thd = 0;
+        }
+
+
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AgiBundle:Agent');
+
+        $agent = $repository->find($id);
+
+
+        return $this->render('AgiBundle:Default:agent/recapitulatif.html.twig', array('vacations' => $vacations, 'agent' => $agent, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
+                'thd' => $thd, 'thf' => $thf));
 
     }
 

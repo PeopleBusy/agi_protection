@@ -78,6 +78,14 @@ liste_sites_vacations_supprimes:
     path:     /sites/vacations/supprimes
     defaults: { _controller: AgiBundle:Vacation:listerSupprime }
 
+site_recapitulatif:
+    path:     /site/recapitulatif/{id}
+    defaults: { _controller: AgiBundle:Site:recapitulatif }
+
+agent_recapitulatif:
+    path:     /agent/recapitulatif/{id}
+    defaults: { _controller: AgiBundle:Agent:recapitulatif }
+
 configurer_heure:
     path:     /config_heure
     defaults: { _controller: AgiBundle:HeurePanier:configurerHeure }

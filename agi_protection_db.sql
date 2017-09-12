@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.7.2
+-- https://www.phpmyadmin.net/
 --
--- Client :  localhost
--- Généré le :  Ven 08 Septembre 2017 à 10:14
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+-- Hôte : localhost:3306
+-- Généré le :  mer. 13 sep. 2017 à 01:28
+-- Version du serveur :  5.6.35
+-- Version de PHP :  7.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,7 +37,7 @@ CREATE TABLE `agent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `agent`
+-- Déchargement des données de la table `agent`
 --
 
 INSERT INTO `agent` (`id`, `nom`, `prenom`, `telephone`, `type_contrat`, `date_embauche`, `etat`) VALUES
@@ -61,7 +61,7 @@ CREATE TABLE `contrat_agent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `contrat_agent`
+-- Déchargement des données de la table `contrat_agent`
 --
 
 INSERT INTO `contrat_agent` (`id`, `agent_id`, `date_debut`, `date_fin`, `etat`) VALUES
@@ -85,7 +85,7 @@ CREATE TABLE `contrat_site` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `contrat_site`
+-- Déchargement des données de la table `contrat_site`
 --
 
 INSERT INTO `contrat_site` (`id`, `site_id`, `date_debut`, `date_fin`, `etat`) VALUES
@@ -111,7 +111,7 @@ CREATE TABLE `heure_panier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `heure_panier`
+-- Déchargement des données de la table `heure_panier`
 --
 
 INSERT INTO `heure_panier` (`id`, `libelle`, `heure_debut`, `heure_fin`) VALUES
@@ -136,7 +136,7 @@ CREATE TABLE `operation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `operation`
+-- Déchargement des données de la table `operation`
 --
 
 INSERT INTO `operation` (`id`, `agent_id`, `site_id`, `libelle`, `date_heure`, `auteur`, `type_operation`) VALUES
@@ -179,7 +179,7 @@ CREATE TABLE `site` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `site`
+-- Déchargement des données de la table `site`
 --
 
 INSERT INTO `site` (`id`, `nom_site`, `etat`, `heure_ouv_jour`, `heure_ferm_jour`, `heure_ouv_nuit`, `heure_ferm_nuit`) VALUES
@@ -206,14 +206,23 @@ CREATE TABLE `vacation` (
   `heure_deb_vac` datetime NOT NULL,
   `heure_fin_vac` datetime DEFAULT NULL,
   `etat` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `heure_jour` smallint(6) NOT NULL,
-  `heure_nuit` smallint(6) NOT NULL,
-  `heure_dimanche` smallint(6) NOT NULL,
-  `heure_ferie` smallint(6) NOT NULL
+  `heure_jour` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `heure_nuit` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `heure_dimanche` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `heure_ferie` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Index pour les tables exportées
+-- Déchargement des données de la table `vacation`
+--
+
+INSERT INTO `vacation` (`id`, `agent_id`, `site_id`, `date_vacation`, `heure_panier`, `heure_deb_vac`, `heure_fin_vac`, `etat`, `heure_jour`, `heure_nuit`, `heure_dimanche`, `heure_ferie`) VALUES
+(1, 1, 3, '2017-09-12', 1, '2017-09-10 05:00:00', '2017-09-10 18:00:00', '1', '12:00', '01:00', '13:00', '0'),
+(2, 2, 3, '2017-09-12', 1, '2017-09-11 08:30:00', '2017-09-11 21:30:00', '1', '12:30', '00:30', '0', '0'),
+(3, 4, 5, '2017-09-12', 1, '2017-09-12 06:00:00', '2017-09-12 21:00:00', '1', '15:00', '0', '0', '0');
+
+--
+-- Index pour les tables déchargées
 --
 
 --
@@ -265,7 +274,7 @@ ALTER TABLE `vacation`
   ADD KEY `IDX_E3DADF75F6BD1646` (`site_id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
@@ -302,9 +311,9 @@ ALTER TABLE `site`
 -- AUTO_INCREMENT pour la table `vacation`
 --
 ALTER TABLE `vacation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- Contraintes pour les tables exportées
+-- Contraintes pour les tables déchargées
 --
 
 --
