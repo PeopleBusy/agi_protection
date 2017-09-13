@@ -306,6 +306,8 @@ class AgentController extends Controller
         $thjH = 0; $thjM = 0;
         $thnH = 0; $thnM = 0;
         $thdH = 0; $thdM = 0;
+        $thfH = 0; $thfM = 0;
+
         foreach ($vacations as $v){
             $thp += $v->getHeurePanier();
             $thf += $v->getHeureFerie();
@@ -390,6 +392,23 @@ class AgentController extends Controller
         $thd = $thdH . ':' . $thdM;
         if($thdH == "00" && $thdM == "00"){
             $thd = 0;
+        }
+
+
+
+        if($thfM >= 60){
+            $thfH += ($thfM / 60);
+            $thfM = ($thfM % 60);
+        }
+        if($thfH < 10){
+            $thfH = '0' . $thfH;
+        }
+        if($thfM < 10){
+            $thfM = '0' . $thfM;
+        }
+        $thf = $thfH . ':' . $thfM;
+        if($thfH == "00" && $thfM == "00"){
+            $thf = 0;
         }
 
 

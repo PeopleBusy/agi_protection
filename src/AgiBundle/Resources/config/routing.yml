@@ -46,6 +46,14 @@ afficher_planning_site:
     path:     /site/display_planning/{id}
     defaults: { _controller: AgiBundle:Site:displayPlanning }
 
+calendrier_site:
+    path:     /site/calendrier/{id}
+    defaults: { _controller: AgiBundle:Site:calendrier }
+
+afficher_calendrier_site:
+    path:     /site/display_calendrier/{id}
+    defaults: { _controller: AgiBundle:Site:displayCalendrier }
+
 liste_site_actif:
     path:     /sites/actif
     defaults: { _controller: AgiBundle:Site:listerActif }

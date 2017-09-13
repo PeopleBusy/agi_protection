@@ -73,23 +73,25 @@
                             <th>Heure(s) panier</th>
                             <th>Heure(s) Jour</th>
                             <th>Heure(s) Nuit</th>
+                            <th>Total Vacation</th>
                             <th>Heure(s) Dimanche</th>
                             <th>Heure(s) Fériée(s)</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for v in vacations %}
-                        <tr class="">
-                            <td><span class="id">{{ v.id }}</span></td>
-                            <td><span class="badge bg-info">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
-                            <td><span class="prenom">{{ v.heureDebVac| date('d/m/Y H:i:s') }}</span></td>
-                            <td><span class="prenom">{{ v.heureFinVac| date('d/m/Y H:i:s') }}</span></td>
-                            <td><span class="prenom">{{ v.heurePanier }}</span></td>
-                            <td><span class="prenom">{{ v.heureJour }}</span></td>
-                            <td><span class="prenom">{{ v.heureNuit }}</span></td>
-                            <td><span class="prenom">{{ v.heureDimanche }}</span></td>
-                            <td><span class="">{{ v.heureFerie }}</span></td>
-                        </tr>
+                            <tr class="">
+                                <td><span class="id">{{ v.id }}</span></td>
+                                <td><span class="badge bg-info">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
+                                <td><span class="prenom">{{ v.heureDebVac| date('d/m/Y H:i:s') }}</span></td>
+                                <td><span class="prenom">{{ v.heureFinVac| date('d/m/Y H:i:s') }}</span></td>
+                                <td><span class="prenom">{{ v.heurePanier }}</span></td>
+                                <td><span class="prenom">{{ v.heureJour }}</span></td>
+                                <td><span class="prenom">{{ v.heureNuit }}</span></td>
+                                <td><span class="badge bg-green">0</span></td>
+                                <td><span class="prenom">{{ v.heureDimanche }}</span></td>
+                                <td><span class="">{{ v.heureFerie }}</span></td>
+                            </tr>
                         {% endfor %}
 
                         </tbody>
@@ -99,6 +101,7 @@
                             <th>Total heure: <span class="badge bg-red"> {{ thp }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thj }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thn }}</span></th>
+                            <th>Total vacation(s): <span class="badge bg-red"> 0</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thd }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thf }}</span></th>
                         </tr>

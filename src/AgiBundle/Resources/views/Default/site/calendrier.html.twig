@@ -1,6 +1,16 @@
 {% extends "::base.html.twig" %}
 
-{% block title %} Ajouter agent {% endblock %}
+{% block title %} Calendrier site {% endblock %}
+
+{% block stylesheets %}
+
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="{{ asset('bower_components/fullcalendar/dist/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/fullcalendar/dist/fullcalendar.print.min.css') }}" media="print">
+
+{% endblock %}
+
+
 
 {% block body %}
 
@@ -10,8 +20,8 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-user"></i> Agents</a></li>
-            <li class="active">Enregistrer</li>
+            <li><a href="#"><i class="fa fa-calendar"></i> Sites</a></li>
+            <li class="active">Calendrier</li>
         </ol>
 
         {% if erreur is defined %}
@@ -73,8 +83,8 @@
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title">
-                    <i class="fa fa-user"></i>
-                    Enregistrer un agent
+                    <i class="fa fa-calendar"></i>
+                    Calendrier du site <span class="badge bg-green">{{ site.nomSite }}</span>
                 </h3>
 
                 <div class="box-tools pull-right">
@@ -86,53 +96,10 @@
             </div>
             <div class="box-body">
 
-                {{ form_start(form) }}
+                <div class="col-md-12" id='calendar'>
 
-                <div class="form-group col-md-2">
-                    {{ form_row(form.nom) }}
-                </div>
-                <div class="form-group col-md-2">
-                    {{ form_row(form.prenom) }}
-                </div>
-                <div class="form-group col-md-2">
-                    {{ form_row(form.telephone) }}
-                </div>
-                <div class="form-group col-md-1">
-                    {{ form_row(form.typeContrat) }}
-                </div>
-                <div class="form-group col-md-2 div_datecontrat" id="div_datedebut">
-                    <label>Date début du contrat:</label>
-                    <div class="input-group date">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="text" name="date_debut" class="form-control pull-right" id="datepicker1">
-                    </div>
-                </div>
-                <div class="form-group col-md-2 div_datecontrat" id="div_datefin">
-                    <label>Date fin du contrat:</label>
-                    <div class="input-group date">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="text" name="date_fin" class="form-control pull-right" id="datepicker2">
-                    </div>
-                </div>
-                <div class="form-group col-md-2 hide" id="div_date_embauche">
-                    <label>Date d'embauche:</label>
-                    <div class="input-group date">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="text" name="date_embauche" class="form-control pull-right" id="datepicker3">
-                    </div>
-                </div>
-                <div class="form-group col-md-1">
-                    <button type="submit" class="btn btn-danger marTop25px">Enregistrer</button>
-                </div>
 
-                {{ form_end(form) }}
-
+                </div>
 
             </div>
             <!-- /.box-body -->
@@ -142,5 +109,44 @@
             <!-- /.box-footer-->
         </div>
     </section>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+
+        $(document).ready(function() {
+
+            var todayDate = new Date().toISOString().slice(0,10);
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultDate: todayDate,
+                locale: 'fr',
+                editable: true,
+                navLinks: true, // can click day/week names to navigate views
+                eventLimit: true, // allow "more" link when too many events
+                events: {
+                    url: '{{ path("afficher_calendrier_site", {'id': site.id}) }}',
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                        $('#script-warning').show();
+                    }
+                },
+                loading: function(bool) {
+                    $('#loading').html(bool);
+                }
+            });
+
+        });
+
+    </script>
 
 {% endblock %}

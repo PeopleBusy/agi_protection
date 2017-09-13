@@ -20,7 +20,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-calendar"></i> Sites</a></li>
+            <li><a href="#"><i class="fa fa-plane"></i> Sites</a></li>
             <li class="active">Planning</li>
         </ol>
 
@@ -83,7 +83,7 @@
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title">
-                    <i class="fa fa-calendar"></i>
+                    <i class="fa fa-plane"></i>
                     Planning du site <span class="badge bg-green">{{ site.nomSite }}</span>
                 </h3>
 
@@ -96,9 +96,84 @@
             </div>
             <div class="box-body">
 
-                <div class="col-md-12" id='calendar'>
+                <h4 id="planningTitle" class="text-blue text-center">Veuillez sélectionner une date début et une date fin pour afficher le planning</h4>
 
+                <div class="row">
+                    <form method="post" action="{{ path('afficher_planning_site', {'id' : site.id}) }}">
 
+                        <div class="form-group col-md-2"></div>
+                        <div class="form-group col-md-3">
+                            <label>Date début:</label>
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="date_debut" required="true" class="form-control pull-right" id="datepicker1">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label>Date fin:</label>
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="date_fin" required="true" class="form-control pull-right" id="datepicker2">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-1">
+                            <button type="submit"  class="btn btn-primary marTop25px">Afficher</button>
+                        </div>
+
+                    </form>
+                </div><br>
+
+                <div class="table-responsive">
+                    <table id="example1" class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Agent</th>
+                            <th>Date début vacation</th>
+                            <th>Date fin vacation</th>
+                            <th>Heure(s) panier</th>
+                            <th>Heure(s) Jour</th>
+                            <th>Heure(s) Nuit</th>
+                            <th>Total Vacation</th>
+                            <th>Heure(s) Dimanche</th>
+                            <th>Heure(s) Fériée(s)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for v in vacations %}
+                            <tr class="">
+                                <td><span class="id">{{ v.id }}</span></td>
+                                <td><span class="badge bg-info">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
+                                <td><span class="prenom">{{ v.heureDebVac| date('d/m/Y H:i:s') }}</span></td>
+                                <td><span class="prenom">{{ v.heureFinVac| date('d/m/Y H:i:s') }}</span></td>
+                                <td><span class="prenom">{{ v.heurePanier }}</span></td>
+                                <td><span class="prenom">{{ v.heureJour }}</span></td>
+                                <td><span class="prenom">{{ v.heureNuit }}</span></td>
+                                <td><span class="badge bg-green">0</span></td>
+                                <td><span class="prenom">{{ v.heureDimanche }}</span></td>
+                                <td><span class="">{{ v.heureFerie }}</span></td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th colspan="4"></th>
+                            <th>Total heure: <span class="badge bg-red"> {{ thp }}</span></th>
+                            <th>Total heure: <span class="badge bg-red"> {{ thj }}</span></th>
+                            <th>Total heure: <span class="badge bg-red"> {{ thn }}</span></th>
+                            <th>Total vacation(s): <span class="badge bg-red"> 0</span></th>
+                            <th>Total heure: <span class="badge bg-red"> {{ thd }}</span></th>
+                            <th>Total heure: <span class="badge bg-red"> {{ thf }}</span></th>
+                        </tr>
+                        </tfoot>
+                    </table>
                 </div>
 
             </div>
@@ -109,44 +184,5 @@
             <!-- /.box-footer-->
         </div>
     </section>
-
-{% endblock %}
-
-{% block javascripts %}
-    <script>
-
-        $(document).ready(function() {
-
-            var todayDate = new Date().toISOString().slice(0,10);
-
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                defaultDate: todayDate,
-                locale: 'fr',
-                editable: true,
-                navLinks: true, // can click day/week names to navigate views
-                eventLimit: true, // allow "more" link when too many events
-                events: {
-                    url: '{{ path("afficher_planning_site", {'id': site.id}) }}',
-                    success: function(data) {
-                        console.log(data);
-                    },
-                    error: function(error) {
-                        console.log(error);
-                        $('#script-warning').show();
-                    }
-                },
-                loading: function(bool) {
-                    $('#loading').html(bool);
-                }
-            });
-
-        });
-
-    </script>
 
 {% endblock %}

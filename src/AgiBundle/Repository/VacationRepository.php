@@ -75,4 +75,18 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
+    public function findByDistinctAgentInVacationSite($id){
+
+        $qb = $this->createQueryBuilder('v');
+        $qb->leftJoin('AgiBundle:Agent', 'a' , 'WITH' , 'v.agent = a.id')
+            ->select('a.id')->distinct(true)
+            ->where('v.site = :id')
+            ->setParameter('id', $id);
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+
+    }
+
 }

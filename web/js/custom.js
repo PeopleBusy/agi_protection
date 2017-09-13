@@ -245,8 +245,19 @@ function calculerHeures() {
 
             }else if(dateFinVac > dateFinJourDiff){
                 //il commence entre 6h et 21h et finit apres 21h
-                nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
-                nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
+
+                if(dateFinVac < dateFinNuitDiff || dateFinVac.valueOf() === dateFinNuitDiff.valueOf()){
+                    //il commence entre 6h et 21h et finit avant le prochain 6h
+                    nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
+                    nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
+
+                }else {
+                    //il commence entre 6h et 21h et finit apres le prochain 6h
+                    nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
+                    nbHeureNuit = diffDateInHoursAndMinutes(dateFinNuitDiff, dateFinJourDiff);
+                    nbHeureJour = addTimes(diffDateInHoursAndMinutes(dateFinVac, dateFinNuitDiff), nbHeureJour);
+
+                }
 
             }
 

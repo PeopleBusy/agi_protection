@@ -58,6 +58,7 @@ class VacationController extends Controller
             $heure_jour = $request->request->get('heure_jour');
             $heure_nuit = $request->request->get('heure_nuit');
             $heure_dimanche = $request->request->get('heure_dimanche');
+            $heure_ferie = $request->request->get('heure_ferie');
 
             $heureDebVac = $form->getData()->getHeureDebVac();
             $heureFinVac = $form->getData()->getHeureFinVac();
@@ -81,8 +82,6 @@ class VacationController extends Controller
             if($heure_dimanche == null){
                 $heure_dimanche = 0;
             }
-
-            $heure_ferie = 0;//A calculer après
 
             $agent = $this->getDoctrine()
                 ->getRepository('AgiBundle:Agent')
@@ -176,6 +175,7 @@ class VacationController extends Controller
             $heure_jour = $request->request->get('heure_jour');
             $heure_nuit = $request->request->get('heure_nuit');
             $heure_dimanche = $request->request->get('heure_dimanche');
+            $heure_ferie = $request->request->get('heure_ferie');
 
             $heureDebVac = $form->getData()->getHeureDebVac();
             $heureFinVac = $form->getData()->getHeureFinVac();
@@ -199,8 +199,6 @@ class VacationController extends Controller
             if($heure_dimanche == null){
                 $heure_dimanche = 0;
             }
-
-            $heure_ferie = 0;
 
             $agent = $this->getDoctrine()
                 ->getRepository('AgiBundle:Agent')

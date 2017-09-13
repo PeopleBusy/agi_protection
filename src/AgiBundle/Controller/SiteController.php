@@ -257,7 +257,6 @@ class SiteController extends Controller
 
         $operations = $repository->findSitesOperations($id);
 
-
         return $this->render('AgiBundle:Default:site/operation.html.twig', array('operations' => $operations));
 
     }
@@ -269,41 +268,16 @@ class SiteController extends Controller
 
         $site = $repository->find($id);
 
+        $thp = 0; $thj = 0; $thn = 0; $thd = 0; $thf = 0;
 
-        return $this->render('AgiBundle:Default:site/planning.html.twig', array('site' => $site));
-
+        return $this->render('AgiBundle:Default:site/planning.html.twig', array('site' => $site, 'vacations' => null,
+            'thp' => $thp, 'thj' => $thj, 'thn' => $thn, 'thd' => $thd, 'thf' => $thf));
     }
 
-
-    public function displayPlanningAction(Request $request, $id)
+    public function displayPlanningAction($id)
     {
-        if ($request->isXmlHttpRequest()) {
-            $repository = $this->getDoctrine()
-                ->getRepository('AgiBundle:Vacation');
-
-            $vac_array = array();
-            $vacations = $repository->findVacationsForCalendar($id);
-            foreach ($vacations as $v){
-                $e = array();
-                $e['id'] = $v->getId();
-                $e['title'] = $v->getAgent()->getNom() . " " . $v->getAgent()->getPrenom();
-                $e['start'] = $v->getHeureDebVac()->format('Y-m-d H:i:s');
-                $e['end'] = $v->getHeureFinVac()->format('Y-m-d H:i:s');
-                $e['allDay'] = false;
-                array_push($vac_array, $e);
-            }
-
-            return new JsonResponse($vac_array);
-        }
-        return new Response("Ceci n'est pas une requete AJAX!", 400);
-
-    }
-
-    public function recapitulatifAction($id)
-    {
-
         $repository = $this->getDoctrine()
-                ->getRepository('AgiBundle:Vacation');
+            ->getRepository('AgiBundle:Vacation');
 
         $vacations = $repository->findVacationsBySite($id);
 
@@ -311,6 +285,8 @@ class SiteController extends Controller
         $thjH = 0; $thjM = 0;
         $thnH = 0; $thnM = 0;
         $thdH = 0; $thdM = 0;
+        $thfH = 0; $thfM = 0;
+
         foreach ($vacations as $v){
             $thp += $v->getHeurePanier();
             $thf += $v->getHeureFerie();
@@ -395,6 +371,187 @@ class SiteController extends Controller
         $thd = $thdH . ':' . $thdM;
         if($thdH == "00" && $thdM == "00"){
             $thd = 0;
+        }
+
+
+
+        if($thfM >= 60){
+            $thfH += ($thfM / 60);
+            $thfM = ($thfM % 60);
+        }
+        if($thfH < 10){
+            $thfH = '0' . $thfH;
+        }
+        if($thfM < 10){
+            $thfM = '0' . $thfM;
+        }
+        $thf = $thfH . ':' . $thfM;
+        if($thfH == "00" && $thfM == "00"){
+            $thf = 0;
+        }
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AgiBundle:Site');
+
+        $site = $repository->find($id);
+
+
+        return $this->render('AgiBundle:Default:site/planning.html.twig', array('vacations' => $vacations, 'site' => $site, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
+            'thd' => $thd, 'thf' => $thf));
+    }
+
+    public function calendrierAction($id)
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository('AgiBundle:Site');
+
+        $site = $repository->find($id);
+
+
+        return $this->render('AgiBundle:Default:site/calendrier.html.twig', array('site' => $site));
+
+    }
+
+
+    public function displayCalendrierAction(Request $request, $id)
+    {
+        if ($request->isXmlHttpRequest()) {
+            $repository = $this->getDoctrine()
+                ->getRepository('AgiBundle:Vacation');
+
+            $vac_array = array();
+            $vacations = $repository->findVacationsForCalendar($id);
+            foreach ($vacations as $v){
+                $e = array();
+                $e['id'] = $v->getId();
+                $e['title'] = $v->getAgent()->getNom() . " " . $v->getAgent()->getPrenom();
+                $e['start'] = $v->getHeureDebVac()->format('Y-m-d H:i:s');
+                $e['end'] = $v->getHeureFinVac()->format('Y-m-d H:i:s');
+                $e['allDay'] = false;
+                array_push($vac_array, $e);
+            }
+
+            return new JsonResponse($vac_array);
+        }
+        return new Response("Ceci n'est pas une requete AJAX!", 400);
+
+    }
+
+    public function recapitulatifAction($id)
+    {
+
+        $repository = $this->getDoctrine()
+                ->getRepository('AgiBundle:Vacation');
+
+        $vacations = $repository->findVacationsBySite($id);
+
+        $thp = 0; $thj = 0; $thn = 0; $thd = 0; $thf = 0;
+        $thjH = 0; $thjM = 0;
+        $thnH = 0; $thnM = 0;
+        $thdH = 0; $thdM = 0;
+        $thfH = 0; $thfM = 0;
+
+        foreach ($vacations as $v){
+            $thp += $v->getHeurePanier();
+            $thf += $v->getHeureFerie();
+
+            if($v->getHeureJour() == '0'){
+                $thjH += 0;
+                $thjM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureJour())[0]);
+                $m = intval(mbsplit(":", $v->getHeureJour())[1]);
+                $thjH += $h;
+                $thjM += $m;
+            }
+
+            if($v->getHeureNuit() == '0'){
+                $thnH += 0;
+                $thnM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureNuit())[0]);
+                $m = intval(mbsplit(":", $v->getHeureNuit())[1]);
+                $thnH += $h;
+                $thnM += $m;
+            }
+
+            if($v->getHeureDimanche() == '0'){
+                $thdH += 0;
+                $thdM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureDimanche())[0]);
+                $m = intval(mbsplit(":", $v->getHeureDimanche())[1]);
+                $thdH += $h;
+                $thdM += $m;
+            }
+
+        }
+
+        if($thjM >= 60){
+            $thjH += ($thjM / 60);
+            $thjM = ($thjM % 60);
+        }
+        if($thjH < 10){
+            $thjH = '0' . $thjH;
+        }
+        if($thjM < 10){
+            $thjM = '0' . $thjM;
+        }
+        $thj = $thjH . ':' . $thjM;
+        if($thjH == "00" && $thjM == "00"){
+            $thj = 0;
+        }
+
+
+
+        if($thnM >= 60){
+            $thnH += ($thnM / 60);
+            $thnM = ($thnM % 60);
+        }
+        if($thnH < 10){
+            $thnH = '0' . $thnH;
+        }
+        if($thnM < 10){
+            $thnM = '0' . $thnM;
+        }
+        $thn = $thnH . ':' . $thnM;
+        if($thnH == "00" && $thnM == "00"){
+            $thn = 0;
+        }
+
+
+
+
+        if($thdM >= 60){
+            $thdH += ($thdM / 60);
+            $thdM = ($thdM % 60);
+        }
+        if($thdH < 10){
+            $thdH = '0' . $thdH;
+        }
+        if($thdM < 10){
+            $thdM = '0' . $thdM;
+        }
+        $thd = $thdH . ':' . $thdM;
+        if($thdH == "00" && $thdM == "00"){
+            $thd = 0;
+        }
+
+
+
+        if($thfM >= 60){
+            $thfH += ($thfM / 60);
+            $thfM = ($thfM % 60);
+        }
+        if($thfH < 10){
+            $thfH = '0' . $thfH;
+        }
+        if($thfM < 10){
+            $thfM = '0' . $thfM;
+        }
+        $thf = $thfH . ':' . $thfM;
+        if($thfH == "00" && $thfM == "00"){
+            $thf = 0;
         }
 
         $repository = $this->getDoctrine()
