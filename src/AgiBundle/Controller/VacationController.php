@@ -51,7 +51,6 @@ class VacationController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $date_vacation = new DateTime();
             $agent_id = $request->request->get('agent_id');
             $site_id = $request->request->get('site_id');
             $heure_panier = $request->request->get('heure_panier');
@@ -73,14 +72,17 @@ class VacationController extends Controller
             if($heure_panier == null){
                 $heure_panier = 0;
             }
-            if($heure_jour == null){
-                $heure_jour = 0;
+            if($heure_jour == null || $heure_jour == "0"){
+                $heure_jour = "00:00";
             }
-            if($heure_nuit == null){
-                $heure_nuit = 0;
+            if($heure_nuit == null || $heure_nuit == "0"){
+                $heure_nuit = "00:00";
             }
-            if($heure_dimanche == null){
-                $heure_dimanche = 0;
+            if($heure_dimanche == null || $heure_dimanche == "0"){
+                $heure_dimanche = "00:00";
+            }
+            if($heure_ferie == null || $heure_ferie == "0"){
+                $heure_ferie = "00:00";
             }
 
             $agent = $this->getDoctrine()
@@ -90,7 +92,7 @@ class VacationController extends Controller
             $vacation = $form->getData();
             $vacation->setAgent($agent);
             $vacation->setSite($site);
-            $vacation->setDateVacation($date_vacation);
+            $vacation->setDateVacation($vacation->getHeureDebVac());
             $vacation->setHeurePanier($heure_panier);
             $vacation->setHeureJour($heure_jour);
             $vacation->setHeureNuit($heure_nuit);
@@ -168,7 +170,6 @@ class VacationController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $date_vacation = new DateTime();
             $agent_id = $request->request->get('agent_id');
             $site_id = $request->request->get('site_id');
             $heure_panier = $request->request->get('heure_panier');
@@ -180,7 +181,7 @@ class VacationController extends Controller
             $heureDebVac = $form->getData()->getHeureDebVac();
             $heureFinVac = $form->getData()->getHeureFinVac();
 
-            if ($date_vacation == null || $site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i:s') == '00:00') {
+            if ($site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i:s') == '00:00') {
 
                 return $this->render('AgiBundle:Default:vacation/edit.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs saisies!',
                     'vacation' => $vacation,'site' => $site, 'agent' => $agent, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
@@ -190,14 +191,17 @@ class VacationController extends Controller
             if($heure_panier == null){
                 $heure_panier = 0;
             }
-            if($heure_jour == null){
-                $heure_jour = 0;
+            if($heure_jour == null || $heure_jour == "0"){
+                $heure_jour = "00:00";
             }
-            if($heure_nuit == null){
-                $heure_nuit = 0;
+            if($heure_nuit == null || $heure_nuit == "0"){
+                $heure_nuit = "00:00";
             }
-            if($heure_dimanche == null){
-                $heure_dimanche = 0;
+            if($heure_dimanche == null || $heure_dimanche == "0"){
+                $heure_dimanche = "00:00";
+            }
+            if($heure_ferie == null || $heure_ferie == "0"){
+                $heure_ferie = "00:00";
             }
 
             $agent = $this->getDoctrine()
@@ -207,7 +211,7 @@ class VacationController extends Controller
             $vacation = $form->getData();
             $vacation->setAgent($agent);
             $vacation->setSite($site);
-            $vacation->setDateVacation($date_vacation);
+            $vacation->setDateVacation($vacation->getHeureDebVac());
             $vacation->setHeurePanier($heure_panier);
             $vacation->setHeureJour($heure_jour);
             $vacation->setHeureNuit($heure_nuit);

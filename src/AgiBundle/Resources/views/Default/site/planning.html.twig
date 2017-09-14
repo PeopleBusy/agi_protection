@@ -96,7 +96,7 @@
             </div>
             <div class="box-body">
 
-                <h4 id="planningTitle" class="text-blue text-center">Veuillez sélectionner une date début et une date fin pour afficher le planning</h4>
+                <h4 id="planningTitle" class="bg-success text-bold text-center">{{ title }}</h4>
 
                 <div class="row">
                     <form method="post" action="{{ path('afficher_planning_site', {'id' : site.id}) }}">
@@ -108,7 +108,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" name="date_debut" required="true" class="form-control pull-right" id="datepicker1">
+                                <input type="text" name="date_debut" value="{{ date_debut }}" required="true" class="form-control pull-right" id="datepicker1">
                             </div>
                         </div>
 
@@ -118,13 +118,22 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" name="date_fin" required="true" class="form-control pull-right" id="datepicker2">
+                                <input type="text" name="date_fin" value="{{ date_fin }}" required="true" class="form-control pull-right" id="datepicker2">
                             </div>
                         </div>
 
                         <div class="form-group col-md-1">
                             <button type="submit"  class="btn btn-primary marTop25px">Afficher</button>
                         </div>
+
+                        {% if vacations is not empty %}
+                            <div class="form-group col-md-1">
+                                <button type="button"  class="btn btn-success marTop25px">
+                                    <i class="fa fa-print"></i>
+                                     Imprimer
+                                </button>
+                            </div>
+                        {% endif %}
 
                     </form>
                 </div><br>
@@ -133,7 +142,6 @@
                     <table id="example1" class="table table-striped table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>Agent</th>
                             <th>Date début vacation</th>
                             <th>Date fin vacation</th>
@@ -148,14 +156,13 @@
                         <tbody>
                         {% for v in vacations %}
                             <tr class="">
-                                <td><span class="id">{{ v.id }}</span></td>
                                 <td><span class="badge bg-info">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
                                 <td><span class="prenom">{{ v.heureDebVac| date('d/m/Y H:i:s') }}</span></td>
                                 <td><span class="prenom">{{ v.heureFinVac| date('d/m/Y H:i:s') }}</span></td>
                                 <td><span class="prenom">{{ v.heurePanier }}</span></td>
                                 <td><span class="prenom">{{ v.heureJour }}</span></td>
                                 <td><span class="prenom">{{ v.heureNuit }}</span></td>
-                                <td><span class="badge bg-green">0</span></td>
+                                <td><span class="badge bg-green">{{ v.heureJour|sumheure(v.heureNuit) }}</span></td>
                                 <td><span class="prenom">{{ v.heureDimanche }}</span></td>
                                 <td><span class="">{{ v.heureFerie }}</span></td>
                             </tr>
@@ -164,11 +171,11 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th colspan="4"></th>
+                            <th colspan="3"></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thp }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thj }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thn }}</span></th>
-                            <th>Total vacation(s): <span class="badge bg-red"> 0</span></th>
+                            <th>Total vacation(s): <span class="badge bg-red"> {{ thj|sumheure(thn) }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thd }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thf }}</span></th>
                         </tr>

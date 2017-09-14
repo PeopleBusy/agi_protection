@@ -197,7 +197,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="{% if app.request.get('_route') in ['imprimer_agent', 'imprimer_site', 'imprimer_vacation', 'imprimer_planning'] %}active{% endif %} treeview">
+                <li class="hide {% if app.request.get('_route') in ['imprimer_agent', 'imprimer_site', 'imprimer_vacation', 'imprimer_planning'] %}active{% endif %} treeview">
                     <a href="#">
                         <i class="fa fa-print"></i>
                         <span>Impressions</span>

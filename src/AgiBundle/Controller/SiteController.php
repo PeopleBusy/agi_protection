@@ -268,18 +268,31 @@ class SiteController extends Controller
 
         $site = $repository->find($id);
 
-        $thp = 0; $thj = 0; $thn = 0; $thd = 0; $thf = 0;
+        $thp = "00:00"; $thj = "00:00"; $thn = "00:00"; $thd = "00:00"; $thf = "00:00";
+
+        $title = "Veuillez sélectionner une date début et une date fin pour afficher le planning";
 
         return $this->render('AgiBundle:Default:site/planning.html.twig', array('site' => $site, 'vacations' => null,
-            'thp' => $thp, 'thj' => $thj, 'thn' => $thn, 'thd' => $thd, 'thf' => $thf));
+            'thp' => $thp, 'thj' => $thj, 'thn' => $thn, 'thd' => $thd, 'thf' => $thf, 'title' => $title, 'date_debut' => '', 'date_fin' => ''));
     }
 
-    public function displayPlanningAction($id)
+    public function displayPlanningAction(Request $request, $id)
     {
+        $date_debut = $request->request->get('date_debut');
+        $date_fin = $request->request->get('date_fin');
+
+        $title = "Affichage du planning du " . $date_debut . " - au - " . $date_fin;
+
+        $dd = DateTime::createFromFormat('d/m/Y', $date_debut);
+        $df = DateTime::createFromFormat('d/m/Y', $date_fin);
+
+        $dd = $dd->format('Y-m-d');
+        $df = $df->format('Y-m-d');
+
         $repository = $this->getDoctrine()
             ->getRepository('AgiBundle:Vacation');
 
-        $vacations = $repository->findVacationsBySite($id);
+        $vacations = $repository->findVacationsBySiteAndPeriode($id, $dd, $df);
 
         $thp = 0; $thj = 0; $thn = 0; $thd = 0; $thf = 0;
         $thjH = 0; $thjM = 0;
@@ -289,7 +302,6 @@ class SiteController extends Controller
 
         foreach ($vacations as $v){
             $thp += $v->getHeurePanier();
-            $thf += $v->getHeureFerie();
 
             if($v->getHeureJour() == '0'){
                 $thjH += 0;
@@ -321,6 +333,16 @@ class SiteController extends Controller
                 $thdM += $m;
             }
 
+            if($v->getHeureFerie() == '0'){
+                $thfH += 0;
+                $thfM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureFerie())[0]);
+                $m = intval(mbsplit(":", $v->getHeureFerie())[1]);
+                $thfH += $h;
+                $thfM += $m;
+            }
+
         }
 
         if($thjM >= 60){
@@ -334,9 +356,9 @@ class SiteController extends Controller
             $thjM = '0' . $thjM;
         }
         $thj = $thjH . ':' . $thjM;
-        if($thjH == "00" && $thjM == "00"){
+        /*if($thjH == "00" && $thjM == "00"){
             $thj = 0;
-        }
+        }*/
 
 
 
@@ -351,9 +373,9 @@ class SiteController extends Controller
             $thnM = '0' . $thnM;
         }
         $thn = $thnH . ':' . $thnM;
-        if($thnH == "00" && $thnM == "00"){
+        /*if($thnH == "00" && $thnM == "00"){
             $thn = 0;
-        }
+        }*/
 
 
 
@@ -369,9 +391,9 @@ class SiteController extends Controller
             $thdM = '0' . $thdM;
         }
         $thd = $thdH . ':' . $thdM;
-        if($thdH == "00" && $thdM == "00"){
+        /*if($thdH == "00" && $thdM == "00"){
             $thd = 0;
-        }
+        }*/
 
 
 
@@ -386,9 +408,9 @@ class SiteController extends Controller
             $thfM = '0' . $thfM;
         }
         $thf = $thfH . ':' . $thfM;
-        if($thfH == "00" && $thfM == "00"){
+        /*if($thfH == "00" && $thfM == "00"){
             $thf = 0;
-        }
+        }*/
 
         $repository = $this->getDoctrine()
             ->getRepository('AgiBundle:Site');
@@ -397,7 +419,7 @@ class SiteController extends Controller
 
 
         return $this->render('AgiBundle:Default:site/planning.html.twig', array('vacations' => $vacations, 'site' => $site, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
-            'thd' => $thd, 'thf' => $thf));
+            'thd' => $thd, 'thf' => $thf, 'title' => $title, 'date_debut' => $date_debut, 'date_fin' => $date_fin));
     }
 
     public function calendrierAction($id)
@@ -453,7 +475,6 @@ class SiteController extends Controller
 
         foreach ($vacations as $v){
             $thp += $v->getHeurePanier();
-            $thf += $v->getHeureFerie();
 
             if($v->getHeureJour() == '0'){
                 $thjH += 0;
@@ -485,6 +506,16 @@ class SiteController extends Controller
                 $thdM += $m;
             }
 
+            if($v->getHeureFerie() == '0'){
+                $thfH += 0;
+                $thfM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureFerie())[0]);
+                $m = intval(mbsplit(":", $v->getHeureFerie())[1]);
+                $thfH += $h;
+                $thfM += $m;
+            }
+
         }
 
         if($thjM >= 60){
@@ -498,9 +529,9 @@ class SiteController extends Controller
             $thjM = '0' . $thjM;
         }
         $thj = $thjH . ':' . $thjM;
-        if($thjH == "00" && $thjM == "00"){
+        /*if($thjH == "00" && $thjM == "00"){
             $thj = 0;
-        }
+        }*/
 
 
 
@@ -515,9 +546,9 @@ class SiteController extends Controller
             $thnM = '0' . $thnM;
         }
         $thn = $thnH . ':' . $thnM;
-        if($thnH == "00" && $thnM == "00"){
+        /*if($thnH == "00" && $thnM == "00"){
             $thn = 0;
-        }
+        }*/
 
 
 
@@ -533,9 +564,9 @@ class SiteController extends Controller
             $thdM = '0' . $thdM;
         }
         $thd = $thdH . ':' . $thdM;
-        if($thdH == "00" && $thdM == "00"){
+        /*if($thdH == "00" && $thdM == "00"){
             $thd = 0;
-        }
+        }*/
 
 
 
@@ -550,9 +581,9 @@ class SiteController extends Controller
             $thfM = '0' . $thfM;
         }
         $thf = $thfH . ':' . $thfM;
-        if($thfH == "00" && $thfM == "00"){
+        /*if($thfH == "00" && $thfM == "00"){
             $thf = 0;
-        }
+        }*/
 
         $repository = $this->getDoctrine()
             ->getRepository('AgiBundle:Site');

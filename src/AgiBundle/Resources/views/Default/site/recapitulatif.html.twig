@@ -88,7 +88,7 @@
                                 <td><span class="prenom">{{ v.heurePanier }}</span></td>
                                 <td><span class="prenom">{{ v.heureJour }}</span></td>
                                 <td><span class="prenom">{{ v.heureNuit }}</span></td>
-                                <td><span class="badge bg-green">0</span></td>
+                                <td><span class="badge bg-green">{{ v.heureJour|sumheure(v.heureNuit) }}</span></td>
                                 <td><span class="prenom">{{ v.heureDimanche }}</span></td>
                                 <td><span class="">{{ v.heureFerie }}</span></td>
                             </tr>
@@ -101,7 +101,7 @@
                             <th>Total heure: <span class="badge bg-red"> {{ thp }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thj }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thn }}</span></th>
-                            <th>Total vacation(s): <span class="badge bg-red"> 0</span></th>
+                            <th>Total vacation(s): <span class="badge bg-red"> {{ thj|sumheure(thn) }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thd }}</span></th>
                             <th>Total heure: <span class="badge bg-red"> {{ thf }}</span></th>
                         </tr>

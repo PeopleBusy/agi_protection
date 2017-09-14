@@ -310,7 +310,6 @@ class AgentController extends Controller
 
         foreach ($vacations as $v){
             $thp += $v->getHeurePanier();
-            $thf += $v->getHeureFerie();
 
             if($v->getHeureJour() == '0'){
                 $thjH += 0;
@@ -342,6 +341,16 @@ class AgentController extends Controller
                 $thdM += $m;
             }
 
+            if($v->getHeureFerie() == '0'){
+                $thfH += 0;
+                $thfM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureFerie())[0]);
+                $m = intval(mbsplit(":", $v->getHeureFerie())[1]);
+                $thfH += $h;
+                $thfM += $m;
+            }
+
         }
 
         if($thjM >= 60){
@@ -355,9 +364,9 @@ class AgentController extends Controller
             $thjM = '0' . $thjM;
         }
         $thj = $thjH . ':' . $thjM;
-        if($thjH == "00" && $thjM == "00"){
+        /*if($thjH == "00" && $thjM == "00"){
             $thj = 0;
-        }
+        }*/
 
 
 
@@ -372,9 +381,9 @@ class AgentController extends Controller
             $thnM = '0' . $thnM;
         }
         $thn = $thnH . ':' . $thnM;
-        if($thnH == "00" && $thnM == "00"){
+        /*if($thnH == "00" && $thnM == "00"){
             $thn = 0;
-        }
+        }*/
 
 
 
@@ -390,9 +399,9 @@ class AgentController extends Controller
             $thdM = '0' . $thdM;
         }
         $thd = $thdH . ':' . $thdM;
-        if($thdH == "00" && $thdM == "00"){
+        /*if($thdH == "00" && $thdM == "00"){
             $thd = 0;
-        }
+        }*/
 
 
 
@@ -407,9 +416,9 @@ class AgentController extends Controller
             $thfM = '0' . $thfM;
         }
         $thf = $thfH . ':' . $thfM;
-        if($thfH == "00" && $thfM == "00"){
+        /*if($thfH == "00" && $thfM == "00"){
             $thf = 0;
-        }
+        }*/
 
 
 
