@@ -354,7 +354,7 @@ class AgentController extends Controller
         }
 
         if($thjM >= 60){
-            $thjH += ($thjM / 60);
+            $thjH += floor($thjM / 60);
             $thjM = ($thjM % 60);
         }
         if($thjH < 10){
@@ -371,7 +371,7 @@ class AgentController extends Controller
 
 
         if($thnM >= 60){
-            $thnH += ($thnM / 60);
+            $thnH += floor($thnM / 60);
             $thnM = ($thnM % 60);
         }
         if($thnH < 10){
@@ -389,7 +389,7 @@ class AgentController extends Controller
 
 
         if($thdM >= 60){
-            $thdH += ($thdM / 60);
+            $thdH += floor($thdM / 60);
             $thdM = ($thdM % 60);
         }
         if($thdH < 10){
@@ -406,7 +406,7 @@ class AgentController extends Controller
 
 
         if($thfM >= 60){
-            $thfH += ($thfM / 60);
+            $thfH += floor($thfM / 60);
             $thfM = ($thfM % 60);
         }
         if($thfH < 10){
