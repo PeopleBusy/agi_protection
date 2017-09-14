@@ -33,7 +33,7 @@ class AgentController extends Controller
                 //CDD
                 $date_debut = $request->request->get('date_debut');
                 $date_fin = $request->request->get('date_fin');
-                if ($date_debut == null || $date_fin == null || $date_debut >= $date_fin) {
+                if ($date_debut == null || $date_fin == null) {
                     return $this->render('AgiBundle:Default:agent/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les dates saisies!'));
                 }
 
@@ -121,7 +121,7 @@ class AgentController extends Controller
                 //CDD
                 $date_debut = $request->request->get('date_debut');
                 $date_fin = $request->request->get('date_fin');
-                if ($date_debut == null || $date_fin == null || $date_debut >= $date_fin) {
+                if ($date_debut == null || $date_fin == null) {
                     return $this->render('AgiBundle:Default:agent/edit.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les dates saisies!'));
                 }
 
