@@ -80,10 +80,11 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->createQueryBuilder('v');
         $qb->select('v')
             ->where('v.site = :id')
-            ->andWhere('v.dateVacation BETWEEN :debut AND :fin')
             ->setParameter('id', $id)
+            ->andWhere('v.dateVacation BETWEEN :debut AND :fin')
             ->setParameter('debut', $debut)
-            ->setParameter('fin', $fin);
+            ->setParameter('fin', $fin)
+            ->orderBy('v.dateVacation', 'ASC');
 
         $query = $qb->getQuery();
 
