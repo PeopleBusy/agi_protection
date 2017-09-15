@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %} Liste des vacations {% endblock %}
+{% block title %} Liste des plannings {% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-industry"></i> Vacations</a></li>
+            <li><a href="#"><i class="fa fa-industry"></i> Plannings</a></li>
             <li class="active">Liste</li>
         </ol>
 
@@ -50,9 +50,9 @@
                 <h3 class="box-title">
                     <i class="fa fa-list"></i>
                     {% if actif == 1 %}
-                        Liste des vacations actives
+                        Liste des plannings actifs
                     {% else %}
-                        Liste des sites supprimées
+                        Liste des plannings supprimés
                     {% endif %}
 
                 </h3>
@@ -70,12 +70,11 @@
                     <table id="example1" class="table table-striped table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Site</th>
+                            <th>Client</th>
                             <th>Agent</th>
                             <th>Date début vacation</th>
                             <th>Date fin vacation</th>
-                            <th>Heure(s) panier</th>
+                            <th>Panier</th>
                             <th>Heure(s) Jour</th>
                             <th>Heure(s) Nuit</th>
                             <th>Heure(s) Dimanche</th>
@@ -86,7 +85,6 @@
                         <tbody>
                         {% for v in vacations %}
                         <tr class="">
-                            <td><span class="id">{{ v.id }}</span></td>
                             <td><span class="badge bg-info">{{ v.site.nomSite }}</span></td>
                             <td><span class="">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
                             <td><span class="prenom">{{ v.heureDebVac| date('d/m/Y H:i:s') }}</span></td>
@@ -94,7 +92,11 @@
                             <td><span class="prenom">{{ v.heurePanier }}</span></td>
                             <td><span class="prenom">{{ v.heureJour }}</span></td>
                             <td><span class="prenom">{{ v.heureNuit }}</span></td>
-                            <td><span class="prenom">{{ v.heureDimanche }}</span></td>
+                            {% if v.heureDimanche == "00:00" %}
+                                <td><span class="">{{ v.heureDimanche }}</span></td>
+                            {% else %}
+                                <td class="bg-black-gradient"><span>{{ v.heureDimanche }}</span></td>
+                            {% endif %}
                             <td><span class="">{{ v.heureFerie }}</span></td>
 
                             <td class="center">

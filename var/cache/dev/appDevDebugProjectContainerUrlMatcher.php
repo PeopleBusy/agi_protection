@@ -194,6 +194,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'planning_site')), array (  '_controller' => 'AgiBundle\\Controller\\SiteController::planningAction',));
             }
 
+            // imprimer_planning_site
+            if (0 === strpos($pathinfo, '/site/imprimer_planning') && preg_match('#^/site/imprimer_planning/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'imprimer_planning_site')), array (  '_controller' => 'AgiBundle\\Controller\\SiteController::imprimerAction',));
+            }
+
             // calendrier_site
             if (0 === strpos($pathinfo, '/site/calendrier') && preg_match('#^/site/calendrier/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'calendrier_site')), array (  '_controller' => 'AgiBundle\\Controller\\SiteController::calendrierAction',));

@@ -153,7 +153,7 @@
                 <li class="{% if app.request.get('_route') in ['ajouter_site', 'liste_site_actif', 'liste_site_supprime'] %}active{% endif %} treeview">
                     <a href="#">
                         <i class="fa fa-university"></i>
-                        <span>Sites</span>
+                        <span>Clients</span>
                         <span class="pull-right-container">
                              <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -161,17 +161,17 @@
                     <ul class="treeview-menu">
                         <li class="{% if app.request.get('_route') == 'ajouter_site' %}active{% endif %} ">
                             <a href="{{ path('ajouter_site') }}">
-                                <i class=" fa fa-circle-o"></i> Enregistrer un site
+                                <i class=" fa fa-circle-o"></i> Enregistrer un client
                             </a>
                         </li>
                         <li class="{% if app.request.get('_route') == 'liste_site_actif' %}active{% endif %} ">
                             <a href="{{ path('liste_site_actif') }}">
-                                <i class="fa fa-circle-o"></i> Liste des sites actifs
+                                <i class="fa fa-circle-o"></i> Liste des clients actifs
                             </a>
                         </li>
                         <li class="{% if app.request.get('_route') == 'liste_site_supprime' %}active{% endif %} ">
                             <a href="{{ path('liste_site_supprime') }}">
-                                <i class="fa fa-circle-o"></i> Liste des sites supprimés
+                                <i class="fa fa-circle-o"></i> Liste des clients supprimés
                             </a>
                         </li>
                     </ul>
@@ -179,7 +179,7 @@
                 <li class="{% if app.request.get('_route') in ['liste_sites_vacations_actives', 'liste_sites_vacations_supprimes'] %}active{% endif %} treeview">
                     <a href="#">
                         <i class="fa fa-industry"></i>
-                        <span>Vacations</span>
+                        <span>Plannings</span>
                         <span class="pull-right-container">
                              <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -187,12 +187,12 @@
                     <ul class="treeview-menu">
                         <li class="{% if app.request.get('_route') == 'liste_sites_vacations_actives' %}active{% endif %} ">
                             <a href="{{ path('liste_sites_vacations_actives') }}">
-                                <i class="fa fa-circle-o"></i> Liste des vacations actives
+                                <i class="fa fa-circle-o"></i> Liste des plannings actifs
                             </a>
                         </li>
                         <li class="{% if app.request.get('_route') == 'liste_sites_vacations_supprimes' %}active{% endif %} ">
                             <a href="{{ path('liste_sites_vacations_supprimes') }}">
-                                <i class="fa fa-circle-o"></i> Liste des vacations supprimées
+                                <i class="fa fa-circle-o"></i> Liste des plannings supprimés
                             </a>
                         </li>
                     </ul>
@@ -342,7 +342,7 @@
             'paging'      : true,
             'lengthChange': true,
             'searching'   : true,
-            'ordering'    : true,
+            'ordering'    : false,
             'info'        : true,
             'autoWidth'   : false,
             'language'   :  {

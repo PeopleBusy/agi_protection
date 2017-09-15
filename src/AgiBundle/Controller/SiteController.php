@@ -268,7 +268,7 @@ class SiteController extends Controller
 
         $site = $repository->find($id);
 
-        $thp = "00:00"; $thj = "00:00"; $thn = "00:00"; $thd = "00:00"; $thf = "00:00";
+        $thp = "0"; $thj = "00:00"; $thn = "00:00"; $thd = "00:00"; $thf = "00:00";
 
         $title = "Veuillez sélectionner une date début et une date fin pour afficher le planning";
 
@@ -420,6 +420,164 @@ class SiteController extends Controller
 
         return $this->render('AgiBundle:Default:site/planning.html.twig', array('vacations' => $vacations, 'site' => $site, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
             'thd' => $thd, 'thf' => $thf, 'title' => $title, 'date_debut' => $date_debut, 'date_fin' => $date_fin));
+    }
+
+    public function imprimerAction(Request $request, $id)
+    {
+        /*$date_debut = $request->request->get('date_debut');
+        $date_fin = $request->request->get('date_fin');*/
+
+        $date_debut = '01/09/2017';
+        $date_fin = '30/09/2017';
+
+        $title = "Du " . $date_debut . " - au - " . $date_fin;
+
+        $dd = DateTime::createFromFormat('d/m/Y', $date_debut);
+        $df = DateTime::createFromFormat('d/m/Y', $date_fin);
+
+        $dd = $dd->format('Y-m-d');
+        $df = $df->format('Y-m-d');
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AgiBundle:Vacation');
+
+        $vacations = $repository->findVacationsBySiteAndPeriode($id, $dd, $df);
+
+        $thp = 0; $thj = 0; $thn = 0; $thd = 0; $thf = 0;
+        $thjH = 0; $thjM = 0;
+        $thnH = 0; $thnM = 0;
+        $thdH = 0; $thdM = 0;
+        $thfH = 0; $thfM = 0;
+
+        foreach ($vacations as $v){
+            $thp += $v->getHeurePanier();
+
+            if($v->getHeureJour() == '0'){
+                $thjH += 0;
+                $thjM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureJour())[0]);
+                $m = intval(mbsplit(":", $v->getHeureJour())[1]);
+                $thjH += $h;
+                $thjM += $m;
+            }
+
+            if($v->getHeureNuit() == '0'){
+                $thnH += 0;
+                $thnM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureNuit())[0]);
+                $m = intval(mbsplit(":", $v->getHeureNuit())[1]);
+                $thnH += $h;
+                $thnM += $m;
+            }
+
+            if($v->getHeureDimanche() == '0'){
+                $thdH += 0;
+                $thdM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureDimanche())[0]);
+                $m = intval(mbsplit(":", $v->getHeureDimanche())[1]);
+                $thdH += $h;
+                $thdM += $m;
+            }
+
+            if($v->getHeureFerie() == '0'){
+                $thfH += 0;
+                $thfM += 0;
+            }else{
+                $h = intval(mbsplit(":", $v->getHeureFerie())[0]);
+                $m = intval(mbsplit(":", $v->getHeureFerie())[1]);
+                $thfH += $h;
+                $thfM += $m;
+            }
+
+        }
+
+        if($thjM >= 60){
+            $thjH += floor($thjM / 60);
+            $thjM = ($thjM % 60);
+        }
+        if($thjH < 10){
+            $thjH = '0' . $thjH;
+        }
+        if($thjM < 10){
+            $thjM = '0' . $thjM;
+        }
+        $thj = $thjH . ':' . $thjM;
+        /*if($thjH == "00" && $thjM == "00"){
+            $thj = 0;
+        }*/
+
+
+
+        if($thnM >= 60){
+            $thnH += floor($thnM / 60);
+            $thnM = ($thnM % 60);
+        }
+        if($thnH < 10){
+            $thnH = '0' . $thnH;
+        }
+        if($thnM < 10){
+            $thnM = '0' . $thnM;
+        }
+        $thn = $thnH . ':' . $thnM;
+        /*if($thnH == "00" && $thnM == "00"){
+            $thn = 0;
+        }*/
+
+
+
+
+        if($thdM >= 60){
+            $thdH += floor($thdM / 60);
+            $thdM = ($thdM % 60);
+        }
+        if($thdH < 10){
+            $thdH = '0' . $thdH;
+        }
+        if($thdM < 10){
+            $thdM = '0' . $thdM;
+        }
+        $thd = $thdH . ':' . $thdM;
+        /*if($thdH == "00" && $thdM == "00"){
+            $thd = 0;
+        }*/
+
+
+
+        if($thfM >= 60){
+            $thfH += floor($thfM / 60);
+            $thfM = ($thfM % 60);
+        }
+        if($thfH < 10){
+            $thfH = '0' . $thfH;
+        }
+        if($thfM < 10){
+            $thfM = '0' . $thfM;
+        }
+        $thf = $thfH . ':' . $thfM;
+        /*if($thfH == "00" && $thfM == "00"){
+            $thf = 0;
+        }*/
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AgiBundle:Site');
+
+        $site = $repository->find($id);
+
+
+        $template = $this->render('AgiBundle:Default:site/pdf.html.twig', array('vacations' => $vacations, 'site' => $site, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
+            'thd' => $thd, 'thf' => $thf, 'title' => $title, 'date_debut' => $date_debut, 'date_fin' => $date_fin));
+
+
+        $html2pdf = $this->get('app.html2pdf');
+
+        $html2pdf->create('L', 'A4', 'fr', true, 'UTF-8', array(20, 5, 20, 5));
+
+        return $html2pdf->generatePdf($template, "planning_" . $site->getNomSite() . '_' . $title);
+
+
     }
 
     public function calendrierAction($id)

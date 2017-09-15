@@ -54,7 +54,8 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->createQueryBuilder('v');
         $qb->select('v')
             ->where('v.site = :id')
-            ->setParameter('id', $id);
+            ->setParameter('id', $id)
+            ->orderBy('v.dateVacation', 'ASC');
 
         $query = $qb->getQuery();
 
@@ -67,7 +68,8 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->createQueryBuilder('v');
         $qb->select('v')
             ->where('v.agent = :id')
-            ->setParameter('id', $id);
+            ->setParameter('id', $id)
+            ->orderBy('v.dateVacation', 'ASC');
 
         $query = $qb->getQuery();
 

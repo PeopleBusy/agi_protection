@@ -29,7 +29,7 @@ class SumHeureExtension extends \Twig_Extension
         $m = $m1 + $m2;
 
         if($m >= 60){
-            $h += ($m / 60);
+            $h += floor($m / 60);
             $m = ($m % 60);
         }
         if($h < 10){

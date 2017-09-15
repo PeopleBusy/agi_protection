@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %} Enregistrer vacation {% endblock %}
+{% block title %} Enregistrer planning {% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-industry"></i> Vacations</a></li>
+            <li><a href="#"><i class="fa fa-industry"></i> Planning</a></li>
             <li class="active">Enregistrer</li>
         </ol>
 
@@ -74,7 +74,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">
                     <i class="fa fa-industry"></i>
-                    Enregistrer une vacation pour le site <span class="badge bg-green">{{ site.nomSite }}</span>
+                    Enregistrer un planning pour le client <span class="badge bg-green">{{ site.nomSite }}</span>
                 </h3>
 
                 <div class="box-tools pull-right">
@@ -93,7 +93,7 @@
                 <input type="hidden" data-debut="{{ heureDimanche.heureDebut|date('H:i') }}" data-fin="{{ heureDimanche.heureFin|date('H:i') }}" id="heureDimanche" name="heureDimanche"/>
 
                 <div class="col-md-2">
-                    <label>Site:</label>
+                    <label>Client:</label>
                     <input readonly="true" value="{{ site.nomSite }}" type="text" name="site" class="form-control" id="site">
                     <input readonly="true" value="{{ site.id }}" type="hidden" name="site_id" id="site_id">
                 </div>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col-md-1">
-                    <label>Heure panier:</label>
+                    <label>Panier:</label>
                     <input type="text" name="heure_panier" value="0" readonly="true" class="form-control" id="heure_panier">
                 </div>
 

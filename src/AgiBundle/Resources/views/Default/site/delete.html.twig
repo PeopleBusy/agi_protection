@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %} Supprimer site {% endblock %}
+{% block title %} Supprimer client {% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-university"></i> Sites</a></li>
+            <li><a href="#"><i class="fa fa-university"></i> Clients</a></li>
             <li class="active">Supprimer</li>
         </ol>
 
@@ -76,7 +76,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">
                     <i class="fa fa-times-circle-o"></i>
-                    Supprimer un site
+                    Supprimer un client
                 </h3>
 
                 <div class="box-tools pull-right">
@@ -90,7 +90,7 @@
             </div>
             <div class="box-body">
 
-                <h2 class="text-red text-center">Voulez-vous vraiment supprimer le site {{ site.nomSite }}?</h2><br>
+                <h2 class="text-red text-center">Voulez-vous vraiment supprimer le client {{ site.nomSite }}?</h2><br>
 
                 {{ form_start(form) }}
 

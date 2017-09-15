@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %} Supprimer vacation {% endblock %}
+{% block title %} Supprimer planning {% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-industry"></i> Vacations</a></li>
+            <li><a href="#"><i class="fa fa-industry"></i> Plannings</a></li>
             <li class="active">Supprimer</li>
         </ol>
 
@@ -74,7 +74,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">
                     <i class="fa fa-times-circle-o"></i>
-                    Supprimer une vacation
+                    Supprimer un planning
                 </h3>
 
                 <div class="box-tools pull-right">
@@ -86,7 +86,7 @@
             </div>
             <div class="box-body">
 
-                <h2 class="text-red text-center">Voulez-vous vraiment supprimer cette vacation pour le site {{ site.nomSite }}?</h2><br>
+                <h2 class="text-red text-center">Voulez-vous vraiment supprimer ce planning pour le client {{ vacation.site.nomSite }}?</h2><br>
 
                 {{ form_start(form) }}
 
@@ -95,9 +95,9 @@
                 <input type="hidden" data-debut="{{ heureDimanche.heureDebut|date('H:i') }}" data-fin="{{ heureDimanche.heureFin|date('H:i') }}" id="heureDimanche" name="heureDimanche"/>
 
                 <div class="col-md-2">
-                    <label>Site:</label>
-                    <input readonly="true" value="{{ site.nomSite }}" type="text" name="site" class="form-control" id="site">
-                    <input readonly="true" value="{{ site.id }}" type="hidden" name="site_id" id="site_id">
+                    <label>Client:</label>
+                    <input readonly="true" value="{{ vacation.site.nomSite }}" type="text" name="site" class="form-control" id="site">
+                    <input readonly="true" value="{{ vacation.site.id }}" type="hidden" name="site_id" id="site_id">
                 </div>
 
                 <div class="col-md-2">
@@ -107,7 +107,7 @@
 
                         {% for a in agents %}
 
-                            {% if a.id == agent.id %}
+                            {% if a.id == vacation.agent.id %}
                                 <option selected value="{{ a.id }}">{{ a.nom }} {{ a.prenom }}</option>
                             {% else %}
                                 <option value="{{ a.id }}">{{ a.nom }} {{ a.prenom }}</option>
@@ -127,7 +127,7 @@
                 </div>
 
                 <div class="col-md-1">
-                    <label>Heure panier:</label>
+                    <label>Panier:</label>
                     <input type="text" name="heure_panier" value="{{ vacation.heurePanier }}" readonly="true" class="form-control" id="heure_panier">
                 </div>
 

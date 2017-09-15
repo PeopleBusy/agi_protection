@@ -18,7 +18,7 @@ class SiteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomSite', TextType::class, array('label' => 'Nom du site:', 'required' => true, 'attr' => array('class' => 'form-control')))
+            ->add('nomSite', TextType::class, array('label' => 'Nom du client:', 'required' => true, 'attr' => array('class' => 'form-control')))
             ->add('heureOuvJour',null, array('label' => 'Heure ouverture jour'))
             ->add('heureFermJour', null, array('label' => 'Heure fermeture jour:'))
             ->add('heureOuvNuit', null, array('label' => 'Heure ouverture nuit:'))

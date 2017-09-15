@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %} Liste des sites {% endblock %}
+{% block title %} Liste des clients {% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-university"></i> Sites</a></li>
+            <li><a href="#"><i class="fa fa-university"></i> Clients</a></li>
             <li class="active">Liste</li>
         </ol>
 
@@ -50,9 +50,9 @@
                 <h3 class="box-title">
                     <i class="fa fa-list"></i>
                     {% if actif == 1 %}
-                        Liste des sites actifs
+                        Liste des clients actifs
                     {% else %}
-                        Liste des sites supprimés
+                        Liste des clients supprimés
                     {% endif %}
 
                 </h3>
@@ -70,8 +70,7 @@
                     <table id="example1" class="table table-striped table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Site</th>
+                            <th>Client</th>
                             <th>Heure ouverture jour</th>
                             <th>Heure fermeture jour</th>
                             <th>Heure ouverture nuit</th>
@@ -82,7 +81,6 @@
                         <tbody>
                         {% for s in sites %}
                         <tr class="">
-                            <td><span class="id">{{ s.id }}</span></td>
                             <td><span class="badge bg-info">{{ s.nomSite }}</span></td>
 
                             {% if s.HeureOuvJour != null %}
@@ -117,9 +115,9 @@
 
                                     <a href="{{ path('supprimer_site', {'id': s.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
 
-                                    <a href="{{ path('site_enregistrer_vacation', {'id': s.id}) }}" class="btn btn-success btn-xs">Enregistrer vacation</a>
+                                    <a href="{{ path('site_enregistrer_vacation', {'id': s.id}) }}" class="btn btn-success btn-xs">Enregistrer planning</a>
 
-                                    <a href="{{ path('planning_site', {'id': s.id}) }}" class="btn btn-info btn-xs">Planning</a>
+                                    <a href="{{ path('planning_site', {'id': s.id}) }}" class="btn btn-info btn-xs">Consulter planning</a>
 
                                     <a href="{{ path('calendrier_site', {'id': s.id}) }}" class="btn btn-pinterest btn-xs">Calendrier</a>
 

@@ -10,7 +10,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-recycle"></i> Site</a></li>
+            <li><a href="#"><i class="fa fa-recycle"></i> Client</a></li>
             <li class="active">Récapitulatif</li>
         </ol>
 
@@ -49,7 +49,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">
                     <i class="fa fa-recycle"></i>
-                    Récapitulatif des vacations du site <span class="badge bg-blue">{{ site.nomSite }}</span>
+                    Récapitulatif des plannings du client <span class="badge bg-blue">{{ site.nomSite }}</span>
 
                 </h3>
 
@@ -66,22 +66,21 @@
                     <table id="example1" class="table table-striped table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>Agent</th>
                             <th>Date début vacation</th>
                             <th>Date fin vacation</th>
-                            <th>Heure(s) panier</th>
+                            <th>Panier</th>
                             <th>Heure(s) Jour</th>
                             <th>Heure(s) Nuit</th>
-                            <th>Total Vacation</th>
+                            <th>Total Heure(s)</th>
                             <th>Heure(s) Dimanche</th>
                             <th>Heure(s) Fériée(s)</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for v in vacations %}
                             <tr class="">
-                                <td><span class="id">{{ v.id }}</span></td>
                                 <td><span class="badge bg-info">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
                                 <td><span class="prenom">{{ v.heureDebVac| date('d/m/Y H:i:s') }}</span></td>
                                 <td><span class="prenom">{{ v.heureFinVac| date('d/m/Y H:i:s') }}</span></td>
@@ -89,21 +88,31 @@
                                 <td><span class="prenom">{{ v.heureJour }}</span></td>
                                 <td><span class="prenom">{{ v.heureNuit }}</span></td>
                                 <td><span class="badge bg-green">{{ v.heureJour|sumheure(v.heureNuit) }}</span></td>
-                                <td><span class="prenom">{{ v.heureDimanche }}</span></td>
+                                {% if v.heureDimanche == "00:00" %}
+                                    <td><span class="">{{ v.heureDimanche }}</span></td>
+                                {% else %}
+                                    <td class="bg-black-gradient"><span>{{ v.heureDimanche }}</span></td>
+                                {% endif %}
                                 <td><span class="">{{ v.heureFerie }}</span></td>
+                                <td class="center">
+                                    <a href="{{ path('site_modifier_vacation', {'id': v.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
+                                    <a href="{{ path('site_supprimer_vacation', {'id': v.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
+
+                                </td>
                             </tr>
                         {% endfor %}
 
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th colspan="4"></th>
-                            <th>Total heure: <span class="badge bg-red"> {{ thp }}</span></th>
-                            <th>Total heure: <span class="badge bg-red"> {{ thj }}</span></th>
-                            <th>Total heure: <span class="badge bg-red"> {{ thn }}</span></th>
-                            <th>Total vacation(s): <span class="badge bg-red"> {{ thj|sumheure(thn) }}</span></th>
-                            <th>Total heure: <span class="badge bg-red"> {{ thd }}</span></th>
-                            <th>Total heure: <span class="badge bg-red"> {{ thf }}</span></th>
+                            <th colspan="3"></th>
+                            <th>TP: <span class="badge bg-red"> {{ thp }}</span></th>
+                            <th>THJ: <span class="badge bg-red"> {{ thj }}</span></th>
+                            <th>THN: <span class="badge bg-red"> {{ thn }}</span></th>
+                            <th>THM: <span class="badge bg-red"> {{ thj|sumheure(thn) }}</span></th>
+                            <th>THD: <span class="badge bg-red"> {{ thd }}</span></th>
+                            <th>THF: <span class="badge bg-red"> {{ thf }}</span></th>
+                            <th></th>
                         </tr>
                         </tfoot>
                     </table>
