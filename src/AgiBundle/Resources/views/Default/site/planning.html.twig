@@ -130,6 +130,10 @@
 
                     <form method="post" target="_blank" action="{{ path('imprimer_planning_site', {'id' : site.id}) }}">
 
+                        <input type="hidden" name="date_debut_planning"/>
+
+                        <input type="hidden" name="date_fin_planning"/>
+
                         {% if vacations is not empty %}
                             <div class="form-group col-md-1">
                                 <button type="submit"  class="btn btn-success marTop25px">
@@ -207,5 +211,14 @@
             <!-- /.box-footer-->
         </div>
     </section>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="text/javascript">
+        $("[name='date_debut_planning']").val($("[name='date_debut']").val());
+        $("[name='date_fin_planning']").val($("[name='date_fin']").val());
+    </script>
 
 {% endblock %}

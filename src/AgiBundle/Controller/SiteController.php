@@ -424,13 +424,11 @@ class SiteController extends Controller
 
     public function imprimerAction(Request $request, $id)
     {
-        /*$date_debut = $request->request->get('date_debut');
-        $date_fin = $request->request->get('date_fin');*/
 
-        $date_debut = '01/09/2017';
-        $date_fin = '30/09/2017';
+        $date_debut = $request->request->get('date_debut_planning');
+        $date_fin = $request->request->get('date_fin_planning');
 
-        $title = "Du " . $date_debut . " - au - " . $date_fin;
+        $title = $date_debut . " - AU - " . $date_fin;
 
         $dd = DateTime::createFromFormat('d/m/Y', $date_debut);
         $df = DateTime::createFromFormat('d/m/Y', $date_fin);
@@ -568,7 +566,7 @@ class SiteController extends Controller
 
 
         $template = $this->render('AgiBundle:Default:site/pdf.html.twig', array('vacations' => $vacations, 'site' => $site, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
-            'thd' => $thd, 'thf' => $thf, 'title' => $title, 'date_debut' => $date_debut, 'date_fin' => $date_fin));
+            'thd' => $thd, 'thf' => $thf, 'title' => $title, 'date_debut' => $date_debut, 'date_fin' => $date_fin))->getContent();
 
 
         $html2pdf = $this->get('app.html2pdf');
