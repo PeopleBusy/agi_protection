@@ -7,7 +7,8 @@
     .separator {height: 5px;}
     .breakW {word-wrap: break-word !important;}
     .content td {border: solid 1px #CFD1D2; padding: 2px;}
-    .content th {border: solid 1px #000000; padding: 2px; background-color: #000000; color: #ffffff;}
+    .thcontent th {border: solid 1px #000000; padding: 2px; background-color: #000000; color: #ffffff;}
+    .tfcontent th {border: solid 1px #000000; padding: 2px; background-color: red; color: #ffffff;}
     .bBlackFontWhite {background-color: yellow; color: #000000; font-weight: bold;}
     .redFontWhite {background-color: red !important; color: #000000 !important; font-weight: bold !important;}
 </style>
@@ -20,9 +21,6 @@
             <td class="text-left">
                 <img class="" style="width: 60px;height: 60px;" src=".{{asset('img/logo1.png') }}">
             </td>
-            <td class="text-right">
-
-            </td>
         </tr>
     </table>
 
@@ -30,14 +28,15 @@
         <span class="" >RECAPITULATIF DU {{ title }}</span>
     </div>
 
-    <div class="text-right" style="position:absolute;top: 0px; width: 100%;">
-        <span style="font-weight: bold; font-style: italic; color: red;">{{ site.nomSite }}</span>
+    <div class="text-right" style="position:absolute;top: 0px; width: 100%;font-style: italic;">
+        <span style="">Client: </span>
+        <span style="font-weight: bold; color: red;">{{ site.nomSite }}</span>
     </div>
 
     <div class="separator"></div>
 
     <table id="" class="content">
-        <thead>
+        <thead class="thcontent">
             <tr>
                 <th class="breakW">Agent</th>
                 <th class="text-center">Date début</th>
@@ -70,16 +69,16 @@
         {% endfor %}
 
         </tbody>
-        <tfoot>
-        <tr>
-            <th class="" colspan="3"></th>
-            <th class="text-center">TP: <span class="badge bg-red"> {{ thp }}</span></th>
-            <th class="text-center">THJ: <span class="badge bg-red"> {{ thj }}</span></th>
-            <th class="text-center">THN: <span class="badge bg-red"> {{ thn }}</span></th>
-            <th class="text-center">THM: <span class="badge bg-red"> {{ thj|sumheure(thn) }}</span></th>
-            <th class="text-center">THD: <span class="badge bg-red"> {{ thd }}</span></th>
-            <th class="text-center">THF: <span class="badge bg-red"> {{ thf }}</span></th>
-        </tr>
+        <tfoot class="tfcontent">
+            <tr>
+                <th class="" colspan="3"></th>
+                <th class="text-center">TP: <span class="badge bg-red"> {{ thp }}</span></th>
+                <th class="text-center">THJ: <span class="badge bg-red"> {{ thj }}</span></th>
+                <th class="text-center">THN: <span class="badge bg-red"> {{ thn }}</span></th>
+                <th class="text-center">THM: <span class="badge bg-red"> {{ thj|sumheure(thn) }}</span></th>
+                <th class="text-center">THD: <span class="badge bg-red"> {{ thd }}</span></th>
+                <th class="text-center">THF: <span class="badge bg-red"> {{ thf }}</span></th>
+            </tr>
         </tfoot>
     </table>
 
