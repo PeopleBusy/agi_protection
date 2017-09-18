@@ -22,6 +22,18 @@ liste_agent_supprime:
     path:     /agents/delete
     defaults: { _controller: AgiBundle:Agent:listerSupprime }
 
+planning_agent:
+    path:     /agent/planning/{id}
+    defaults: { _controller: AgiBundle:Agent:planning }
+
+afficher_planning_agent:
+    path:     /agent/display_planning/{id}
+    defaults: { _controller: AgiBundle:Agent:displayPlanning }
+
+imprimer_planning_agent:
+    path:     /agent/imprimer_planning/{id}
+    defaults: { _controller: AgiBundle:Agent:imprimer }
+
 operation_enregistrement_agent:
     path:     /agent/details/{id}
     defaults: { _controller: AgiBundle:Agent:details }

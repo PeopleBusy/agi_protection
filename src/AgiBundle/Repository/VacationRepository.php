@@ -94,6 +94,23 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
+    public function findVacationsByAgentAndPeriode($id, $debut, $fin){
+
+        $qb = $this->createQueryBuilder('v');
+        $qb->select('v')
+            ->where('v.agent = :id')
+            ->setParameter('id', $id)
+            ->andWhere('v.dateVacation BETWEEN :debut AND :fin')
+            ->setParameter('debut', $debut)
+            ->setParameter('fin', $fin)
+            ->orderBy('v.dateVacation', 'ASC');
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+
+    }
+
     public function findByDistinctAgentInVacationSite($id){
 
         $qb = $this->createQueryBuilder('v');

@@ -29,8 +29,8 @@
     </div>
 
     <div class="text-right" style="position:absolute;top: 40px; width: 100%;font-style: italic;">
-        <span style="">Client: </span>
-        <span style="font-weight: bold; color: green;">{{ site.nomSite }}</span>
+        <span style="">Agent: </span>
+        <span style="font-weight: bold; color: green;">{{ agent.nom }} {{ agent.prenom }}</span>
     </div>
 
     <div class="separator"></div>
@@ -38,7 +38,7 @@
     <table id="" class="content">
         <thead class="thcontent">
             <tr>
-                <th class="breakW">Agent</th>
+                <th class="breakW">Client</th>
                 <th class="text-center">Date début</th>
                 <th class="text-center">Date fin</th>
                 <th class="text-center">Panier</th>
@@ -52,7 +52,7 @@
         <tbody>
         {% for v in vacations %}
             <tr class="">
-                <td class="breakW"><span class="">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
+                <td class="breakW"><span class="">{{ v.site.nomSite }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureDebVac| date('d/m/Y H:i') }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureFinVac| date('d/m/Y H:i') }}</span></td>
                 <td class="text-center"><span class="">{{ v.heurePanier }}</span></td>

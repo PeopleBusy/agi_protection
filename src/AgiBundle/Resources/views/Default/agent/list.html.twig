@@ -111,6 +111,8 @@
 
                                     <a href="{{ path('supprimer_agent', {'id': ca.agent.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
 
+                                    <a href="{{ path('planning_agent', {'id': ca.agent.id}) }}" class="btn btn-info btn-xs">Consulter planning</a>
+
                                     <a href="{{ path('agent_recapitulatif', {'id': ca.agent.id}) }}" class="btn btn-default btn-xs">Récapitulatif</a>
 
                                 {% endif %}

@@ -94,7 +94,6 @@ class SiteController extends Controller
 
     }
 
-
     public function modifierAction(Request $request, $id)
     {
         $site = $this->getDoctrine()
@@ -248,7 +247,6 @@ class SiteController extends Controller
         return $this->render('AgiBundle:Default:site/list.html.twig', array('sites' => $sites, 'actif' => 0));
 
     }
-
 
     public function detailsAction($id)
     {
@@ -590,7 +588,6 @@ class SiteController extends Controller
         return $this->render('AgiBundle:Default:site/calendrier.html.twig', array('site' => $site));
 
     }
-
 
     public function displayCalendrierAction(Request $request, $id)
     {
