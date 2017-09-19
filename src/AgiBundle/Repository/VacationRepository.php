@@ -57,7 +57,8 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
             ->where('v.site = :id')
             ->setParameter('id', $id)
             ->andWhere('v.etat = 1')
-            ->orderBy('v.dateVacation', 'ASC');
+            ->orderBy('v.heureDebVac', 'ASC')
+            ->addOrderBy('v.heureFinVac', 'ASC');
 
         $query = $qb->getQuery();
 
@@ -72,7 +73,8 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
             ->where('v.agent = :id')
             ->setParameter('id', $id)
             ->andWhere('v.etat = 1')
-            ->orderBy('v.dateVacation', 'ASC');
+            ->orderBy('v.heureDebVac', 'ASC')
+            ->addOrderBy('v.heureFinVac', 'ASC');
 
         $query = $qb->getQuery();
 
@@ -90,7 +92,8 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('debut', $debut)
             ->setParameter('fin', $fin)
             ->andWhere('v.etat = 1')
-            ->orderBy('v.dateVacation', 'ASC');
+            ->orderBy('v.heureDebVac', 'ASC')
+            ->addOrderBy('v.heureFinVac', 'ASC');
 
         $query = $qb->getQuery();
 
@@ -108,7 +111,8 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('debut', $debut)
             ->setParameter('fin', $fin)
             ->andWhere('v.etat = 1')
-            ->orderBy('v.dateVacation', 'ASC');
+            ->orderBy('v.heureDebVac', 'ASC')
+            ->addOrderBy('v.heureFinVac', 'ASC');
 
         $query = $qb->getQuery();
 

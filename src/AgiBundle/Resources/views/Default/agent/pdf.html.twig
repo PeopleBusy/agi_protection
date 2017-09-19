@@ -25,7 +25,7 @@
     </table>
 
     <div class="text-center" style="position:absolute;top: 0px; width: 100%; font-size: 20px;">
-        <span class="" >RECAPITULATIF DU {{ title }}</span>
+        <span class="" >PLANNING DU {{ title }}</span>
     </div>
 
     <div class="text-right" style="position:absolute;top: 40px; width: 100%;font-style: italic;">
@@ -51,7 +51,16 @@
         </thead>
         <tbody>
         {% for v in vacations %}
-            <tr class="">
+            {% if v.heureFinVac|dayByDate == "6"  %}
+                <tr class="bBlackFontWhite">
+            {% elseif v.heureDebVac|dayByDate == "6" %}
+                <tr class="bBlackFontWhite">
+            {% elseif v.heureDimanche == "00:00" %}
+                <tr class="">
+            {% else %}
+                <tr class="bBlackFontWhite">
+            {% endif %}
+
                 <td class="breakW"><span class="">{{ v.site.nomSite }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureDebVac| date('d/m/Y H:i') }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureFinVac| date('d/m/Y H:i') }}</span></td>
@@ -59,11 +68,7 @@
                 <td class="text-center"><span class="">{{ v.heureJour }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureNuit }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureJour|sumheure(v.heureNuit) }}</span></td>
-                {% if v.heureDimanche == "00:00" %}
-                    <td class="text-center"><span class="">{{ v.heureDimanche }}</span></td>
-                {% else %}
-                    <td class="bBlackFontWhite text-center"><span>{{ v.heureDimanche }}</span></td>
-                {% endif %}
+                <td class="text-center"><span class="">{{ v.heureDimanche }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureFerie }}</span></td>
             </tr>
         {% endfor %}
@@ -81,6 +86,25 @@
             </tr>
         </tfoot>
     </table>
+
+    <div class="separator"></div>
+
+    <div style="position:absolute;bottom: 50px; width: 100%;">
+        <table id="" style="table-layout: fixed; width: 100%;" class="content">
+            <thead class="thcontent">
+            <tr>
+                <th style="width: 50%;" class="text-center">Signature de la Direction</th>
+                <th style="width: 50%;" class="text-center">Signature de l'agent</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="width: 50%; height: 3px;" class="text-center"><h1></h1></td>
+                <td style="width: 50%; height: 3px;"class="text-center"><h1></h1></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
     <div class="separator"></div>
 

@@ -165,7 +165,17 @@
                         </thead>
                         <tbody>
                         {% for v in vacations %}
-                            <tr class="">
+
+                            {% if v.heureFinVac|dayByDate == "6"  %}
+                                <tr class="bg-yellow-gradient">
+                            {% elseif v.heureDebVac|dayByDate == "6" %}
+                                <tr class="bg-yellow-gradient">
+                            {% elseif v.heureDimanche == "00:00" %}
+                                <tr class="">
+                            {% else %}
+                                <tr class="bg-yellow-gradient">
+                            {% endif %}
+
                                 <td><span class="badge bg-info">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
                                 <td><span class="prenom">{{ v.heureDebVac| date('d/m/Y H:i:s') }}</span></td>
                                 <td><span class="prenom">{{ v.heureFinVac| date('d/m/Y H:i:s') }}</span></td>
@@ -173,11 +183,7 @@
                                 <td><span class="prenom">{{ v.heureJour }}</span></td>
                                 <td><span class="prenom">{{ v.heureNuit }}</span></td>
                                 <td><span class="badge bg-green">{{ v.heureJour|sumheure(v.heureNuit) }}</span></td>
-                                {% if v.heureDimanche == "00:00" %}
-                                    <td><span class="">{{ v.heureDimanche }}</span></td>
-                                {% else %}
-                                    <td class="bg-black-gradient"><span>{{ v.heureDimanche }}</span></td>
-                                {% endif %}
+                                <td class="text-center"><span class="">{{ v.heureDimanche }}</span></td>
                                 <td><span class="">{{ v.heureFerie }}</span></td>
                                 <td class="">
                                     <a href="{{ path('site_enregistrer_vacation', {'id': v.site.id}) }}" class="btn btn-success btn-xs">Enreg. planning</a>

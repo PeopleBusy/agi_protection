@@ -4,5 +4,10 @@ services:
       tags:
         - { name: twig.extension }
 
+    dayByDate:
+      class: AgiBundle\Twig\Extension\DayByDateExtension
+      tags:
+        - { name: twig.extension }
+
     app.html2pdf:
       class: AgiBundle\Service\CustomHtml2Pdf
