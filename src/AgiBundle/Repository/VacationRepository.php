@@ -41,6 +41,7 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->createQueryBuilder('v');
         $qb->select('v')
             ->where('v.site = :id')
+            ->andWhere('v.etat = 1')
             ->setParameter('id', $id);
 
         $query = $qb->getQuery();
@@ -55,6 +56,7 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('v')
             ->where('v.site = :id')
             ->setParameter('id', $id)
+            ->andWhere('v.etat = 1')
             ->orderBy('v.dateVacation', 'ASC');
 
         $query = $qb->getQuery();
@@ -69,6 +71,7 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('v')
             ->where('v.agent = :id')
             ->setParameter('id', $id)
+            ->andWhere('v.etat = 1')
             ->orderBy('v.dateVacation', 'ASC');
 
         $query = $qb->getQuery();
@@ -86,6 +89,7 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
             ->andWhere('v.dateVacation BETWEEN :debut AND :fin')
             ->setParameter('debut', $debut)
             ->setParameter('fin', $fin)
+            ->andWhere('v.etat = 1')
             ->orderBy('v.dateVacation', 'ASC');
 
         $query = $qb->getQuery();
@@ -103,6 +107,7 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
             ->andWhere('v.dateVacation BETWEEN :debut AND :fin')
             ->setParameter('debut', $debut)
             ->setParameter('fin', $fin)
+            ->andWhere('v.etat = 1')
             ->orderBy('v.dateVacation', 'ASC');
 
         $query = $qb->getQuery();

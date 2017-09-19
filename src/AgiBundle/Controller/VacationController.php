@@ -141,7 +141,7 @@ class VacationController extends Controller
         $site = $repository->find($vacation->getSite());
 
         $repository = $this->getDoctrine()
-            ->getRepository('AgiBundle:Site');
+            ->getRepository('AgiBundle:Agent');
 
         $agent = $repository->find($vacation->getAgent());
 
@@ -255,6 +255,7 @@ class VacationController extends Controller
             );
         }
 
+        $success = null;
 
         $repository = $this->getDoctrine()
             ->getRepository('AgiBundle:Site');
@@ -262,7 +263,7 @@ class VacationController extends Controller
         $site = $repository->find($vacation->getSite());
 
         $repository = $this->getDoctrine()
-            ->getRepository('AgiBundle:Site');
+            ->getRepository('AgiBundle:Agent');
 
         $agent = $repository->find($vacation->getAgent());
 
@@ -305,9 +306,11 @@ class VacationController extends Controller
             $repository = $this->getDoctrine()
                 ->getRepository('AgiBundle:Vacation');
 
-            $vacations = $repository->findVacations('1');
+            $vacations = $repository->findVacations('0');
 
-            return $this->render('AgiBundle:Default:vacation/list.html.twig', array('vacations' => $vacations, 'actif' => 0));
+            $success = "Suppression réussie!";
+
+            return $this->render('AgiBundle:Default:vacation/list.html.twig', array('vacations' => $vacations, 'actif' => 0, 'success' => $success));
 
 
         }

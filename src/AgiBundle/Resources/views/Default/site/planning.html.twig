@@ -179,7 +179,8 @@
                                     <td class="bg-black-gradient"><span>{{ v.heureDimanche }}</span></td>
                                 {% endif %}
                                 <td><span class="">{{ v.heureFerie }}</span></td>
-                                <td class="center">
+                                <td class="">
+                                    <a href="{{ path('site_enregistrer_vacation', {'id': v.site.id}) }}" class="btn btn-success btn-xs">Enreg. planning</a>
                                     <a href="{{ path('site_modifier_vacation', {'id': v.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
                                     <a href="{{ path('site_supprimer_vacation', {'id': v.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
 

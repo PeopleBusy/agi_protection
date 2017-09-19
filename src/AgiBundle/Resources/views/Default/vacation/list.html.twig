@@ -102,6 +102,7 @@
                             <td class="center">
 
                                 {% if actif == 1 %}
+                                    <a href="{{ path('site_enregistrer_vacation', {'id': v.site.id}) }}" class="btn btn-success btn-xs">Enregistrer planning</a>
 
                                     <a href="{{ path('site_modifier_vacation', {'id': v.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
 
