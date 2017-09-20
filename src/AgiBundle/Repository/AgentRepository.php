@@ -28,7 +28,8 @@ class AgentRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->createQueryBuilder('a');
         $qb->select('a')
             ->where('a.etat = :etat')
-            ->setParameter('etat', $etat);
+            ->setParameter('etat', $etat)
+            ->orderBy('a.nom', 'ASC');
 
         $query = $qb->getQuery();
 

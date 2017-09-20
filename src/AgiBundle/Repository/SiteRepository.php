@@ -27,7 +27,8 @@ class SiteRepository extends \Doctrine\ORM\EntityRepository
         $qb = $this->createQueryBuilder('s');
         $qb->select('s')
             ->where('s.etat = :etat')
-            ->setParameter('etat', $etat);
+            ->setParameter('etat', $etat)
+            ->orderBy('s.nomSite', 'ASC');
 
         $query = $qb->getQuery();
 

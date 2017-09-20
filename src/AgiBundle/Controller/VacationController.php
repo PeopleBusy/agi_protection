@@ -62,6 +62,7 @@ class VacationController extends Controller
             $heureDebVac = $form->getData()->getHeureDebVac();
             $heureFinVac = $form->getData()->getHeureFinVac();
 
+
             if ($site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i') == '00:00') {
 
                 return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs saisies!',
@@ -89,6 +90,48 @@ class VacationController extends Controller
                 ->getRepository('AgiBundle:Agent')
                 ->find(intval($agent_id));
 
+            //A revoir
+            /*$vacs = $this->getDoctrine()
+                ->getRepository('AgiBundle:Vacation')
+                ->findVacationsByAgentAfterDate(intval($agent_id), $heureDebVac);
+
+            $isBtweenDate = false;
+
+            foreach ($vacs as $vac){
+                $listD = $this->getDatesBetween($vac->getHeureDebVac()->format('Y-m-d'), $vac->getHeureFinVac()->format('Y-m-d'));
+                foreach ($listD as $d){
+                    echo substr($heureDebVac->format('Y-m-d'), 0, 10);
+                    echo '<br>';
+                    echo $d;echo '<br>';echo '<br>';echo '<br>';
+
+                    if($d == substr($heureDebVac->format('Y-m-d'), 0, 10)){
+                        $isBtweenDate = true;
+                        break;
+                    }
+                }
+            }
+
+            $vacs = $this->getDoctrine()
+                ->getRepository('AgiBundle:Vacation')
+                ->findVacationsByAgentBeforeDate(intval($agent_id), $heureFinVac);
+
+            foreach ($vacs as $vac){
+                $listD = $this->getDatesBetween($vac->getHeureDebVac()->format('Y-m-d'), $vac->getHeureFinVac()->format('Y-m-d'));
+                foreach ($listD as $d){
+                    if($d == substr($heureFinVac->format('Y-m-d'), 0, 10)){
+                        $isBtweenDate = true;
+                        break;
+                    }
+                }
+            }
+
+            if($isBtweenDate){
+                echo 'Date exist';
+            }else{
+                echo 'Date not exist';
+            }*/
+            //A revoir
+
             $vacation = $form->getData();
             $vacation->setAgent($agent);
             $vacation->setSite($site);
@@ -103,9 +146,9 @@ class VacationController extends Controller
 
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($vacation);
+            //$em->persist($vacation);
 
-            $em->flush();
+            //$em->flush();
 
             $form = $this->createForm(VacationType::class, new Vacation(), array(
                 'action' => $this->generateUrl('site_enregistrer_vacation', array('id' => $id)),
@@ -355,6 +398,22 @@ class VacationController extends Controller
 
 
         return $this->render('AgiBundle:Default:agent/operation.html.twig', array('operations' => $operations));
+
+    }
+
+    public function getDatesBetween($start, $end, $format = 'Y-m-d') {
+
+        $start  = new DateTime($start);
+        $end    = new DateTime($end);
+        $invert = $start > $end;
+
+        $dates = array();
+        $dates[] = $start->format($format);
+        while ($start != $end) {
+            $start->modify(($invert ? '-' : '+') . '1 day');
+            $dates[] = $start->format($format);
+        }
+        return $dates;
 
     }
 

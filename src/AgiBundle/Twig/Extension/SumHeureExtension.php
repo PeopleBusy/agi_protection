@@ -19,31 +19,40 @@ class SumHeureExtension extends \Twig_Extension
     }
 
     public function sumOfTwoTimes($time1, $time2){
-        $h1 = intval(mbsplit(":", $time1)[0]);
-        $m1 = intval(mbsplit(":", $time1)[1]);
+        if (strpos($time1, ':') == false || strpos($time2, ':') == false) {
 
-        $h2 = intval(mbsplit(":", $time2)[0]);
-        $m2 = intval(mbsplit(":", $time2)[1]);
+            return "00:00";
 
-        $h = $h1 + $h2;
-        $m = $m1 + $m2;
+        }else{
 
-        if($m >= 60){
-            $h += floor($m / 60);
-            $m = ($m % 60);
+            $h1 = intval(mbsplit(":", $time1)[0]);
+            $m1 = intval(mbsplit(":", $time1)[1]);
+
+            $h2 = intval(mbsplit(":", $time2)[0]);
+            $m2 = intval(mbsplit(":", $time2)[1]);
+
+            $h = $h1 + $h2;
+            $m = $m1 + $m2;
+
+            if($m >= 60){
+                $h += floor($m / 60);
+                $m = ($m % 60);
+            }
+            if($h < 10){
+                $h = '0' . $h;
+            }
+            if($m < 10){
+                $m = '0' . $m;
+            }
+            $time = $h . ':' . $m;
+            /*if($h == "00" && $m == "00"){
+                $time = 0;
+            }*/
+
+            return $time;
+
         }
-        if($h < 10){
-            $h = '0' . $h;
-        }
-        if($m < 10){
-            $m = '0' . $m;
-        }
-        $time = $h . ':' . $m;
-        /*if($h == "00" && $m == "00"){
-            $time = 0;
-        }*/
 
-        return $time;
     }
 
 

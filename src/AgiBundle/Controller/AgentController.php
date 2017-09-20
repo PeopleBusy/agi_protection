@@ -5,6 +5,8 @@ namespace AgiBundle\Controller;
 use AgiBundle\Entity\Agent;
 use AgiBundle\Entity\ContratAgent;
 use AgiBundle\Entity\Operation;
+use AgiBundle\Entity\Vacation;
+use AgiBundle\Entity\Site;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use AgiBundle\Form\AgentType;
@@ -12,6 +14,8 @@ use AgiBundle\Form\ContratAgentType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
+use \DateInterval;
+use \DatePeriod;
 
 class AgentController extends Controller
 {
@@ -606,6 +610,8 @@ class AgentController extends Controller
         $dd = $dd->format('Y-m-d');
         $df = $df->format('Y-m-d');
 
+        $listDates = $this->getDatesBetween($dd, $df);
+
         $repository = $this->getDoctrine()
             ->getRepository('AgiBundle:Vacation');
 
@@ -734,8 +740,35 @@ class AgentController extends Controller
 
         $agent = $repository->find($id);
 
+        $repository = $this->getDoctrine()
+            ->getRepository('AgiBundle:Vacation');
 
-        $template = $this->render('AgiBundle:Default:agent/pdf.html.twig', array('vacations' => $vacations, 'agent' => $agent, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
+        $vac_array = array();
+        foreach ($listDates as $d) {
+            $vacs = $repository->findVacationsByAgentAndDate($id, $d);
+            if($vacs == null || sizeof($vacs) == 0){
+                $nv = new Vacation();
+                $nv->setSite(new Site());
+                $nv->setDateVacation(new DateTime($d));
+                $nv->setHeureDebVac(new DateTime($d));
+                $nv->setHeureFinVac(new DateTime($d));
+                $nv->setHeurePanier(0);
+                $nv->setHeureJour(0);
+                $nv->setHeureNuit(0);
+                $nv->setHeureDimanche(0);
+                $nv->setHeureFerie(0);
+                array_push($vac_array, $nv);
+
+            }else{
+                foreach ($vacs as $va){
+                    array_push($vac_array, $v);
+                }
+            }
+
+        }
+
+
+        $template = $this->render('AgiBundle:Default:agent/pdf.html.twig', array('vacations' => $vac_array, 'agent' => $agent, 'thp' => $thp, 'thj' => $thj, 'thn' => $thn,
             'thd' => $thd, 'thf' => $thf, 'title' => $title, 'date_debut' => $date_debut, 'date_fin' => $date_fin))->getContent();
 
 
@@ -746,6 +779,22 @@ class AgentController extends Controller
 
         return $html2pdf->generatePdf($template, "planning_" . $agent->getNom() . '_' . $title);
 
+
+    }
+
+    public function getDatesBetween($start, $end, $format = 'Y-m-d') {
+
+        $start  = new DateTime($start);
+        $end    = new DateTime($end);
+        $invert = $start > $end;
+
+        $dates = array();
+        $dates[] = $start->format($format);
+        while ($start != $end) {
+            $start->modify(($invert ? '-' : '+') . '1 day');
+            $dates[] = $start->format($format);
+        }
+        return $dates;
 
     }
 

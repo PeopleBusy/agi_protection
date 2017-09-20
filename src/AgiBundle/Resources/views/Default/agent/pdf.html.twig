@@ -13,7 +13,7 @@
     .redFontWhite {background-color: red !important; color: #000000 !important; font-weight: bold !important;}
 </style>
 
-<page backtop="0" backright="0" backbottom="0" backleft="0">
+<page backtop="0" backright="0" backbottom="0" backleft="0" pageset="old">
 
 
     <table class="header">
@@ -65,11 +65,11 @@
                 <td class="text-center"><span class="">{{ v.heureDebVac| date('d/m/Y H:i') }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureFinVac| date('d/m/Y H:i') }}</span></td>
                 <td class="text-center"><span class="">{{ v.heurePanier }}</span></td>
-                <td class="text-center"><span class="">{{ v.heureJour }}</span></td>
-                <td class="text-center"><span class="">{{ v.heureNuit }}</span></td>
+                <td class="text-center"><span class="">{{ v.heureJour | formaterChaine }}</span></td>
+                <td class="text-center"><span class="">{{ v.heureNuit | formaterChaine }}</span></td>
                 <td class="text-center"><span class="">{{ v.heureJour|sumheure(v.heureNuit) }}</span></td>
-                <td class="text-center"><span class="">{{ v.heureDimanche }}</span></td>
-                <td class="text-center"><span class="">{{ v.heureFerie }}</span></td>
+                <td class="text-center"><span class="">{{ v.heureDimanche | formaterChaine }}</span></td>
+                <td class="text-center"><span class="">{{ v.heureFerie | formaterChaine }}</span></td>
             </tr>
         {% endfor %}
 

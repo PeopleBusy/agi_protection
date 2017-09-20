@@ -600,7 +600,7 @@ class SiteController extends Controller
             foreach ($vacations as $v){
                 $e = array();
                 $e['id'] = $v->getId();
-                $e['title'] = $v->getAgent()->getNom() . " " . $v->getAgent()->getPrenom();
+                $e['title'] = $v->getAgent()->getNom() . " " . $v->getAgent()->getPrenom() . ' - ' . $v->getHeureFinVac()->format('d/m/Y H:i');
                 $e['start'] = $v->getHeureDebVac()->format('Y-m-d H:i:s');
                 $e['end'] = $v->getHeureFinVac()->format('Y-m-d H:i:s');
                 $e['allDay'] = false;
@@ -749,5 +749,6 @@ class SiteController extends Controller
                 'thd' => $thd, 'thf' => $thf));
 
     }
+
 
 }

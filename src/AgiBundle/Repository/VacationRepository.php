@@ -120,6 +120,56 @@ class VacationRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
+    public function findVacationsByAgentAndDate($id, $datevac){
+
+        $qb = $this->createQueryBuilder('v');
+        $qb->select('v')
+            ->where('v.agent = :id')
+            ->setParameter('id', $id)
+            ->andWhere('v.dateVacation = :date')
+            ->setParameter('date', $datevac)
+            ->andWhere('v.etat = 1')
+            ->orderBy('v.heureDebVac', 'ASC')
+            ->addOrderBy('v.heureFinVac', 'ASC');
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+
+    }
+
+    public function findVacationsByAgentAfterDate($id, $datedebut){
+
+        $qb = $this->createQueryBuilder('v');
+        $qb->select('v')
+            ->where('v.agent = :id')
+            ->setParameter('id', $id)
+            ->andWhere('v.heureDebVac >= :date')
+            ->setParameter('date', $datedebut)
+            ->andWhere('v.etat = 1');
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+
+    }
+
+    public function findVacationsByAgentBeforeDate($id, $datefin){
+
+        $qb = $this->createQueryBuilder('v');
+        $qb->select('v')
+            ->where('v.agent = :id')
+            ->setParameter('id', $id)
+            ->andWhere('v.heureFinVac <= :date')
+            ->setParameter('date', $datefin)
+            ->andWhere('v.etat = 1');
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+
+    }
+
     public function findByDistinctAgentInVacationSite($id){
 
         $qb = $this->createQueryBuilder('v');
