@@ -747,6 +747,7 @@ class AgentController extends Controller
         foreach ($listDates as $d) {
             $vacs = $repository->findVacationsByAgentAndDate($id, $d);
             if($vacs == null || sizeof($vacs) == 0){
+
                 $nv = new Vacation();
                 $nv->setSite(new Site());
                 $nv->setDateVacation(new DateTime($d));
@@ -761,7 +762,7 @@ class AgentController extends Controller
 
             }else{
                 foreach ($vacs as $va){
-                    array_push($vac_array, $v);
+                    array_push($vac_array, $va);
                 }
             }
 
