@@ -110,10 +110,11 @@
                             <td class="center">
 
                                 {% if actif == 1 %}
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <a href="{{ path('modifier_site', {'id': s.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
 
-                                    <a href="{{ path('modifier_site', {'id': s.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
-
-                                    <a href="{{ path('supprimer_site', {'id': s.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
+                                        <a href="{{ path('supprimer_site', {'id': s.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
+                                    {% endif %}
 
                                     <a href="{{ path('site_enregistrer_vacation', {'id': s.id}) }}" class="btn btn-success btn-xs">Enregistrer planning</a>
 

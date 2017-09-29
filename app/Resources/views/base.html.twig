@@ -80,19 +80,24 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="{{ asset('img/user.png') }}" class="user-image" alt="User Image">
-                            <span class="hidden-xs">AGI Protection</span>
+                            <span class="hidden-xs">{{ app.user.nom }} {{ app.user.prenom }}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left hide">
-                                    <a href="#" class="btn btn-default btn-flat">Profil</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-primary btn-flat">Déconnecter</a>
-                                </div>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <div class="pull-right">
+                                        <a href="{{ logout_path() }}" class="btn btn-primary btn-flat">Déconnecter</a>
+                                    </div>
+                                {% else %}
+                                    <div class="pull-right">
+                                        <a href="{{ path('agi_login') }}" class="btn btn-primary btn-flat">Se connecter</a>
+                                    </div>
+                                {% endif %}
+
                             </li>
                         </ul>
+
                     </li>
                 </ul>
             </div>
@@ -192,37 +197,17 @@
                         </li>
                     </ul>
                 </li>
-                <li class="hide {% if app.request.get('_route') in ['imprimer_agent', 'imprimer_site', 'imprimer_vacation', 'imprimer_planning'] %}active{% endif %} treeview">
-                    <a href="#">
-                        <i class="fa fa-print"></i>
-                        <span>Impressions</span>
-                        <span class="pull-right-container">
-                                        <i class="fa fa-angle-left pull-right"></i>
-                                    </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li class="{% if app.request.get('_route') == 'imprimer_agent' %}active{% endif %} ">
-                            <a href="#">
-                                <i class="fa fa-circle-o"></i> Imprimer récap. agent
-                            </a>
-                        </li>
-                        <li class="hide {% if app.request.get('_route') == 'imprimer_site' %}active{% endif %} ">
-                            <a href="#">
-                                <i class="fa fa-circle-o"></i> Imprimer un site
-                            </a>
-                        </li>
-                        <li class="hide {% if app.request.get('_route') == 'imprimer_vacation' %}active{% endif %} ">
-                            <a href="#">
-                                <i class="fa fa-circle-o"></i> Imprimer une vacation
-                            </a>
-                        </li>
-                        <li class="{% if app.request.get('_route') == 'imprimer_planning' %}active{% endif %} ">
-                            <a href="#">
-                                <i class="fa fa-circle-o"></i> Imprimer récap. site
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                {% else %}
+                    <li class="active">
+                        <a href="{{ path('agi_login') }}">
+                            <i class="fa fa-sign-in"></i>
+                            <span>Se connecter</span>
+                        </a>
+                    </li>
+                {% endif %}
+
             </ul>
         </section>
         <!-- /.sidebar -->

@@ -82,7 +82,9 @@
                             <td><span class="nom">{{ h.HeureFin | date('H:i:s')}}</span></td>
 
                             <td class="center">
-                                <a href="{{ path('modifier_config_heure', {'id': h.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('modifier_config_heure', {'id': h.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
+                                {% endif %}
                             </td>
                         </tr>
                         {% endfor %}

@@ -3,9 +3,13 @@
 namespace AgiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class AgiController extends Controller
 {
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function indexAction()
     {
         $agentRepository = $this->getDoctrine()

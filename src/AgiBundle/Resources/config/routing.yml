@@ -1,5 +1,17 @@
-agi_homepage:
+agi_index:
     path:     /
+    defaults: { _controller: AgiBundle:Login:login }
+
+agi_login:
+    path:     /login
+    defaults: { _controller: AgiBundle:Login:login }
+
+agi_logout:
+    path:     /logout
+    defaults: { _controller: AgiBundle:Login:logout }
+
+agi_homepage:
+    path:     /home
     defaults: { _controller: AgiBundle:Agi:index }
 
 ajouter_agent:

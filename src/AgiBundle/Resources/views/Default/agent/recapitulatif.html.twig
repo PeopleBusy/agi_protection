@@ -98,8 +98,10 @@
                                 <td><span class="">{{ v.heureFerie }}</span></td>
                                 <td class="">
                                     <a href="{{ path('site_enregistrer_vacation', {'id': v.site.id}) }}" class="btn btn-success btn-xs">Enregistrer planning</a>
-                                    <a href="{{ path('site_modifier_vacation', {'id': v.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
-                                    <a href="{{ path('site_supprimer_vacation', {'id': v.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <a href="{{ path('site_modifier_vacation', {'id': v.id}) }}" class="btn btn-primary btn-xs">Modifier</a>
+                                        <a href="{{ path('site_supprimer_vacation', {'id': v.id}) }}" class="btn btn-danger btn-xs">Supprimer</a>
+                                    {% endif %}
 
                                 </td>
                             </tr>

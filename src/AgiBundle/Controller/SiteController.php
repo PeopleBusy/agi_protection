@@ -14,6 +14,7 @@ use \DateTime;
 use \DateTimeZone;
 use \DateTimeImmutable;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class SiteController extends Controller
 {
@@ -94,6 +95,9 @@ class SiteController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function modifierAction(Request $request, $id)
     {
         $site = $this->getDoctrine()
@@ -169,6 +173,9 @@ class SiteController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function supprimerAction(Request $request, $id)
     {
         $site = $this->getDoctrine()
@@ -236,6 +243,9 @@ class SiteController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function listerSupprimeAction()
     {
         $repository = $this->getDoctrine()

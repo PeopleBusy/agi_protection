@@ -11,10 +11,13 @@ use AgiBundle\Form\HeurePanierType;
 use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
 use \DateTimeImmutable;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class HeurePanierController extends Controller
 {
-
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function modifierHeureAction(Request $request, $id)
     {
         $heure = $this->getDoctrine()

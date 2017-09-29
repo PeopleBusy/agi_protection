@@ -212,11 +212,17 @@ function calculerHeures() {
     var nbHeureJour = 0, nbHeureNuit = 0; var temp;
     if(dateDebVac < dateDebJourDiff){ //Heure debut avant 6h
         //il a begin avant 6h
-        nbHeureNuit = diffDateInHoursAndMinutes(dateDebJourDiff, dateDebVac);
 
-        if(dateFinVac < dateFinJourDiff || dateFinVac.valueOf() === dateFinJourDiff.valueOf()){
+        if((dateFinVac > dateDebJourDiff && dateFinVac < dateFinJourDiff) || dateFinVac.valueOf() === dateFinJourDiff.valueOf()){
+            //il a begin avant 6h et finit entre 6h01 et 21h
+            nbHeureNuit = diffDateInHoursAndMinutes(dateDebJourDiff, dateDebVac);
             nbHeureJour = diffDateInHoursAndMinutes(dateFinVac, dateDebJourDiff);
+        }else if(dateFinVac < dateDebJourDiff || dateFinVac.valueOf() === dateDebJourDiff.valueOf()){
+            //il a begin avant 6h et finit au plus tard a 6h
+            nbHeureJour = "00:00";
+            nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateDebVac);
         }else if(dateFinVac > dateFinJourDiff){
+            //il a begin avant 6h et finit apres 21h
             nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebJourDiff);
             var hm = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
             nbHeureNuit = addTimes(nbHeureNuit+':00', hm+':00');
@@ -234,44 +240,61 @@ function calculerHeures() {
 
 
     }   else {
-
         //il a begin apres 6h
         if(dateDebVac < dateFinJourDiff || dateDebVac.valueOf() === dateFinJourDiff.valueOf()){
             //il commence entre 6h et 21h
             if(dateFinVac < dateFinJourDiff || dateFinVac.valueOf() === dateFinJourDiff.valueOf()){
                 //il commence entre 6h et 21h et finit entre 6h et 21h
                 nbHeureJour = diffDateInHoursAndMinutes(dateFinVac, dateDebVac);
+                nbHeureNuit = "00:00";
 
-
-            }else if(dateFinVac > dateFinJourDiff){
+            }else {
                 //il commence entre 6h et 21h et finit apres 21h
-
-                if(dateFinVac < dateFinNuitDiff || dateFinVac.valueOf() === dateFinNuitDiff.valueOf()){
-                    //il commence entre 6h et 21h et finit avant le prochain 6h
+                if((dateDebVac.getDate() == dateFinVac.getDate()) && (dateDebVac.getMonth() == dateFinVac.getMonth())){
+                    //il commence entre 6h et 21h et finit avant 00h
                     nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
                     nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
 
-                }else {
-                    //il commence entre 6h et 21h et finit apres le prochain 6h
-                    nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
-                    nbHeureNuit = diffDateInHoursAndMinutes(dateFinNuitDiff, dateFinJourDiff);
-                    nbHeureJour = addTimes(diffDateInHoursAndMinutes(dateFinVac, dateFinNuitDiff), nbHeureJour);
+                }else if((dateDebVac.getDate() < dateFinVac.getDate()) && (dateDebVac.getMonth() == dateFinVac.getMonth())){
+                    dateFinNuitDiff = stringToDate(concatenerDate(dateFinVac.getDate(), dateFinVac.getMonth()+1, dateFinVac.getFullYear(), heureNuitFin[0], heureNuitFin[1]));
+                    //il commence entre 6h et 21h et finit avant le prochain 6h
+                    if(dateFinVac < dateFinNuitDiff || dateFinVac.valueOf() === dateFinNuitDiff.valueOf()){
+                        //il commence entre 6h et 21h et finit avant le prochain 6h
+                        nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
+                        nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateFinJourDiff);
 
+                    }else {
+                        //il commence commence entre 6h et 21h et finit apres le prochain 6h
+                        nbHeureJour = diffDateInHoursAndMinutes(dateFinJourDiff, dateDebVac);
+                        nbHeureNuit = diffDateInHoursAndMinutes(dateFinNuitDiff, dateFinJourDiff);
+                        nbHeureJour = addTimes(diffDateInHoursAndMinutes(dateFinVac, dateFinNuitDiff), nbHeureJour);
+
+                    }
                 }
 
             }
 
         }else {
             //il commence apres 21h
-            if(dateFinVac < dateFinNuitDiff || dateFinVac.valueOf() === dateFinNuitDiff.valueOf()){
-                //il commence apres 21h et finit avant le prochain 6h
+            if((dateDebVac.getDate() == dateFinVac.getDate()) && (dateDebVac.getMonth() == dateFinVac.getMonth())){
+                //il commence apres 21h et finit avant 00h
+                nbHeureJour = "00:00";
                 nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateDebVac);
 
-            }else {
-                //il commence apres 21h et finit apres le prochain 6h
-                nbHeureJour = diffDateInHoursAndMinutes(dateFinVac, dateFinNuitDiff);
-                nbHeureNuit = diffDateInHoursAndMinutes(dateFinNuitDiff, dateDebVac);
+            }else if((dateDebVac.getDate() < dateFinVac.getDate()) && (dateDebVac.getMonth() == dateFinVac.getMonth())){
+                dateFinNuitDiff = stringToDate(concatenerDate(dateFinVac.getDate(), dateFinVac.getMonth()+1, dateFinVac.getFullYear(), heureNuitFin[0], heureNuitFin[1]));
+                //il commence apres 21h et finit avant le prochain 6h
+                if(dateFinVac < dateFinNuitDiff || dateFinVac.valueOf() === dateFinNuitDiff.valueOf()){
+                    //il commence apres 21h et finit avant le prochain 6h
+                    nbHeureJour = "00:00";
+                    nbHeureNuit = diffDateInHoursAndMinutes(dateFinVac, dateDebVac);
 
+                }else {
+                    //il commence apres 21h et finit apres le prochain 6h
+                    nbHeureJour = diffDateInHoursAndMinutes(dateFinVac, dateFinNuitDiff);
+                    nbHeureNuit = diffDateInHoursAndMinutes(dateFinNuitDiff, dateDebVac);
+
+                }
             }
         }
 

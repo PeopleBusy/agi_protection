@@ -12,6 +12,7 @@ use AgiBundle\Form\VacationType;
 use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
 use \DateTimeImmutable;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class VacationController extends Controller
 {
@@ -65,9 +66,9 @@ class VacationController extends Controller
             $heureFinVac = $form->getData()->getHeureFinVac();
 
 
-            if ($site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i') == '00:00') {
+            if ($heureDebVac > $heureFinVac || $site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i') == '00:00') {
 
-                return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs saisies!',
+                return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs ou les dates saisies!',
                     'site' => $site, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
 
             }
@@ -179,7 +180,9 @@ class VacationController extends Controller
 
     }
 
-
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function modifierAction(Request $request, $id)
     {
         $vacation = $this->getDoctrine()
@@ -238,9 +241,9 @@ class VacationController extends Controller
             $heureDebVac = $form->getData()->getHeureDebVac();
             $heureFinVac = $form->getData()->getHeureFinVac();
 
-            if ($site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i:s') == '00:00') {
+            if ($heureDebVac > $heureFinVac || $site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i:s') == '00:00') {
 
-                return $this->render('AgiBundle:Default:vacation/edit.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs saisies!',
+                return $this->render('AgiBundle:Default:vacation/edit.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs ou les dates saisies!',
                     'vacation' => $vacation,'site' => $site, 'agent' => $agent, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
 
             }
@@ -355,6 +358,9 @@ class VacationController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function supprimerAction(Request $request, $id)
     {
         $vacation = $this->getDoctrine()
@@ -446,6 +452,9 @@ class VacationController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function listerSupprimeAction()
     {
         $repository = $this->getDoctrine()
@@ -456,7 +465,6 @@ class VacationController extends Controller
         return $this->render('AgiBundle:Default:vacation/list.html.twig', array('vacations' => $vacations, 'actif' => 0));
 
     }
-
 
     public function detailsAction($id)
     {

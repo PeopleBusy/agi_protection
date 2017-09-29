@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
 use \DateInterval;
 use \DatePeriod;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class AgentController extends Controller
 {
@@ -97,6 +98,9 @@ class AgentController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function modifierAction(Request $request, $id)
     {
         $contratagent = $this->getDoctrine()
@@ -182,6 +186,9 @@ class AgentController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function supprimerAction(Request $request, $id)
     {
         $contratagent = $this->getDoctrine()
@@ -253,6 +260,9 @@ class AgentController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function listerSupprimeAction()
     {
         $repository = $this->getDoctrine()

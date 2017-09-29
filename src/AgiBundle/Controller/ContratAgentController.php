@@ -11,6 +11,7 @@ use AgiBundle\Form\AgentType;
 use AgiBundle\Form\ContratAgentType;
 use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class ContratAgentController extends Controller
 {
@@ -90,7 +91,9 @@ class ContratAgentController extends Controller
 
     }
 
-
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function modifierAction(Request $request, $id)
     {
         $agent = $this->getDoctrine()
@@ -112,6 +115,9 @@ class ContratAgentController extends Controller
 
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function supprimerAction(Request $request, $id)
     {
         $agent = $this->getDoctrine()
