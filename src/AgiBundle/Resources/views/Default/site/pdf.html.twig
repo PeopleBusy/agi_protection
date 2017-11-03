@@ -57,14 +57,12 @@
         <tbody>
         {% for v in vacations %}
 
-            {% if v.heureFinVac|dayByDate == "6"  %}
+            {% if v.heureFinVac|dayByDate == "6" or v.heureFinVac|dayByDate == "7"  %}
                 <tr class="bBlackFontWhite">
-            {% elseif v.heureDebVac|dayByDate == "6" %}
+            {% elseif v.heureDebVac|dayByDate == "6" or v.heureDebVac|dayByDate == "7"  %}
                 <tr class="bBlackFontWhite">
-            {% elseif v.heureDimanche == "00:00" %}
-                <tr class="">
             {% else %}
-                <tr class="bBlackFontWhite">
+                <tr class="">
             {% endif %}
 
                 <td class="text-left breakW" style="width: 100px;"><span class="">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>

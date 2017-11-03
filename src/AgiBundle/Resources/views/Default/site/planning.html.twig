@@ -166,14 +166,12 @@
                         <tbody>
                         {% for v in vacations %}
 
-                            {% if v.heureFinVac|dayByDate == "6"  %}
+                            {% if v.heureFinVac|dayByDate == "6" or v.heureFinVac|dayByDate == "7"  %}
                                 <tr class="bg-yellow-gradient">
-                            {% elseif v.heureDebVac|dayByDate == "6" %}
+                            {% elseif v.heureDebVac|dayByDate == "6" or v.heureDebVac|dayByDate == "7"  %}
                                 <tr class="bg-yellow-gradient">
-                            {% elseif v.heureDimanche == "00:00" %}
-                                <tr class="">
                             {% else %}
-                                <tr class="bg-yellow-gradient">
+                                <tr class="">
                             {% endif %}
 
                                 <td><span class="badge bg-info">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>
