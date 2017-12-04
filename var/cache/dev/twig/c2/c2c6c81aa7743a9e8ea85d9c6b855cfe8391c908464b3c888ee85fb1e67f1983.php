@@ -15,11 +15,11 @@ class __TwigTemplate_cd35d944d028f6896509f613c0326ffcf1ccfb2ddb7bae28c22a69db603
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e0c96b9066310bd2c7567317a9cf52f612f489b4028ce0c2019d0c833204f1d3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_e0c96b9066310bd2c7567317a9cf52f612f489b4028ce0c2019d0c833204f1d3->enter($__internal_e0c96b9066310bd2c7567317a9cf52f612f489b4028ce0c2019d0c833204f1d3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
+        $__internal_d6077dd3c850beee0ce75156a5a148ba206af9672e04f429c42acfc37b2898b5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d6077dd3c850beee0ce75156a5a148ba206af9672e04f429c42acfc37b2898b5->enter($__internal_d6077dd3c850beee0ce75156a5a148ba206af9672e04f429c42acfc37b2898b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
 
-        $__internal_9c2a29a4f2fd5559346a795f34973434d653e2f7fefde8aef6c3099ebf6181a4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9c2a29a4f2fd5559346a795f34973434d653e2f7fefde8aef6c3099ebf6181a4->enter($__internal_9c2a29a4f2fd5559346a795f34973434d653e2f7fefde8aef6c3099ebf6181a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
+        $__internal_ee41dc5651c2de1b0ce79e14c21c3ea752459ecf50a49ece8f6eee609241648f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ee41dc5651c2de1b0ce79e14c21c3ea752459ecf50a49ece8f6eee609241648f->enter($__internal_ee41dc5651c2de1b0ce79e14c21c3ea752459ecf50a49ece8f6eee609241648f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
 
         // line 1
         echo "<style type=\"text/css\">
@@ -97,63 +97,58 @@ class __TwigTemplate_cd35d944d028f6896509f613c0326ffcf1ccfb2ddb7bae28c22a69db603
             echo "
             ";
             // line 60
-            if (($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureFinVac", array())) == "6")) {
+            if ((($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureFinVac", array())) == "6") || ($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureFinVac", array())) == "7"))) {
                 // line 61
                 echo "                <tr class=\"bBlackFontWhite\">
             ";
-            } elseif (($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute(            // line 62
-$context["v"], "heureDebVac", array())) == "6")) {
+            } elseif ((($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute(            // line 62
+$context["v"], "heureDebVac", array())) == "6") || ($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureDebVac", array())) == "7"))) {
                 // line 63
                 echo "                <tr class=\"bBlackFontWhite\">
             ";
-            } elseif (($this->getAttribute(            // line 64
-$context["v"], "heureDimanche", array()) == "00:00")) {
+            } else {
                 // line 65
                 echo "                <tr class=\"\">
             ";
-            } else {
-                // line 67
-                echo "                <tr class=\"bBlackFontWhite\">
-            ";
             }
-            // line 69
+            // line 67
             echo "
                 <td class=\"text-left breakW\" style=\"width: 100px;\"><span class=\"\">";
-            // line 70
+            // line 68
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["v"], "agent", array()), "nom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["v"], "agent", array()), "prenom", array()), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center wid20 breakW\"><span class=\"\">";
-            // line 71
+            // line 69
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["v"], "heureDebVac", array()), "d/m/Y H:i"), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center wid20 breakW\"><span class=\"\">";
-            // line 72
+            // line 70
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["v"], "heureFinVac", array()), "d/m/Y H:i"), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center wid20\"><span class=\"\">";
-            // line 73
+            // line 71
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heurePanier", array()), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center wid20\"><span class=\"\">";
-            // line 74
+            // line 72
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureJour", array()), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center wid20\"><span class=\"\">";
-            // line 75
+            // line 73
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureNuit", array()), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center wid20\"><span class=\"\">";
-            // line 76
+            // line 74
             echo twig_escape_filter($this->env, $this->env->getExtension('AgiBundle\Twig\Extension\SumHeureExtension')->sumOfTwoTimes($this->getAttribute($context["v"], "heureJour", array()), $this->getAttribute($context["v"], "heureNuit", array())), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center\"><span class=\"\">";
-            // line 77
+            // line 75
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureDimanche", array()), "html", null, true);
             echo "</span></td>
                 <td class=\"text-center wid20\"><span class=\"\">";
-            // line 78
+            // line 76
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureFerie", array()), "html", null, true);
             echo "</span></td>
             </tr>
@@ -162,34 +157,34 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['v'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 81
+        // line 79
         echo "
         </tbody>
         <tfoot class=\"tfcontent\">
             <tr>
                 <th class=\"\" colspan=\"3\"></th>
                 <th class=\"text-center wid20 breakW\" style=\"width: 10px;\">TP:<span class=\"badge bg-red\"> ";
-        // line 86
+        // line 84
         echo twig_escape_filter($this->env, ($context["thp"] ?? $this->getContext($context, "thp")), "html", null, true);
         echo "</span></th>
                 <th class=\"text-center wid20 breakW\">THJ:<span class=\"badge bg-red\"> ";
-        // line 87
+        // line 85
         echo twig_escape_filter($this->env, ($context["thj"] ?? $this->getContext($context, "thj")), "html", null, true);
         echo "</span></th>
                 <th class=\"text-center wid20 breakW\">THN:<span class=\"badge bg-red\"> ";
-        // line 88
+        // line 86
         echo twig_escape_filter($this->env, ($context["thn"] ?? $this->getContext($context, "thn")), "html", null, true);
         echo "</span></th>
                 <th class=\"text-center wid20 breakW\">THM:<span class=\"badge bg-red\"> ";
-        // line 89
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('AgiBundle\Twig\Extension\SumHeureExtension')->sumOfTwoTimes(($context["thj"] ?? $this->getContext($context, "thj")), ($context["thn"] ?? $this->getContext($context, "thn"))), "html", null, true);
         echo "</span></th>
                 <th class=\"text-center wid20 breakW\">THD:<span class=\"badge bg-red\"> ";
-        // line 90
+        // line 88
         echo twig_escape_filter($this->env, ($context["thd"] ?? $this->getContext($context, "thd")), "html", null, true);
         echo "</span></th>
                 <th class=\"text-center wid20 breakW\">THF:<span class=\"badge bg-red\"> ";
-        // line 91
+        // line 89
         echo twig_escape_filter($this->env, ($context["thf"] ?? $this->getContext($context, "thf")), "html", null, true);
         echo "</span></th>
             </tr>
@@ -226,10 +221,10 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
 
 </page>";
         
-        $__internal_e0c96b9066310bd2c7567317a9cf52f612f489b4028ce0c2019d0c833204f1d3->leave($__internal_e0c96b9066310bd2c7567317a9cf52f612f489b4028ce0c2019d0c833204f1d3_prof);
+        $__internal_d6077dd3c850beee0ce75156a5a148ba206af9672e04f429c42acfc37b2898b5->leave($__internal_d6077dd3c850beee0ce75156a5a148ba206af9672e04f429c42acfc37b2898b5_prof);
 
         
-        $__internal_9c2a29a4f2fd5559346a795f34973434d653e2f7fefde8aef6c3099ebf6181a4->leave($__internal_9c2a29a4f2fd5559346a795f34973434d653e2f7fefde8aef6c3099ebf6181a4_prof);
+        $__internal_ee41dc5651c2de1b0ce79e14c21c3ea752459ecf50a49ece8f6eee609241648f->leave($__internal_ee41dc5651c2de1b0ce79e14c21c3ea752459ecf50a49ece8f6eee609241648f_prof);
 
     }
 
@@ -245,7 +240,7 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
 
     public function getDebugInfo()
     {
-        return array (  193 => 91,  189 => 90,  185 => 89,  181 => 88,  177 => 87,  173 => 86,  166 => 81,  157 => 78,  153 => 77,  149 => 76,  145 => 75,  141 => 74,  137 => 73,  133 => 72,  129 => 71,  123 => 70,  120 => 69,  116 => 67,  112 => 65,  110 => 64,  107 => 63,  105 => 62,  102 => 61,  100 => 60,  97 => 59,  93 => 58,  70 => 38,  62 => 33,  53 => 27,  25 => 1,);
+        return array (  188 => 89,  184 => 88,  180 => 87,  176 => 86,  172 => 85,  168 => 84,  161 => 79,  152 => 76,  148 => 75,  144 => 74,  140 => 73,  136 => 72,  132 => 71,  128 => 70,  124 => 69,  118 => 68,  115 => 67,  111 => 65,  107 => 63,  105 => 62,  102 => 61,  100 => 60,  97 => 59,  93 => 58,  70 => 38,  62 => 33,  53 => 27,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -317,14 +312,12 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
         <tbody>
         {% for v in vacations %}
 
-            {% if v.heureFinVac|dayByDate == \"6\"  %}
+            {% if v.heureFinVac|dayByDate == \"6\" or v.heureFinVac|dayByDate == \"7\"  %}
                 <tr class=\"bBlackFontWhite\">
-            {% elseif v.heureDebVac|dayByDate == \"6\" %}
+            {% elseif v.heureDebVac|dayByDate == \"6\" or v.heureDebVac|dayByDate == \"7\"  %}
                 <tr class=\"bBlackFontWhite\">
-            {% elseif v.heureDimanche == \"00:00\" %}
-                <tr class=\"\">
             {% else %}
-                <tr class=\"bBlackFontWhite\">
+                <tr class=\"\">
             {% endif %}
 
                 <td class=\"text-left breakW\" style=\"width: 100px;\"><span class=\"\">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>

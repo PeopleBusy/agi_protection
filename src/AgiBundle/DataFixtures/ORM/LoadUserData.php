@@ -20,7 +20,7 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
     public function load(ObjectManager $manager)
     {
 
-        //Admin username: agi-admin  ---> password: agi@admin.2017 ---> Nom: AGI   prenom: Administrateur
+        //Admin username: agi-admin  ---> password: AGI1474 ---> Nom: AGI   prenom: Administrateur
         //User username: agi-user  ----> password: agi@user.2017 ---> Nom: AGI   prenom: Utilisateur
 
         $user = new User();
@@ -33,7 +33,7 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
         $user->setRoles(array('ROLE_ADMIN'));
 
         $encoder = $this->container->get('security.password_encoder');
-        $password = $encoder->encodePassword($user, "agi@admin.2017");
+        $password = $encoder->encodePassword($user, "AGI1474");
         $user->setPassword($password);
         $user->setDateCreation(new \DateTime());
 

@@ -24,47 +24,47 @@ class __TwigTemplate_040d3b1c0bfbd358a5d9aa0bd079e11be249c4471947316a112b95bdd0c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3942dbf3dd86bf50834f13eb36d68122a4d131803dd7b71e46e24ba5f2646e56 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3942dbf3dd86bf50834f13eb36d68122a4d131803dd7b71e46e24ba5f2646e56->enter($__internal_3942dbf3dd86bf50834f13eb36d68122a4d131803dd7b71e46e24ba5f2646e56_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:planning.html.twig"));
+        $__internal_a8a76935b410039d3be75308d839b369e41669423d170aac62629bb28681e4f0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a8a76935b410039d3be75308d839b369e41669423d170aac62629bb28681e4f0->enter($__internal_a8a76935b410039d3be75308d839b369e41669423d170aac62629bb28681e4f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:planning.html.twig"));
 
-        $__internal_3420f2f4790cd567801283849a981469b126c212e4edf0a08adfb39916bdc45b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3420f2f4790cd567801283849a981469b126c212e4edf0a08adfb39916bdc45b->enter($__internal_3420f2f4790cd567801283849a981469b126c212e4edf0a08adfb39916bdc45b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:planning.html.twig"));
+        $__internal_20b7721726cf25c8708d8973f74bfce6ae254405f45948b6572546487ecaefa1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_20b7721726cf25c8708d8973f74bfce6ae254405f45948b6572546487ecaefa1->enter($__internal_20b7721726cf25c8708d8973f74bfce6ae254405f45948b6572546487ecaefa1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:planning.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3942dbf3dd86bf50834f13eb36d68122a4d131803dd7b71e46e24ba5f2646e56->leave($__internal_3942dbf3dd86bf50834f13eb36d68122a4d131803dd7b71e46e24ba5f2646e56_prof);
+        $__internal_a8a76935b410039d3be75308d839b369e41669423d170aac62629bb28681e4f0->leave($__internal_a8a76935b410039d3be75308d839b369e41669423d170aac62629bb28681e4f0_prof);
 
         
-        $__internal_3420f2f4790cd567801283849a981469b126c212e4edf0a08adfb39916bdc45b->leave($__internal_3420f2f4790cd567801283849a981469b126c212e4edf0a08adfb39916bdc45b_prof);
+        $__internal_20b7721726cf25c8708d8973f74bfce6ae254405f45948b6572546487ecaefa1->leave($__internal_20b7721726cf25c8708d8973f74bfce6ae254405f45948b6572546487ecaefa1_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_9825101436469b0adb6f514f39c0bd02be07059eb73713c6634566e3bafeb941 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_9825101436469b0adb6f514f39c0bd02be07059eb73713c6634566e3bafeb941->enter($__internal_9825101436469b0adb6f514f39c0bd02be07059eb73713c6634566e3bafeb941_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_1dbe81f0301d7d9886f93b9b230e9c509c06e690533effc0f1dee5a69d6edd75 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1dbe81f0301d7d9886f93b9b230e9c509c06e690533effc0f1dee5a69d6edd75->enter($__internal_1dbe81f0301d7d9886f93b9b230e9c509c06e690533effc0f1dee5a69d6edd75_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_6f5c1f071133c2e3901d5b6a97cff2c4eacead9593e56c48820fdf0bf0e80bc3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6f5c1f071133c2e3901d5b6a97cff2c4eacead9593e56c48820fdf0bf0e80bc3->enter($__internal_6f5c1f071133c2e3901d5b6a97cff2c4eacead9593e56c48820fdf0bf0e80bc3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_bd8bb8f5c21d5888f65715261299e5fb6bc8f803d877ae231c6764b734c52363 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bd8bb8f5c21d5888f65715261299e5fb6bc8f803d877ae231c6764b734c52363->enter($__internal_bd8bb8f5c21d5888f65715261299e5fb6bc8f803d877ae231c6764b734c52363_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Planning site ";
         
-        $__internal_6f5c1f071133c2e3901d5b6a97cff2c4eacead9593e56c48820fdf0bf0e80bc3->leave($__internal_6f5c1f071133c2e3901d5b6a97cff2c4eacead9593e56c48820fdf0bf0e80bc3_prof);
+        $__internal_bd8bb8f5c21d5888f65715261299e5fb6bc8f803d877ae231c6764b734c52363->leave($__internal_bd8bb8f5c21d5888f65715261299e5fb6bc8f803d877ae231c6764b734c52363_prof);
 
         
-        $__internal_9825101436469b0adb6f514f39c0bd02be07059eb73713c6634566e3bafeb941->leave($__internal_9825101436469b0adb6f514f39c0bd02be07059eb73713c6634566e3bafeb941_prof);
+        $__internal_1dbe81f0301d7d9886f93b9b230e9c509c06e690533effc0f1dee5a69d6edd75->leave($__internal_1dbe81f0301d7d9886f93b9b230e9c509c06e690533effc0f1dee5a69d6edd75_prof);
 
     }
 
     // line 5
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_645dfb0ce23721c8a920f674ff1b49eafeda4d18580815c8317de69379c9fe4d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_645dfb0ce23721c8a920f674ff1b49eafeda4d18580815c8317de69379c9fe4d->enter($__internal_645dfb0ce23721c8a920f674ff1b49eafeda4d18580815c8317de69379c9fe4d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_5559857942cd073e827dc3cab033af4852bd1ff4907ba53e61846e5e57dfbab3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5559857942cd073e827dc3cab033af4852bd1ff4907ba53e61846e5e57dfbab3->enter($__internal_5559857942cd073e827dc3cab033af4852bd1ff4907ba53e61846e5e57dfbab3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        $__internal_2cd5de59795dbeb96f55efbcfad8db732f79e971596f0ae6a3b7913c1ac79b8f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2cd5de59795dbeb96f55efbcfad8db732f79e971596f0ae6a3b7913c1ac79b8f->enter($__internal_2cd5de59795dbeb96f55efbcfad8db732f79e971596f0ae6a3b7913c1ac79b8f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_abffd2c50ca53a14a77e35c15e37e8d2a6bdda2a0482fac7a372c7457e573a30 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_abffd2c50ca53a14a77e35c15e37e8d2a6bdda2a0482fac7a372c7457e573a30->enter($__internal_abffd2c50ca53a14a77e35c15e37e8d2a6bdda2a0482fac7a372c7457e573a30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 6
         echo "
@@ -80,21 +80,21 @@ class __TwigTemplate_040d3b1c0bfbd358a5d9aa0bd079e11be249c4471947316a112b95bdd0c
 
 ";
         
-        $__internal_2cd5de59795dbeb96f55efbcfad8db732f79e971596f0ae6a3b7913c1ac79b8f->leave($__internal_2cd5de59795dbeb96f55efbcfad8db732f79e971596f0ae6a3b7913c1ac79b8f_prof);
+        $__internal_abffd2c50ca53a14a77e35c15e37e8d2a6bdda2a0482fac7a372c7457e573a30->leave($__internal_abffd2c50ca53a14a77e35c15e37e8d2a6bdda2a0482fac7a372c7457e573a30_prof);
 
         
-        $__internal_645dfb0ce23721c8a920f674ff1b49eafeda4d18580815c8317de69379c9fe4d->leave($__internal_645dfb0ce23721c8a920f674ff1b49eafeda4d18580815c8317de69379c9fe4d_prof);
+        $__internal_5559857942cd073e827dc3cab033af4852bd1ff4907ba53e61846e5e57dfbab3->leave($__internal_5559857942cd073e827dc3cab033af4852bd1ff4907ba53e61846e5e57dfbab3_prof);
 
     }
 
     // line 15
     public function block_body($context, array $blocks = array())
     {
-        $__internal_5f8128297dfd25457c5b824c4e724b0fc15bbe8c721613b5dd8b0a1f9f94e7cd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_5f8128297dfd25457c5b824c4e724b0fc15bbe8c721613b5dd8b0a1f9f94e7cd->enter($__internal_5f8128297dfd25457c5b824c4e724b0fc15bbe8c721613b5dd8b0a1f9f94e7cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_bcc472fc31966ff7f646f71e98c3ec3420935e60fadbf4024499b4420286a225 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_bcc472fc31966ff7f646f71e98c3ec3420935e60fadbf4024499b4420286a225->enter($__internal_bcc472fc31966ff7f646f71e98c3ec3420935e60fadbf4024499b4420286a225_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_1a77559f8afbbf58ded7714741a84acdedc24a947803a77e2844ae57122d12dc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1a77559f8afbbf58ded7714741a84acdedc24a947803a77e2844ae57122d12dc->enter($__internal_1a77559f8afbbf58ded7714741a84acdedc24a947803a77e2844ae57122d12dc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2b48257dda2d7b5ac1164b14454172f33a9988aa1b6358e4aefc4557635d64ab = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2b48257dda2d7b5ac1164b14454172f33a9988aa1b6358e4aefc4557635d64ab->enter($__internal_2b48257dda2d7b5ac1164b14454172f33a9988aa1b6358e4aefc4557635d64ab_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 16
         echo "
@@ -296,84 +296,79 @@ class __TwigTemplate_040d3b1c0bfbd358a5d9aa0bd079e11be249c4471947316a112b95bdd0c
             echo "
                             ";
             // line 169
-            if (($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureFinVac", array())) == "6")) {
+            if ((($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureFinVac", array())) == "6") || ($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureFinVac", array())) == "7"))) {
                 // line 170
                 echo "                                <tr class=\"bg-yellow-gradient\">
                             ";
-            } elseif (($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute(            // line 171
-$context["v"], "heureDebVac", array())) == "6")) {
+            } elseif ((($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute(            // line 171
+$context["v"], "heureDebVac", array())) == "6") || ($this->env->getExtension('AgiBundle\Twig\Extension\DayByDateExtension')->isSaturday($this->getAttribute($context["v"], "heureDebVac", array())) == "7"))) {
                 // line 172
                 echo "                                <tr class=\"bg-yellow-gradient\">
                             ";
-            } elseif (($this->getAttribute(            // line 173
-$context["v"], "heureDimanche", array()) == "00:00")) {
+            } else {
                 // line 174
                 echo "                                <tr class=\"\">
                             ";
-            } else {
-                // line 176
-                echo "                                <tr class=\"bg-yellow-gradient\">
-                            ";
             }
-            // line 178
+            // line 176
             echo "
                                 <td><span class=\"badge bg-info\">";
-            // line 179
+            // line 177
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["v"], "agent", array()), "nom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["v"], "agent", array()), "prenom", array()), "html", null, true);
             echo "</span></td>
                                 <td><span class=\"prenom\">";
-            // line 180
+            // line 178
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["v"], "heureDebVac", array()), "d/m/Y H:i:s"), "html", null, true);
             echo "</span></td>
                                 <td><span class=\"prenom\">";
-            // line 181
+            // line 179
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["v"], "heureFinVac", array()), "d/m/Y H:i:s"), "html", null, true);
             echo "</span></td>
                                 <td><span class=\"prenom\">";
-            // line 182
+            // line 180
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heurePanier", array()), "html", null, true);
             echo "</span></td>
                                 <td><span class=\"prenom\">";
-            // line 183
+            // line 181
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureJour", array()), "html", null, true);
             echo "</span></td>
                                 <td><span class=\"prenom\">";
-            // line 184
+            // line 182
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureNuit", array()), "html", null, true);
             echo "</span></td>
                                 <td><span class=\"badge bg-green\">";
-            // line 185
+            // line 183
             echo twig_escape_filter($this->env, $this->env->getExtension('AgiBundle\Twig\Extension\SumHeureExtension')->sumOfTwoTimes($this->getAttribute($context["v"], "heureJour", array()), $this->getAttribute($context["v"], "heureNuit", array())), "html", null, true);
             echo "</span></td>
                                 <td class=\"text-center\"><span class=\"\">";
-            // line 186
+            // line 184
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureDimanche", array()), "html", null, true);
             echo "</span></td>
                                 <td><span class=\"\">";
-            // line 187
+            // line 185
             echo twig_escape_filter($this->env, $this->getAttribute($context["v"], "heureFerie", array()), "html", null, true);
             echo "</span></td>
                                 <td class=\"\">
                                     <a href=\"";
-            // line 189
+            // line 187
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("site_enregistrer_vacation", array("id" => $this->getAttribute($this->getAttribute($context["v"], "site", array()), "id", array()))), "html", null, true);
             echo "\" class=\"btn btn-success btn-xs\">Enreg. planning</a>
                                     ";
-            // line 190
+            // line 188
             if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
-                // line 191
+                // line 189
                 echo "                                        <a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("site_modifier_vacation", array("id" => $this->getAttribute($context["v"], "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-primary btn-xs\">Modifier</a>
                                         <a href=\"";
-                // line 192
+                // line 190
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("site_supprimer_vacation", array("id" => $this->getAttribute($context["v"], "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-danger btn-xs\">Supprimer</a>
                                     ";
             }
-            // line 194
+            // line 192
             echo "
                                 </td>
                             </tr>
@@ -382,34 +377,34 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['v'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 198
+        // line 196
         echo "
                         </tbody>
                         <tfoot>
                         <tr>
                             <th colspan=\"3\"></th>
                             <th>TP: <span class=\"badge bg-red\"> ";
-        // line 203
+        // line 201
         echo twig_escape_filter($this->env, ($context["thp"] ?? $this->getContext($context, "thp")), "html", null, true);
         echo "</span></th>
                             <th>THJ: <span class=\"badge bg-red\"> ";
-        // line 204
+        // line 202
         echo twig_escape_filter($this->env, ($context["thj"] ?? $this->getContext($context, "thj")), "html", null, true);
         echo "</span></th>
                             <th>THN: <span class=\"badge bg-red\"> ";
-        // line 205
+        // line 203
         echo twig_escape_filter($this->env, ($context["thn"] ?? $this->getContext($context, "thn")), "html", null, true);
         echo "</span></th>
                             <th>THM: <span class=\"badge bg-red\"> ";
-        // line 206
+        // line 204
         echo twig_escape_filter($this->env, $this->env->getExtension('AgiBundle\Twig\Extension\SumHeureExtension')->sumOfTwoTimes(($context["thj"] ?? $this->getContext($context, "thj")), ($context["thn"] ?? $this->getContext($context, "thn"))), "html", null, true);
         echo "</span></th>
                             <th>THD: <span class=\"badge bg-red\"> ";
-        // line 207
+        // line 205
         echo twig_escape_filter($this->env, ($context["thd"] ?? $this->getContext($context, "thd")), "html", null, true);
         echo "</span></th>
                             <th>THF: <span class=\"badge bg-red\"> ";
-        // line 208
+        // line 206
         echo twig_escape_filter($this->env, ($context["thf"] ?? $this->getContext($context, "thf")), "html", null, true);
         echo "</span></th>
                             <th></th>
@@ -422,7 +417,7 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
             <!-- /.box-body -->
             <div class=\"box-footer\">
                 ";
-        // line 219
+        // line 217
         echo "            </div>
             <!-- /.box-footer-->
         </div>
@@ -430,23 +425,23 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
 
 ";
         
-        $__internal_1a77559f8afbbf58ded7714741a84acdedc24a947803a77e2844ae57122d12dc->leave($__internal_1a77559f8afbbf58ded7714741a84acdedc24a947803a77e2844ae57122d12dc_prof);
+        $__internal_2b48257dda2d7b5ac1164b14454172f33a9988aa1b6358e4aefc4557635d64ab->leave($__internal_2b48257dda2d7b5ac1164b14454172f33a9988aa1b6358e4aefc4557635d64ab_prof);
 
         
-        $__internal_5f8128297dfd25457c5b824c4e724b0fc15bbe8c721613b5dd8b0a1f9f94e7cd->leave($__internal_5f8128297dfd25457c5b824c4e724b0fc15bbe8c721613b5dd8b0a1f9f94e7cd_prof);
+        $__internal_bcc472fc31966ff7f646f71e98c3ec3420935e60fadbf4024499b4420286a225->leave($__internal_bcc472fc31966ff7f646f71e98c3ec3420935e60fadbf4024499b4420286a225_prof);
 
     }
 
-    // line 226
+    // line 224
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_8e7fb26dad99e0e845385c82b7e3ee0a4d09a319c941dd66a6e16c40152af917 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_8e7fb26dad99e0e845385c82b7e3ee0a4d09a319c941dd66a6e16c40152af917->enter($__internal_8e7fb26dad99e0e845385c82b7e3ee0a4d09a319c941dd66a6e16c40152af917_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_aa189784e4892e2a45ebe9f47a1734a32c5390b2aa612aec766ba2a236e4bb46 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_aa189784e4892e2a45ebe9f47a1734a32c5390b2aa612aec766ba2a236e4bb46->enter($__internal_aa189784e4892e2a45ebe9f47a1734a32c5390b2aa612aec766ba2a236e4bb46_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_737a3b30cf6f45ad2f4764aa10a42a56f4d3be6048782be9def164db888baba5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_737a3b30cf6f45ad2f4764aa10a42a56f4d3be6048782be9def164db888baba5->enter($__internal_737a3b30cf6f45ad2f4764aa10a42a56f4d3be6048782be9def164db888baba5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_e082d6877a4c7a8c8f0944f1604713c5893b86a52e96d4f455b0bad16a953a21 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e082d6877a4c7a8c8f0944f1604713c5893b86a52e96d4f455b0bad16a953a21->enter($__internal_e082d6877a4c7a8c8f0944f1604713c5893b86a52e96d4f455b0bad16a953a21_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 227
+        // line 225
         echo "
     <script type=\"text/javascript\">
         \$(\"[name='date_debut_planning']\").val(\$(\"[name='date_debut']\").val());
@@ -455,10 +450,10 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
 
 ";
         
-        $__internal_737a3b30cf6f45ad2f4764aa10a42a56f4d3be6048782be9def164db888baba5->leave($__internal_737a3b30cf6f45ad2f4764aa10a42a56f4d3be6048782be9def164db888baba5_prof);
+        $__internal_e082d6877a4c7a8c8f0944f1604713c5893b86a52e96d4f455b0bad16a953a21->leave($__internal_e082d6877a4c7a8c8f0944f1604713c5893b86a52e96d4f455b0bad16a953a21_prof);
 
         
-        $__internal_8e7fb26dad99e0e845385c82b7e3ee0a4d09a319c941dd66a6e16c40152af917->leave($__internal_8e7fb26dad99e0e845385c82b7e3ee0a4d09a319c941dd66a6e16c40152af917_prof);
+        $__internal_aa189784e4892e2a45ebe9f47a1734a32c5390b2aa612aec766ba2a236e4bb46->leave($__internal_aa189784e4892e2a45ebe9f47a1734a32c5390b2aa612aec766ba2a236e4bb46_prof);
 
     }
 
@@ -474,7 +469,7 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
 
     public function getDebugInfo()
     {
-        return array (  450 => 227,  441 => 226,  426 => 219,  413 => 208,  409 => 207,  405 => 206,  401 => 205,  397 => 204,  393 => 203,  386 => 198,  377 => 194,  372 => 192,  367 => 191,  365 => 190,  361 => 189,  356 => 187,  352 => 186,  348 => 185,  344 => 184,  340 => 183,  336 => 182,  332 => 181,  328 => 180,  322 => 179,  319 => 178,  315 => 176,  311 => 174,  309 => 173,  306 => 172,  304 => 171,  301 => 170,  299 => 169,  296 => 168,  292 => 167,  268 => 145,  259 => 138,  257 => 137,  248 => 131,  235 => 121,  222 => 111,  210 => 102,  204 => 99,  189 => 87,  176 => 76,  165 => 68,  148 => 53,  146 => 52,  143 => 51,  132 => 43,  115 => 28,  113 => 27,  100 => 16,  91 => 15,  78 => 9,  74 => 8,  70 => 6,  61 => 5,  43 => 3,  11 => 1,);
+        return array (  445 => 225,  436 => 224,  421 => 217,  408 => 206,  404 => 205,  400 => 204,  396 => 203,  392 => 202,  388 => 201,  381 => 196,  372 => 192,  367 => 190,  362 => 189,  360 => 188,  356 => 187,  351 => 185,  347 => 184,  343 => 183,  339 => 182,  335 => 181,  331 => 180,  327 => 179,  323 => 178,  317 => 177,  314 => 176,  310 => 174,  306 => 172,  304 => 171,  301 => 170,  299 => 169,  296 => 168,  292 => 167,  268 => 145,  259 => 138,  257 => 137,  248 => 131,  235 => 121,  222 => 111,  210 => 102,  204 => 99,  189 => 87,  176 => 76,  165 => 68,  148 => 53,  146 => 52,  143 => 51,  132 => 43,  115 => 28,  113 => 27,  100 => 16,  91 => 15,  78 => 9,  74 => 8,  70 => 6,  61 => 5,  43 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -655,14 +650,12 @@ $context["v"], "heureDimanche", array()) == "00:00")) {
                         <tbody>
                         {% for v in vacations %}
 
-                            {% if v.heureFinVac|dayByDate == \"6\"  %}
+                            {% if v.heureFinVac|dayByDate == \"6\" or v.heureFinVac|dayByDate == \"7\"  %}
                                 <tr class=\"bg-yellow-gradient\">
-                            {% elseif v.heureDebVac|dayByDate == \"6\" %}
+                            {% elseif v.heureDebVac|dayByDate == \"6\" or v.heureDebVac|dayByDate == \"7\"  %}
                                 <tr class=\"bg-yellow-gradient\">
-                            {% elseif v.heureDimanche == \"00:00\" %}
-                                <tr class=\"\">
                             {% else %}
-                                <tr class=\"bg-yellow-gradient\">
+                                <tr class=\"\">
                             {% endif %}
 
                                 <td><span class=\"badge bg-info\">{{ v.agent.nom }} {{ v.agent.prenom }}</span></td>

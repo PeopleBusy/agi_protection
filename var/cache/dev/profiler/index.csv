@@ -1,10 +1,7 @@
-59915e,127.0.0.1,GET,http://localhost:8000/agent/display_planning/9,1509706382,348009,200
-348009,127.0.0.1,GET,http://localhost:8000/agent/display_planning/9,1509706382,,500
-6b7a9f,127.0.0.1,GET,http://localhost:8000/,1509706387,,200
-06da29,127.0.0.1,POST,http://localhost:8000/login,1509706401,,302
-beec11,127.0.0.1,GET,http://localhost:8000/home,1509706402,,200
-4e528d,127.0.0.1,GET,http://localhost:8000/agents/actif,1509706404,,200
-d69502,127.0.0.1,GET,http://localhost:8000/agent/planning/9,1509706407,,200
-622b77,127.0.0.1,POST,http://localhost:8000/agent/display_planning/9,1509706419,,200
-008e69,127.0.0.1,GET,http://localhost:8000/agent/imprimer_planning/9,1509706426,05d8d4,200
-05d8d4,127.0.0.1,POST,http://localhost:8000/agent/imprimer_planning/9,1509706426,,500
+8d2b42,127.0.0.1,GET,http://localhost:8000/,1512419901,,200
+3b313e,127.0.0.1,POST,http://localhost:8000/login,1512419915,,302
+5dc9b4,127.0.0.1,GET,http://localhost:8000/login,1512419916,,200
+abc75a,127.0.0.1,POST,http://localhost:8000/login,1512419924,,302
+14d35b,127.0.0.1,GET,http://localhost:8000/home,1512419924,,200
+e0c195,127.0.0.1,GET,http://localhost:8000/logout,1512419935,,302
+6f89a0,127.0.0.1,GET,http://localhost:8000/,1512419935,,200
