@@ -125,6 +125,7 @@
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
+      <parameter key="cookie_lifetime">0</parameter>
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
@@ -639,7 +640,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>oLUKwTdmDKqrsTeJP+MvVh</argument>
+      <argument>fjT1C+DwzaB2piqCy+tHm9</argument>
       <argument>/Users/rachid/Documents/Projet Client/agi_protection/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -649,7 +650,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>oLUKwTdmDKqrsTeJP+MvVh</argument>
+      <argument>fjT1C+DwzaB2piqCy+tHm9</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -722,6 +723,7 @@
     </service>
     <service id="session.storage.native" class="Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage">
       <argument type="collection">
+        <argument key="cookie_lifetime">0</argument>
         <argument key="cookie_httponly">true</argument>
         <argument key="gc_probability">1</argument>
       </argument>
@@ -2830,12 +2832,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a25b22626d073.10876419</argument>
+      <argument>5a3df82ba56de7.17692897</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a25b22626d073.10876419</argument>
+      <argument>5a3df82ba56de7.17692897</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4103,7 +4105,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>ntIXmwBFvU</argument>
       <argument>0</argument>
-      <argument>oLUKwTdmDKqrsTeJP+MvVh</argument>
+      <argument>fjT1C+DwzaB2piqCy+tHm9</argument>
       <argument>/Users/rachid/Documents/Projet Client/agi_protection/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4111,7 +4113,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>rQxwspueyi</argument>
       <argument>0</argument>
-      <argument>oLUKwTdmDKqrsTeJP+MvVh</argument>
+      <argument>fjT1C+DwzaB2piqCy+tHm9</argument>
       <argument>/Users/rachid/Documents/Projet Client/agi_protection/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4119,7 +4121,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>fb3P6c8uh1</argument>
       <argument>0</argument>
-      <argument>oLUKwTdmDKqrsTeJP+MvVh</argument>
+      <argument>fjT1C+DwzaB2piqCy+tHm9</argument>
       <argument>/Users/rachid/Documents/Projet Client/agi_protection/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4127,7 +4129,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>zQ50MqHh1I</argument>
       <argument>0</argument>
-      <argument>oLUKwTdmDKqrsTeJP+MvVh</argument>
+      <argument>fjT1C+DwzaB2piqCy+tHm9</argument>
       <argument>/Users/rachid/Documents/Projet Client/agi_protection/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

@@ -73,6 +73,14 @@ $(function() {
         hideBtnSaveVacation();
     })
 
+    $("button#add_agent").click(function () {
+        addAgent();
+    })
+
+    $("button.delete_agent_row").click(function () {
+        deleteAgent();
+    })
+
 });
 
 
@@ -416,4 +424,50 @@ function stringToHour(dStr,format) {
         return now;
     }else
         return "Invalid Format";
+}
+
+function addAgent() {
+    if($('select#agent_id').val() != ''){
+        var agent_id = $('select#agent_id').val();
+        var agent_name = $('select#agent_id  option:selected').text();
+
+
+
+        var ligne_agent = '<tr><td>';
+
+
+        ligne_agent += '<span>' + agent_name + '</span> &nbsp;&nbsp;';
+
+        ligne_agent += '<button type="button" class="btn btn-xs btn-danger pull-right delete_agent_row" onclick="deleteAgent(this);">Supprimer</button></td>';
+
+        ligne_agent += '<td><input value="' + agent_id + '" type="hidden" class="agent_id"/></td>';
+
+        ligne_agent += '</tr>';
+
+        $('#table_agents_tbody').append(ligne_agent);
+
+        $('input#selectedAgentsIds').val($('input#selectedAgentsIds').val() + '#' + agent_id);
+
+    }
+}
+
+function deleteAgent(elem) {
+
+    $(elem).parent().parent().remove();
+
+    var nb_elem = $('#table_agents_tbody').children().length;
+
+    if(nb_elem == 0){
+
+        location.reload();
+
+    }else{
+        $('input#selectedAgentsIds').val('');
+
+        $('#table_agents_tbody > tr').each(function (i, el) {
+            var agent_id = $(this).children().eq(1).children().val();
+            $('input#selectedAgentsIds').val($('input#selectedAgentsIds').val() + '#' + agent_id);
+        })
+    }
+
 }

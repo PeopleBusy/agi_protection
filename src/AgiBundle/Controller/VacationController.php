@@ -54,7 +54,10 @@ class VacationController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $agent_id = $request->request->get('agent_id');
+            $agent_ids = mbsplit('#', $request->request->get('agent_id'));
+
+
+
             $site_id = $request->request->get('site_id');
             $heure_panier = $request->request->get('heure_panier');
             $heure_jour = $request->request->get('heure_jour');
@@ -66,7 +69,7 @@ class VacationController extends Controller
             $heureFinVac = $form->getData()->getHeureFinVac();
 
 
-            if ($heureDebVac > $heureFinVac || $site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i') == '00:00') {
+            if ($heureDebVac > $heureFinVac || $site_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i') == '00:00') {
 
                 return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs ou les dates saisies!',
                     'site' => $site, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
@@ -89,83 +92,99 @@ class VacationController extends Controller
                 $heure_ferie = "00:00";
             }
 
-            $agent = $this->getDoctrine()
-                ->getRepository('AgiBundle:Agent')
-                ->find(intval($agent_id));
-
-            if($agent->getTypeContrat() == "CDD"){
-                $contratAgent = $this->getDoctrine()
-                    ->getRepository('AgiBundle:ContratAgent')
-                    ->findByAgent($agent);
-
-
-                if($contratAgent[0]->getDateFin() < DateTime::createFromFormat('Y-m-d',$heureDebVac->format('Y-m-d')) ||
-                    $contratAgent[0]->getDateFin() < DateTime::createFromFormat('Y-m-d',$heureFinVac->format('Y-m-d'))){
-                    return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Le contrat de cet agent fini le ' .$contratAgent[0]->getDateFin()->format('d/m/Y'),
-                        'site' => $site, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
-                }
-            }
-
-            //A revoir
-            $vacs = $this->getDoctrine()
-                ->getRepository('AgiBundle:Vacation')
-                ->findVacationsByAgentAndDate(intval($agent_id), $heureDebVac->format('Y-m-d'));
-
-            $isBtweenDate = false;
-
-            foreach ($vacs as $vac){
-                if($this->dateTimeIsBetween($vac->getHeureDebVac()->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'), $heureDebVac->format('Y-m-d H:i:s')) &&
-                    $this->dateTimeIsBetween($vac->getHeureDebVac()->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'), $heureFinVac->format('Y-m-d H:i:s'))){
-
-                    $isBtweenDate = true;
-                    break;
-
-                }
-
-                if($this->dateTimeIsBetween($heureDebVac->format('Y-m-d H:i:s'), $heureFinVac->format('Y-m-d H:i:s'), $vac->getHeureDebVac()->format('Y-m-d H:i:s')) &&
-                    $this->dateTimeIsBetween($heureDebVac->format('Y-m-d H:i:s'), $heureFinVac->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'))){
-
-                    $isBtweenDate = true;
-                    break;
-
-                }
-
-                if($vac->getHeureDebVac() == $heureDebVac && $vac->getHeureFinVac() == $heureFinVac){
-
-                    $isBtweenDate = true;
-                    break;
-
-                }
-
-            }
-
-            if($isBtweenDate){
-
-                return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Cet agent a déja un planning dans cette période!',
-                    'site' => $site, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
-
-            }
-            //A revoir
-
-            $vacation = $form->getData();
-            $vacation->setAgent($agent);
-            $vacation->setSite($site);
-            $vacation->setDateVacation($vacation->getHeureDebVac());
-            $vacation->setHeurePanier($heure_panier);
-            $vacation->setHeureJour($heure_jour);
-            $vacation->setHeureNuit($heure_nuit);
-            $vacation->setHeureDimanche($heure_dimanche);
-            $vacation->setHeureFerie($heure_ferie);
-
-            $vacation->setEtat("1");
-
-
             $em = $this->getDoctrine()->getManager();
-            $em->persist($vacation);
 
-            $em->flush();
+            for($i = 1; $i < sizeof($agent_ids); $i++){
 
-            $form = $this->createForm(VacationType::class, new Vacation(), array(
+                $agent_id = $agent_ids[$i];
+
+                $agent = $this->getDoctrine()
+                    ->getRepository('AgiBundle:Agent')
+                    ->find(intval($agent_id));
+
+                if($agent->getTypeContrat() == "CDD"){
+                    $contratAgent = $this->getDoctrine()
+                        ->getRepository('AgiBundle:ContratAgent')
+                        ->findByAgent($agent);
+
+
+                    if($contratAgent[0]->getDateFin() < DateTime::createFromFormat('Y-m-d',$heureDebVac->format('Y-m-d')) ||
+                        $contratAgent[0]->getDateFin() < DateTime::createFromFormat('Y-m-d',$heureFinVac->format('Y-m-d'))){
+                        return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Le contrat de cet agent fini le ' .$contratAgent[0]->getDateFin()->format('d/m/Y'),
+                            'site' => $site, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
+                    }
+                }
+
+                //A revoir
+                $vacs = $this->getDoctrine()
+                    ->getRepository('AgiBundle:Vacation')
+                    ->findVacationsByAgentAndDate(intval($agent_id), $heureDebVac->format('Y-m-d'));
+
+                $isBtweenDate = false;
+
+                foreach ($vacs as $vac){
+                    if($this->dateTimeIsBetween($vac->getHeureDebVac()->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'), $heureDebVac->format('Y-m-d H:i:s')) &&
+                        $this->dateTimeIsBetween($vac->getHeureDebVac()->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'), $heureFinVac->format('Y-m-d H:i:s'))){
+
+                        $isBtweenDate = true;
+                        break;
+
+                    }
+
+                    if($this->dateTimeIsBetween($heureDebVac->format('Y-m-d H:i:s'), $heureFinVac->format('Y-m-d H:i:s'), $vac->getHeureDebVac()->format('Y-m-d H:i:s')) &&
+                        $this->dateTimeIsBetween($heureDebVac->format('Y-m-d H:i:s'), $heureFinVac->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'))){
+
+                        $isBtweenDate = true;
+                        break;
+
+                    }
+
+                    if($vac->getHeureDebVac() == $heureDebVac && $vac->getHeureFinVac() == $heureFinVac){
+
+                        $isBtweenDate = true;
+                        break;
+
+                    }
+
+                }
+
+                if($isBtweenDate){
+
+                    return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Cet agent a déja un planning dans cette période!',
+                        'site' => $site, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
+
+                }
+                //A revoir
+
+                $vacation = $form->getData();
+                $vacation->setAgent($agent);
+                $vacation->setSite($site);
+                $vacation->setDateVacation($vacation->getHeureDebVac());
+                $vacation->setHeurePanier($heure_panier);
+                $vacation->setHeureJour($heure_jour);
+                $vacation->setHeureNuit($heure_nuit);
+                $vacation->setHeureDimanche($heure_dimanche);
+                $vacation->setHeureFerie($heure_ferie);
+
+                $vacation->setEtat("1");
+
+                $em->persist($vacation);
+
+                $em->persist($site);
+                $em->persist($agent);
+
+                $em->flush();
+                $em->clear();
+
+                $vacation = new Vacation();
+
+
+            }
+
+
+
+
+            $form = $this->createForm(VacationType::class, $vacation, array(
                 'action' => $this->generateUrl('site_enregistrer_vacation', array('id' => $id)),
                 'method' => 'POST',
             ));
@@ -290,7 +309,7 @@ class VacationController extends Controller
 
             $isBtweenDate = false;
 
-            foreach ($vacs as $vac){
+            /*foreach ($vacs as $vac){
                 if($this->dateTimeIsBetween($vac->getHeureDebVac()->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'), $heureDebVac->format('Y-m-d H:i:s')) &&
                     $this->dateTimeIsBetween($vac->getHeureDebVac()->format('Y-m-d H:i:s'), $vac->getHeureFinVac()->format('Y-m-d H:i:s'), $heureFinVac->format('Y-m-d H:i:s'))){
 
@@ -321,7 +340,7 @@ class VacationController extends Controller
                 return $this->render('AgiBundle:Default:vacation/edit.html.twig', array('form' => $form->createView(), 'erreur' => 'Cet agent a déja un planning dans cette période!',
                     'vacation' => $vacation,'site' => $site, 'agent' => $agent, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
 
-            }
+            }*/
 
             $vacation = $form->getData();
             $vacation->setAgent($agent);
