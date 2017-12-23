@@ -115,6 +115,17 @@ class VacationController extends Controller
                     }
                 }
 
+                $site = $this->getDoctrine()
+                    ->getRepository('AgiBundle:Site')
+                    ->find($id);
+
+                if (!$site) {
+                    throw $this->createNotFoundException(
+                        'Aucun site trouvé avec l\id ' . $id
+                    );
+                }
+
+
                 //A revoir
                 $vacs = $this->getDoctrine()
                     ->getRepository('AgiBundle:Vacation')
@@ -170,8 +181,7 @@ class VacationController extends Controller
 
                 $em->persist($vacation);
 
-                $em->persist($site);
-                $em->persist($agent);
+                //$em->persist($site);
 
                 $em->flush();
                 $em->clear();

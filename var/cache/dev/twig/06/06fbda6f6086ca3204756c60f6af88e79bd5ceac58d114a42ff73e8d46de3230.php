@@ -15,20 +15,20 @@ class __TwigTemplate_a4f9cdfb68fd5f192aabda855eab30bc13dbef4cbd3cc64894504549b9f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b496c98ee04c2587ac8f2d490cf7ce2410c2cb2805d900712e416cdd9d6c6b52 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b496c98ee04c2587ac8f2d490cf7ce2410c2cb2805d900712e416cdd9d6c6b52->enter($__internal_b496c98ee04c2587ac8f2d490cf7ce2410c2cb2805d900712e416cdd9d6c6b52_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/symfony-logo.svg"));
+        $__internal_e1a32499ad4c4fde7f9f080ad0f925e43427d56bc5409baf27e7ed3929ffa35d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e1a32499ad4c4fde7f9f080ad0f925e43427d56bc5409baf27e7ed3929ffa35d->enter($__internal_e1a32499ad4c4fde7f9f080ad0f925e43427d56bc5409baf27e7ed3929ffa35d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/symfony-logo.svg"));
 
-        $__internal_8e61cab94712cf611d2d97f9afd0c79e978f18ea816708e2368f120d98cc9605 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8e61cab94712cf611d2d97f9afd0c79e978f18ea816708e2368f120d98cc9605->enter($__internal_8e61cab94712cf611d2d97f9afd0c79e978f18ea816708e2368f120d98cc9605_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/symfony-logo.svg"));
+        $__internal_ba65cbedbd803f65b75beaf76d6e61fb554466d7bdf3b21bd57e8a29632d158e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ba65cbedbd803f65b75beaf76d6e61fb554466d7bdf3b21bd57e8a29632d158e->enter($__internal_ba65cbedbd803f65b75beaf76d6e61fb554466d7bdf3b21bd57e8a29632d158e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/images/symfony-logo.svg"));
 
         // line 1
         echo "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"#FFF\" d=\"M12 .9C5.8.9.9 5.8.9 12s5 11.1 11.1 11.1 11.1-5 11.1-11.1S18.2.9 12 .9zm6.5 6c-.6 0-.9-.3-.9-.8 0-.2 0-.4.2-.6.1-.3.2-.3.2-.4 0-.3-.5-.4-.6-.4-1.8.1-2.3 2.5-2.7 4.4l-.2 1c1 .2 1.8 0 2.2-.3.6-.4-.2-.7-.1-1.2.1-.3.5-.5.7-.6.5 0 .7.5.7.9 0 .7-1 1.8-3 1.8-.3 0-.5 0-.6-.1l-.6 2.4c-.4 1.6-.8 3.8-2.4 5.7-1.4 1.7-2.9 1.9-3.5 1.9-1.2 0-1.9-.6-2-1.5 0-.8.7-1.3 1.2-1.3.6 0 1.1.5 1.1 1s-.2.6-.4.6c-.1.1-.3.2-.3.4 0 .1.1.3.4.3.5 0 .8-.3 1.1-.5 1.2-.9 1.6-2.7 2.2-5.7l.1-.7c.2-1 .5-2.1.7-3.2-.8-.6-1.3-1.4-2.4-1.7-.6-.1-1.1.1-1.5.5-.4.5-.2 1.1.2 1.5l.7.6c.7.8 1.2 1.6 1 2.5-.3 1.5-2 2.6-4 1.9-1.8-.6-2-1.8-1.8-2.5.2-.6.6-.7 1.1-.6.5.2.6.7.6 1.2 0 .1 0 .1-.1.3-.2.1-.3.3-.3.4-.1.4.4.6.7.7.7.3 1.6-.2 1.8-.8.2-.6-.2-1-.4-1.1l-.7-.8c-.4-.4-1.1-1.4-.7-2.6.1-.5.4-.9.7-1.3.9-.6 1.8-.7 2.8-.6 1.2.4 1.8 1.1 2.6 1.8.5-1.2 1-2.4 1.8-3.5.9-.9 1.9-1.6 3.1-1.7 1.3.2 2.2.7 2.2 1.6 0 .4-.2 1.1-.9 1.1z\"/></svg>
 ";
         
-        $__internal_b496c98ee04c2587ac8f2d490cf7ce2410c2cb2805d900712e416cdd9d6c6b52->leave($__internal_b496c98ee04c2587ac8f2d490cf7ce2410c2cb2805d900712e416cdd9d6c6b52_prof);
+        $__internal_e1a32499ad4c4fde7f9f080ad0f925e43427d56bc5409baf27e7ed3929ffa35d->leave($__internal_e1a32499ad4c4fde7f9f080ad0f925e43427d56bc5409baf27e7ed3929ffa35d_prof);
 
         
-        $__internal_8e61cab94712cf611d2d97f9afd0c79e978f18ea816708e2368f120d98cc9605->leave($__internal_8e61cab94712cf611d2d97f9afd0c79e978f18ea816708e2368f120d98cc9605_prof);
+        $__internal_ba65cbedbd803f65b75beaf76d6e61fb554466d7bdf3b21bd57e8a29632d158e->leave($__internal_ba65cbedbd803f65b75beaf76d6e61fb554466d7bdf3b21bd57e8a29632d158e_prof);
 
     }
 
