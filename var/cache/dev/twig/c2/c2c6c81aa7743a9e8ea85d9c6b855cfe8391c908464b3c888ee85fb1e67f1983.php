@@ -15,11 +15,11 @@ class __TwigTemplate_cd35d944d028f6896509f613c0326ffcf1ccfb2ddb7bae28c22a69db603
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1245c6d72b452a7a87c0ea57a12f90bb23fbbe4c22e010cedfa3f0a14f30a954 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1245c6d72b452a7a87c0ea57a12f90bb23fbbe4c22e010cedfa3f0a14f30a954->enter($__internal_1245c6d72b452a7a87c0ea57a12f90bb23fbbe4c22e010cedfa3f0a14f30a954_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
+        $__internal_4a16b7d143cd22ca8ea3cdbcd101c52c5bb5110fe764735254c44e9d19a45469 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4a16b7d143cd22ca8ea3cdbcd101c52c5bb5110fe764735254c44e9d19a45469->enter($__internal_4a16b7d143cd22ca8ea3cdbcd101c52c5bb5110fe764735254c44e9d19a45469_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
 
-        $__internal_cc61a4bfb4a7a93bde34bccc55ea3b2dcfa069ad05399b5a788a026bd17b9ae7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cc61a4bfb4a7a93bde34bccc55ea3b2dcfa069ad05399b5a788a026bd17b9ae7->enter($__internal_cc61a4bfb4a7a93bde34bccc55ea3b2dcfa069ad05399b5a788a026bd17b9ae7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
+        $__internal_41c7244466f8a76452928792b9ce8f7c2adb4e3a85d33bdfa4e28fb9a6e9fe51 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_41c7244466f8a76452928792b9ce8f7c2adb4e3a85d33bdfa4e28fb9a6e9fe51->enter($__internal_41c7244466f8a76452928792b9ce8f7c2adb4e3a85d33bdfa4e28fb9a6e9fe51_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AgiBundle:Default/site:pdf.html.twig"));
 
         // line 1
         echo "<style type=\"text/css\">
@@ -73,7 +73,7 @@ class __TwigTemplate_cd35d944d028f6896509f613c0326ffcf1ccfb2ddb7bae28c22a69db603
 
     <div class=\"separator\"></div>
 
-    <table id=\"\" style=\"table-layout: fixed;\" class=\"content\">
+    <table id=\"\" style=\"table-layout: fixed;\" class=\"content\" style=\"margin-bottom: 2px !important;\">
         <thead class=\"thcontent\">
             <tr>
                 <th>Agent</th>
@@ -191,40 +191,38 @@ $context["v"], "heureDebVac", array())) == "6") || ($this->env->getExtension('Ag
         </tfoot>
     </table>
 
-    <div class=\"separator\"></div>
+    <div style=\"position:absolute;bottom: 0px; width: 100%;\">
 
-    <div style=\"position:absolute;bottom: 50px; width: 100%;\">
-        <table id=\"\" style=\"table-layout: fixed; width: 100%;\" class=\"content\">
+        <table id=\"\" style=\"width: 100%;\" class=\"content\">
             <thead class=\"thcontent\">
-                <tr>
-                    <th style=\"width: 50%;\" class=\"text-center\">Signature de la Direction</th>
-                    <th style=\"width: 50%;\" class=\"text-center\">Signature de l'agent</th>
-                </tr>
+            <tr>
+                <th style=\"width: 50%;\" class=\"text-center\">Signature de la Direction</th>
+                <th style=\"width: 50%;\" class=\"text-center\">Signature de l'agent</th>
+            </tr>
             </thead>
             <tbody>
             <tr>
-                <td style=\"width: 50%; height: 3px;\" class=\"text-center\"><h1></h1></td>
-                <td style=\"width: 50%; height: 3px;\"class=\"text-center\"><h1></h1></td>
+                <td style=\"width: 50%;\" class=\"text-center\"><div style=\"font-size:2px; height:25px;\">&nbsp;</div></td>
+                <td style=\"width: 50%;\" class=\"text-center\"><div style=\"font-size:2px; height:25px;\">&nbsp;</div></td>
             </tr>
             </tbody>
         </table>
-    </div>
 
-    <div class=\"separator\"></div>
+        <div class=\"text-center\">
+            <span style=\"color: red; font-size: 10px;\" >Siège Social : 62 rue du Solayer – 63100 CLERMONT-FERRAND - Tel : 04.73.92.48.56 - Télécopie : 04.73.92.29.68</span><br>
+            <span style=\"font-size: 10px;\">N° d'autorisation CNAPS : AUT-063-2113-09-22-20140367933 ; Article L612-14 du code de la sécurité intérieure </span><br>
+            <span style=\"font-size: 10px;\">L’autorisation administrative préalable ne confère aucun caractère officiel à l’entreprise ou aux personnes qui en bénéficient.</span>
+        </div>
 
-    <div class=\"text-center\" style=\"position:absolute;bottom: 0px; width: 100%;\">
-        <span style=\"color: red; font-size: 10px;\" >Siège Social : 62 rue du Solayer – 63100 CLERMONT-FERRAND - Tel : 04.73.92.48.56 - Télécopie : 04.73.92.29.68</span><br>
-        <span style=\"font-size: 10px;\">N° d'autorisation CNAPS : AUT-063-2113-09-22-20140367933 ; Article L612-14 du code de la sécurité intérieure </span><br>
-        <span style=\"font-size: 10px;\">L’autorisation administrative préalable ne confère aucun caractère officiel à l’entreprise ou aux personnes qui en bénéficient.</span>
     </div>
 
 
 </page>";
         
-        $__internal_1245c6d72b452a7a87c0ea57a12f90bb23fbbe4c22e010cedfa3f0a14f30a954->leave($__internal_1245c6d72b452a7a87c0ea57a12f90bb23fbbe4c22e010cedfa3f0a14f30a954_prof);
+        $__internal_4a16b7d143cd22ca8ea3cdbcd101c52c5bb5110fe764735254c44e9d19a45469->leave($__internal_4a16b7d143cd22ca8ea3cdbcd101c52c5bb5110fe764735254c44e9d19a45469_prof);
 
         
-        $__internal_cc61a4bfb4a7a93bde34bccc55ea3b2dcfa069ad05399b5a788a026bd17b9ae7->leave($__internal_cc61a4bfb4a7a93bde34bccc55ea3b2dcfa069ad05399b5a788a026bd17b9ae7_prof);
+        $__internal_41c7244466f8a76452928792b9ce8f7c2adb4e3a85d33bdfa4e28fb9a6e9fe51->leave($__internal_41c7244466f8a76452928792b9ce8f7c2adb4e3a85d33bdfa4e28fb9a6e9fe51_prof);
 
     }
 
@@ -295,7 +293,7 @@ $context["v"], "heureDebVac", array())) == "6") || ($this->env->getExtension('Ag
 
     <div class=\"separator\"></div>
 
-    <table id=\"\" style=\"table-layout: fixed;\" class=\"content\">
+    <table id=\"\" style=\"table-layout: fixed;\" class=\"content\" style=\"margin-bottom: 2px !important;\">
         <thead class=\"thcontent\">
             <tr>
                 <th>Agent</th>
@@ -346,34 +344,32 @@ $context["v"], "heureDebVac", array())) == "6") || ($this->env->getExtension('Ag
         </tfoot>
     </table>
 
-    <div class=\"separator\"></div>
+    <div style=\"position:absolute;bottom: 0px; width: 100%;\">
 
-    <div style=\"position:absolute;bottom: 50px; width: 100%;\">
-        <table id=\"\" style=\"table-layout: fixed; width: 100%;\" class=\"content\">
+        <table id=\"\" style=\"width: 100%;\" class=\"content\">
             <thead class=\"thcontent\">
-                <tr>
-                    <th style=\"width: 50%;\" class=\"text-center\">Signature de la Direction</th>
-                    <th style=\"width: 50%;\" class=\"text-center\">Signature de l'agent</th>
-                </tr>
+            <tr>
+                <th style=\"width: 50%;\" class=\"text-center\">Signature de la Direction</th>
+                <th style=\"width: 50%;\" class=\"text-center\">Signature de l'agent</th>
+            </tr>
             </thead>
             <tbody>
             <tr>
-                <td style=\"width: 50%; height: 3px;\" class=\"text-center\"><h1></h1></td>
-                <td style=\"width: 50%; height: 3px;\"class=\"text-center\"><h1></h1></td>
+                <td style=\"width: 50%;\" class=\"text-center\"><div style=\"font-size:2px; height:25px;\">&nbsp;</div></td>
+                <td style=\"width: 50%;\" class=\"text-center\"><div style=\"font-size:2px; height:25px;\">&nbsp;</div></td>
             </tr>
             </tbody>
         </table>
+
+        <div class=\"text-center\">
+            <span style=\"color: red; font-size: 10px;\" >Siège Social : 62 rue du Solayer – 63100 CLERMONT-FERRAND - Tel : 04.73.92.48.56 - Télécopie : 04.73.92.29.68</span><br>
+            <span style=\"font-size: 10px;\">N° d'autorisation CNAPS : AUT-063-2113-09-22-20140367933 ; Article L612-14 du code de la sécurité intérieure </span><br>
+            <span style=\"font-size: 10px;\">L’autorisation administrative préalable ne confère aucun caractère officiel à l’entreprise ou aux personnes qui en bénéficient.</span>
+        </div>
+
     </div>
 
-    <div class=\"separator\"></div>
 
-    <div class=\"text-center\" style=\"position:absolute;bottom: 0px; width: 100%;\">
-        <span style=\"color: red; font-size: 10px;\" >Siège Social : 62 rue du Solayer – 63100 CLERMONT-FERRAND - Tel : 04.73.92.48.56 - Télécopie : 04.73.92.29.68</span><br>
-        <span style=\"font-size: 10px;\">N° d'autorisation CNAPS : AUT-063-2113-09-22-20140367933 ; Article L612-14 du code de la sécurité intérieure </span><br>
-        <span style=\"font-size: 10px;\">L’autorisation administrative préalable ne confère aucun caractère officiel à l’entreprise ou aux personnes qui en bénéficient.</span>
-    </div>
-
-
-</page>", "AgiBundle:Default/site:pdf.html.twig", "/Users/rachid/Documents/Projet Client/agi_protection/src/AgiBundle/Resources/views/Default/site/pdf.html.twig");
+</page>", "AgiBundle:Default/site:pdf.html.twig", "/Users/Rachid/SymfonyProjects/agi_protection/src/AgiBundle/Resources/views/Default/site/pdf.html.twig");
     }
 }

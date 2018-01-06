@@ -786,7 +786,7 @@ class AgentController extends Controller
         $html2pdf = $this->get('app.html2pdf');
 
         //$html2pdf->create('L', 'A4', 'fr', true, 'UTF-8', array(20, 5, 20, 5));
-        $html2pdf->create('P', 'A4', 'fr', true, 'UTF-8', array(4, 3, 3, 3));
+        $html2pdf->create('P', 'A4', 'fr', true, 'UTF-8', array(1, 2, 2, 2));
 
         return $html2pdf->generatePdf($template, "planning_" . $agent->getNom() . '_' . $title);
 

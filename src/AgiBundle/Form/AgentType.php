@@ -16,8 +16,8 @@ class AgentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextType::class, array('label' => 'Nom de l\'agent:', 'required' => true, 'attr' => array('class' => 'form-control')))
-            ->add('prenom',TextType::class, array('label' => 'Prénom(s) de l\'agent:', 'required' => true, 'attr' => array('class' => 'form-control')))
+            ->add('nom', TextType::class, array('label' => 'Nom de l\'agent:', 'required' => true, 'attr' => array('class' => 'form-control', 'maxlength' => '7')))
+            ->add('prenom',TextType::class, array('label' => 'Prénom(s) de l\'agent:', 'required' => true, 'attr' => array('class' => 'form-control', 'maxlength' => '5')))
             ->add('telephone', TextType::class, array('label' => 'Téléphone de l\'agent:', 'required' => true, 'attr' => array('class' => 'form-control')))
             ->add('typeContrat', ChoiceType::class, array('label' => 'Contrat:', 'choices' => array('CDD' => 'CDD', 'CDI' => 'CDI'), 'attr' => array('class' => 'form-control')));
     }

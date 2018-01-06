@@ -15,11 +15,11 @@ class __TwigTemplate_c920562333531d0e9bb70b4518d3cdae9007e4c1dc0583a09eae820b8ee
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fb99f531508fa7488535aa291fbfb07683b4f918b3ec8926299013212cc75333 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_fb99f531508fa7488535aa291fbfb07683b4f918b3ec8926299013212cc75333->enter($__internal_fb99f531508fa7488535aa291fbfb07683b4f918b3ec8926299013212cc75333_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.txt.twig"));
+        $__internal_8059601128b281c6daa6e4c100e0cc9b2c431ee901494bd34fd3f18859c0017f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_8059601128b281c6daa6e4c100e0cc9b2c431ee901494bd34fd3f18859c0017f->enter($__internal_8059601128b281c6daa6e4c100e0cc9b2c431ee901494bd34fd3f18859c0017f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.txt.twig"));
 
-        $__internal_4f53399628786a9f214ce02b8d05e4ffe038c412a85e52d6e73cc42b4ea5b89b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4f53399628786a9f214ce02b8d05e4ffe038c412a85e52d6e73cc42b4ea5b89b->enter($__internal_4f53399628786a9f214ce02b8d05e4ffe038c412a85e52d6e73cc42b4ea5b89b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.txt.twig"));
+        $__internal_62fac5d2ff0e66c0b93440d2a0300523f4d389ddb002dfa0912efdd6b70a7a44 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_62fac5d2ff0e66c0b93440d2a0300523f4d389ddb002dfa0912efdd6b70a7a44->enter($__internal_62fac5d2ff0e66c0b93440d2a0300523f4d389ddb002dfa0912efdd6b70a7a44_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.txt.twig"));
 
         // line 1
         echo "[exception] ";
@@ -53,10 +53,10 @@ class __TwigTemplate_c920562333531d0e9bb70b4518d3cdae9007e4c1dc0583a09eae820b8ee
         unset($context['_seq'], $context['_iterated'], $context['i'], $context['e'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_fb99f531508fa7488535aa291fbfb07683b4f918b3ec8926299013212cc75333->leave($__internal_fb99f531508fa7488535aa291fbfb07683b4f918b3ec8926299013212cc75333_prof);
+        $__internal_8059601128b281c6daa6e4c100e0cc9b2c431ee901494bd34fd3f18859c0017f->leave($__internal_8059601128b281c6daa6e4c100e0cc9b2c431ee901494bd34fd3f18859c0017f_prof);
 
         
-        $__internal_4f53399628786a9f214ce02b8d05e4ffe038c412a85e52d6e73cc42b4ea5b89b->leave($__internal_4f53399628786a9f214ce02b8d05e4ffe038c412a85e52d6e73cc42b4ea5b89b_prof);
+        $__internal_62fac5d2ff0e66c0b93440d2a0300523f4d389ddb002dfa0912efdd6b70a7a44->leave($__internal_62fac5d2ff0e66c0b93440d2a0300523f4d389ddb002dfa0912efdd6b70a7a44_prof);
 
     }
 
@@ -92,6 +92,6 @@ class __TwigTemplate_c920562333531d0e9bb70b4518d3cdae9007e4c1dc0583a09eae820b8ee
 {{ include('@Twig/Exception/traces.txt.twig', { exception: e }, with_context = false) }}
 
 {% endfor %}
-", "TwigBundle:Exception:exception.txt.twig", "/Users/rachid/Documents/Projet Client/agi_protection/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.txt.twig");
+", "TwigBundle:Exception:exception.txt.twig", "/Users/Rachid/SymfonyProjects/agi_protection/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/exception.txt.twig");
     }
 }
