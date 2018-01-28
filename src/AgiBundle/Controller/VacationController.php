@@ -443,10 +443,11 @@ class VacationController extends Controller
                 ->getRepository('AgiBundle:Vacation')
                 ->find($id);
 
-            $vacation->setEtat("0");
+            /*$vacation->setEtat("0");
+            $em->persist($vacation);*/
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($vacation);
+            $em->remove($vacation);
 
             $em->flush();
 
