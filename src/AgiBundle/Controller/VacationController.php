@@ -69,7 +69,7 @@ class VacationController extends Controller
             $heureFinVac = $form->getData()->getHeureFinVac();
 
 
-            if ($heureDebVac > $heureFinVac || $site_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i') == '00:00') {
+            if ($heureDebVac > $heureFinVac || $site_id == null || $heureDebVac == null || $heureFinVac == null) {
 
                 return $this->render('AgiBundle:Default:vacation/new.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs ou les dates saisies!',
                     'site' => $site, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));
@@ -270,7 +270,7 @@ class VacationController extends Controller
             $heureDebVac = $form->getData()->getHeureDebVac();
             $heureFinVac = $form->getData()->getHeureFinVac();
 
-            if ($heureDebVac > $heureFinVac || $site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null || $heureDebVac->format('H:i') == '00:00' || $heureFinVac->format('H:i:s') == '00:00') {
+            if ($heureDebVac > $heureFinVac || $site_id == null || $agent_id == null || $heureDebVac == null || $heureFinVac == null) {
 
                 return $this->render('AgiBundle:Default:vacation/edit.html.twig', array('form' => $form->createView(), 'erreur' => 'Veuillez vérifier les valeurs ou les dates saisies!',
                     'vacation' => $vacation,'site' => $site, 'agent' => $agent, 'agents' => $agents, 'heureJour' => $heureJour, 'heureNuit' => $heureNuit, 'heureDimanche' => $heureDimanche));

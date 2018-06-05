@@ -2,14 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c506f83-8a70-477a-a4d0-7515eff13c3b" name="Default" comment="">
+      <change beforePath="$USER_HOME$/AngularProjects/Rest-post-Angular/src/index.html" afterPath="$USER_HOME$/AngularProjects/Rest-post-Angular/src/index.html" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/.env.example" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/.env.example" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/app/Exceptions/Handler.php" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/app/Exceptions/Handler.php" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/app/Http/Controllers/QuoteController.php" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/app/Http/Controllers/QuoteController.php" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/app/Http/Kernel.php" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/app/Http/Kernel.php" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/composer.json" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/composer.json" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/composer.lock" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/composer.lock" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/config/app.php" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/config/app.php" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/config/database.php" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/config/database.php" />
+      <change beforePath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/routes/api.php" afterPath="$USER_HOME$/LaravelProjects/laravel-ng2-vue/routes/api.php" />
       <change beforePath="$PROJECT_DIR$/.idea/agi_protection.iml" afterPath="$PROJECT_DIR$/.idea/agi_protection.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Host" afterPath="$PROJECT_DIR$/Host" />
-      <change beforePath="$PROJECT_DIR$/src/AgiBundle/Controller/VacationController.php" afterPath="$PROJECT_DIR$/src/AgiBundle/Controller/VacationController.php" />
+      <change beforePath="$PROJECT_DIR$/src/AgiBundle/Controller/SiteController.php" afterPath="$PROJECT_DIR$/src/AgiBundle/Controller/SiteController.php" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-      <change beforePath="$PROJECT_DIR$/../theglobalview/.idea/theglobalview.iml" afterPath="$PROJECT_DIR$/../theglobalview/.idea/theglobalview.iml" />
-      <change beforePath="$PROJECT_DIR$/../theglobalview/app/config/config.yml" afterPath="$PROJECT_DIR$/../theglobalview/app/config/config.yml" />
+      <change beforePath="$PROJECT_DIR$/../api-lab/Notes.txt" afterPath="$PROJECT_DIR$/../api-lab/Notes.txt" />
+      <change beforePath="$PROJECT_DIR$/../api-lab/var/logs/dev.log" afterPath="$PROJECT_DIR$/../api-lab/var/logs/dev.log" />
+      <change beforePath="$PROJECT_DIR$/../api-lab/var/sessions/dev/sess_f07b72d1d7ab0578bac609d6a9b270d0" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,26 +49,63 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Host" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Host">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Eleve.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Eleve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="36" />
+            <state relative-caret-position="870">
+              <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="63" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VacationController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AgiBundle/Controller/VacationController.php">
+      <file leaf-file-name="InscriptionRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Repository/InscriptionRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="456" column="54" lean-forward="false" selection-start-line="456" selection-start-column="54" selection-end-line="456" selection-end-column="54" />
-              <folding>
-                <element signature="e#452#8216#0#PHP" expanded="false" />
-                <element signature="e#8281#15809#0#PHP" expanded="false" />
-              </folding>
+            <state relative-caret-position="465">
+              <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/inscription/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2265">
+              <caret line="151" column="96" lean-forward="false" selection-start-line="151" selection-start-column="96" selection-end-line="151" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/post/post.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1995">
+              <caret line="133" column="41" lean-forward="false" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="planning.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/planning.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Inscription.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="42" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,57 +121,109 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>glob</find>
-      <find>bre</find>
-      <find>Popu</find>
-      <find>Populaire</find>
-      <find>fixture</find>
-      <find>Load data fixtures with the passed EntityManager</find>
+      <find>wv46WPSDWNieOiHa0ptXmeeTMdH6JgoR</find>
+      <find>Home</find>
+      <find>-Origin</find>
+      <find>forge</find>
+      <find>root</find>
+      <find>category</find>
+      <find>body-background-large</find>
+      <find>1920</find>
+      <find>img</find>
+      <find>image-light</find>
+      <find>title-background-home-version-2-large</find>
+      <find>Popular</find>
+      <find>En</find>
+      <find>image-holder</find>
+      <find>AgiBundle</find>
+      <find>Eleve</find>
+      <find>Eleve.php</find>
+      <find>agi</find>
+      <find>AGI</find>
+      <find>limit</find>
+      <find>setMaxRes</find>
+      <find>findVacationsBySiteAndPeriode</find>
+      <find>modal</find>
+      <find>checkIfInscritExistsInYear</find>
+      <find>$pays</find>
+      <find>Operat</find>
+      <find>Operation</find>
+      <find>AppBundle/Entity/Operation.php</find>
+      <find>XmlH</find>
+      <find>rech</find>
     </findStrings>
+    <replaceStrings>
+      <replace>AppBundle</replace>
+    </replaceStrings>
     <dirStrings>
+      <dir>$PROJECT_DIR$/../api-lab</dir>
+      <dir>$USER_HOME$/LaravelProjects/laravelQuoteApi</dir>
+      <dir>$USER_HOME$/LaravelProjects/laravel-ng2-vue</dir>
+      <dir>$PROJECT_DIR$/../theglobalview</dir>
+      <dir>$PROJECT_DIR$/../uemoabacapi-v1/src</dir>
+      <dir>$PROJECT_DIR$/../uemoabacapi-v1</dir>
+      <dir>$PROJECT_DIR$/../ulimprime-v1</dir>
+      <dir>$PROJECT_DIR$/../ulimprime-v1/vendor</dir>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../theglobalview" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/pagination.html.twig" />
-        <option value="$USER_HOME$/Desktop/config/admin_base.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/lang_link.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/home_link.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/widget_articles.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/base_de.html.twig" />
+        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/base_en.html.twig" />
         <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/admin_base.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/web/js/app.js" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Controller/PostController.php" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/post/post.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/index_de.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/index_en.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/carousel.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/article_detail_en.html.twig" />
+        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/login/login.html.twig" />
+        <option value="$PROJECT_DIR$/../theglobalview/web/css/custom.css" />
+        <option value="$PROJECT_DIR$/../theglobalview/web/css/style.css" />
+        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/base_fr.html.twig" />
         <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/article_detail_fr.html.twig" />
         <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/article_detail_de.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/index_fr.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/base_fr.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/base_en.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/Resources/views/base_de.html.twig" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Repository/PostRepository.php" />
-        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/../theglobalview/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/AgiBundle/Form/AgentType.php" />
-        <option value="$USER_HOME$/Desktop/test/index.html" />
-        <option value="$PROJECT_DIR$/Host" />
-        <option value="$USER_HOME$/Desktop/test/app/config/parameters.yml" />
-        <option value="$USER_HOME$/Desktop/test/web/app_dev.php" />
-        <option value="$USER_HOME$/Desktop/test/web/app.php" />
-        <option value="$USER_HOME$/Desktop/test/app/Resources/views/base_en.html.twig" />
-        <option value="$USER_HOME$/Desktop/test/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/AgiBundle/Controller/VacationController.php" />
+        <option value="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/article_detail_en.html.twig" />
+        <option value="$PROJECT_DIR$/../api-lab/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/composer.json" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/../api-lab/Notes.txt" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/Api/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/AppBundle.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/DataFixtures/ORM/LoadUserData.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/Api/UserController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/login/login.html.twig" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Operation.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Form/InscriptionType.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/DataFixtures/ORM/UserFixtures.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Form/EleveType.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Eleve.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Repository/InscriptionRepository.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/InscriptionController.php" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/inscription/new.html.twig" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/web/js/custom.js" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/inscription/list.html.twig" />
+        <option value="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Inscription.php" />
+        <option value="$PROJECT_DIR$/../ulimprime-v1/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/../ulimprime-v1/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/../ulimprime-v1/var/logs/dev.log" />
+        <option value="$PROJECT_DIR$/../ulimprime-v1/vendor/composer/autoload_classmap.php" />
+        <option value="$PROJECT_DIR$/../ulimprime-v1/vendor/composer/autoload_static.php" />
       </list>
     </option>
   </component>
@@ -128,6 +232,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$USER_HOME$/LaravelProjects/laravel-ng2-vue/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
     <include_path>
@@ -177,11 +284,9 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="4" />
-    <option name="y" value="23" />
-    <option name="width" value="1915" />
-    <option name="height" value="1088" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1920" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -201,14 +306,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
               <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
@@ -228,6 +338,179 @@
               <item name="AgiBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AgiBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AgiBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AgiBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AgiBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="site" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AgiBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vacation" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agi_protection" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theglobalview" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theglobalview" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theglobalview" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GlobalViewBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theglobalview" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GlobalViewBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theglobalview" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GlobalViewBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theglobalview" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GlobalViewBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theglobalview" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="inscription" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="agi_protection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uemoabacapi-v1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -240,14 +523,17 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../theglobalview/app/Resources/views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../theglobalview/app/Resources/views/default" />
-      <recent name="$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default" />
-      <recent name="$PROJECT_DIR$/../theglobalview/app/Resources/views" />
+      <recent name="$PROJECT_DIR$/../uemoabacapi-v1/web/img" />
+      <recent name="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle" />
+      <recent name="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller" />
       <recent name="$PROJECT_DIR$/../theglobalview/web/img" />
+      <recent name="$USER_HOME$/LaravelProjects/laravel-ng2-vue/app/Http/Controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller" />
+      <recent name="$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/Api" />
+      <recent name="$PROJECT_DIR$/../theglobalview/app/Resources/views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -278,34 +564,43 @@
       <workItem from="1515181074962" duration="20773000" />
       <workItem from="1515259783963" duration="1404000" />
       <workItem from="1515698107632" duration="3433000" />
-      <workItem from="1517157874361" duration="1536000" />
+      <workItem from="1517157874361" duration="1988000" />
+      <workItem from="1517677603444" duration="1534000" />
+      <workItem from="1517994722172" duration="12107000" />
+      <workItem from="1519946882082" duration="855000" />
+      <workItem from="1520618990254" duration="22010000" />
+      <workItem from="1521021344589" duration="677000" />
+      <workItem from="1521367187629" duration="1863000" />
+      <workItem from="1524503511121" duration="91369000" />
+      <workItem from="1527022350221" duration="308000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27146000" />
+    <option name="totallyTimeSpent" value="158321000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="1915" height="1177" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18526427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1996805" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16913123" sideWeight="0.50186867" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28305236" sideWeight="0.5037274" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995194" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15434381" sideWeight="0.49813133" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20408164" sideWeight="0.49627262" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -317,138 +612,26 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$USER_HOME$/NodeJsProjects/movie-analyst-api/server.js</url>
+          <line>111</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Entity/Post.php">
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Entity/Agent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="242" column="34" lean-forward="false" selection-start-line="242" selection-start-column="20" selection-end-line="242" selection-end-column="34" />
+        <state relative-caret-position="408">
+          <caret line="75" column="4" lean-forward="false" selection-start-line="75" selection-start-column="4" selection-end-line="78" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/app/Resources/views/carousel.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/app/Resources/views/home_link.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="72" lean-forward="true" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/article_detail_en.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="50" column="41" lean-forward="false" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/article_detail_fr.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/article_detail_de.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/index_fr.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="121" lean-forward="false" selection-start-line="37" selection-start-column="121" selection-end-line="37" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/index_de.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/index_en.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="25" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/app/Resources/views/base_de.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4890">
-          <caret line="326" column="81" lean-forward="false" selection-start-line="326" selection-start-column="81" selection-end-line="326" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/app/Resources/views/base_en.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4890">
-          <caret line="326" column="56" lean-forward="false" selection-start-line="326" selection-start-column="56" selection-end-line="326" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/app/Resources/views/base_fr.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4710">
-          <caret line="314" column="114" lean-forward="false" selection-start-line="314" selection-start-column="114" selection-end-line="314" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Repository/PostRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="104" column="34" lean-forward="false" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Controller/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="120" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Form/ContratAgentType.php">
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Entity/ContratAgent.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -457,143 +640,344 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AgiBundle/Form/AgentType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="167" lean-forward="false" selection-start-line="19" selection-start-column="167" selection-end-line="19" selection-end-column="167" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Twig/Extension/DayByDateExtension.php">
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/DataFixtures/ORM/UserFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-735">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/agent/operation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/agent/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="102" column="16" lean-forward="true" selection-start-line="102" selection-start-column="16" selection-end-line="110" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AgiBundle/Controller/ContratAgentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-498">
+        <state relative-caret-position="-29">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Controller/AgentController.php">
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Form/EleveType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11170">
+        <state relative-caret-position="355">
+          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/agent/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-492">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Service/CustomHtml2Pdf.php">
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/test/index.html" />
-    <entry file="file://$PROJECT_DIR$/../theglobalview/Host">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/test/app/config/config_prod.yml" />
-    <entry file="file://$USER_HOME$/Desktop/test/app/config/config.yml" />
-    <entry file="file://$USER_HOME$/Desktop/test/app/config/parameters.yml" />
-    <entry file="file://$USER_HOME$/Desktop/test/web/app_dev.php" />
-    <entry file="file://$USER_HOME$/Desktop/test/web/app.php" />
-    <entry file="file://$USER_HOME$/Desktop/test/bin/symfony_requirements" />
-    <entry file="file://$PROJECT_DIR$/../theglobalview/web/app_dev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/web/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/web/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/test/web/.htaccess" />
-    <entry file="file://$USER_HOME$/Desktop/test/src/.htaccess" />
-    <entry file="file://$USER_HOME$/Desktop/test/src/GlobalViewBundle/Controller/DefaultController.php" />
-    <entry file="file://$USER_HOME$/Desktop/test/src/GlobalViewBundle/Resources/views/Default/index_en.html.twig" />
-    <entry file="file://$USER_HOME$/Desktop/test/app/Resources/views/base_en.html.twig" />
-    <entry file="file://$USER_HOME$/Desktop/test/.htaccess" />
-    <entry file="file://$USER_HOME$/Desktop/test/web/config.php" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="1320" column="9" lean-forward="false" selection-start-line="1320" selection-start-column="9" selection-end-line="1320" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/test/app/AppKernel.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/FixtureInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/DataFixtures/ORM/LoadUserData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="55" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Host">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Entity/Vacation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-879">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="8">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AgiBundle/Controller/VacationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="456" column="54" lean-forward="false" selection-start-line="456" selection-start-column="54" selection-end-line="456" selection-end-column="54" />
-          <folding>
-            <element signature="e#452#8216#0#PHP" expanded="false" />
-            <element signature="e#8281#15809#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="-7145">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Repository/AgentRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="43" column="27" lean-forward="false" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Repository/SiteRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="134" column="62" lean-forward="false" selection-start-line="134" selection-start-column="62" selection-end-line="134" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Repository/ContratAgentRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Repository/VacationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="184" column="5" lean-forward="true" selection-start-line="172" selection-start-column="4" selection-end-line="184" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="113" column="49" lean-forward="true" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1001">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/InscriptionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="228" column="38" lean-forward="false" selection-start-line="228" selection-start-column="38" selection-end-line="228" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/web/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/inscription/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="31" column="76" lean-forward="false" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/tests/AppBundle/Controller/DefaultControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4560">
+          <caret line="307" column="19" lean-forward="true" selection-start-line="307" selection-start-column="19" selection-end-line="307" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/src/AppBundle/Controller/InscriptionController.php" />
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/var/logs/dev.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="206" lean-forward="false" selection-start-line="0" selection-start-column="206" selection-end-line="0" selection-end-column="206" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="114" lean-forward="false" selection-start-line="10" selection-start-column="114" selection-end-line="10" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/src/AppBundle/DataFixtures/ORM/UserFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ulimprime-v1/vendor/composer/autoload_static.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="274" column="128" lean-forward="false" selection-start-line="274" selection-start-column="128" selection-end-line="274" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Operation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="143" column="21" lean-forward="false" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3621">
+          <caret line="300" column="7" lean-forward="false" selection-start-line="300" selection-start-column="7" selection-end-line="300" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Entity/Eleve.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="63" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Resources/views/Default/inscription/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2265">
+          <caret line="151" column="96" lean-forward="false" selection-start-line="151" selection-start-column="96" selection-end-line="151" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/recapitulatif.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-449">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/calendrier.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1505">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/pdf.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4310">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Resources/views/Default/site/planning.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Controller/AgentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="322" column="8" lean-forward="false" selection-start-line="322" selection-start-column="8" selection-end-line="322" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AgiBundle/Controller/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="615" column="37" lean-forward="false" selection-start-line="615" selection-start-column="37" selection-end-line="615" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../theglobalview/src/GlobalViewBundle/Resources/views/Default/post/post.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="133" column="41" lean-forward="false" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../uemoabacapi-v1/src/AppBundle/Repository/InscriptionRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

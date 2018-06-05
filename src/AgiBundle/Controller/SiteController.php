@@ -7,7 +7,7 @@ use AgiBundle\Entity\ContratSite;
 use AgiBundle\Entity\Operation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use AgiBundle\Form\SiteType;
+use AgiBundle\Form\InscriptionType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use \DateTime;
@@ -21,7 +21,7 @@ class SiteController extends Controller
     public function ajouterAction(Request $request)
     {
 
-        $form = $this->createForm(SiteType::class, new Site(), array(
+        $form = $this->createForm(InscriptionType::class, new Site(), array(
             'action' => $this->generateUrl('ajouter_site'),
             'method' => 'POST',
         ));
@@ -82,7 +82,7 @@ class SiteController extends Controller
 
             $em->flush();
 
-            $form = $this->createForm(SiteType::class, new Site(), array(
+            $form = $this->createForm(InscriptionType::class, new Site(), array(
                 'action' => $this->generateUrl('ajouter_site'),
                 'method' => 'POST',
             ));
@@ -110,7 +110,7 @@ class SiteController extends Controller
             );
         }
 
-        $form = $this->createForm(SiteType::class, $site, array(
+        $form = $this->createForm(InscriptionType::class, $site, array(
             'action' => $this->generateUrl('modifier_site', array('id' => $id)),
             'method' => 'POST',
         ));
@@ -160,7 +160,7 @@ class SiteController extends Controller
 
             $em->flush();
 
-            $form = $this->createForm(SiteType::class, new Site(), array(
+            $form = $this->createForm(InscriptionType::class, new Site(), array(
                 'action' => $this->generateUrl('modifier_site', array('id' => $id)),
                 'method' => 'POST',
             ));
@@ -188,7 +188,7 @@ class SiteController extends Controller
             );
         }
 
-        $form = $this->createForm(SiteType::class, $site, array(
+        $form = $this->createForm(InscriptionType::class, $site, array(
             'action' => $this->generateUrl('supprimer_site', array('id' => $id)),
             'method' => 'POST',
         ));

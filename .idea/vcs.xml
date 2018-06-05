@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$USER_HOME$/AngularProjects/Rest-post-Angular" vcs="Git" />
+    <mapping directory="$USER_HOME$/LaravelProjects/laravel-ng2-vue" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../api-lab" vcs="Git" />
   </component>
 </project>

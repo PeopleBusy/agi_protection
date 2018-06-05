@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/agi_protection.iml" filepath="$PROJECT_DIR$/.idea/agi_protection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../api-lab/.idea/api-lab.iml" filepath="$PROJECT_DIR$/../api-lab/.idea/api-lab.iml" />
+      <module fileurl="file://$USER_HOME$/LaravelProjects/laravelQuoteApi/.idea/laravelQuoteApi.iml" filepath="$USER_HOME$/LaravelProjects/laravelQuoteApi/.idea/laravelQuoteApi.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/test/.idea/test.iml" filepath="$USER_HOME$/Desktop/test/.idea/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/../theglobalview/.idea/theglobalview.iml" filepath="$PROJECT_DIR$/../theglobalview/.idea/theglobalview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../uemoabacapi-v1/.idea/uemoabacapi-v1.iml" filepath="$PROJECT_DIR$/../uemoabacapi-v1/.idea/uemoabacapi-v1.iml" />
     </modules>
   </component>
 </project>

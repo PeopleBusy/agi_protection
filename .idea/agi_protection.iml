@@ -150,5 +150,10 @@
     </orderEntry>
     <orderEntry type="module" module-name="config" />
     <orderEntry type="module" module-name="test" />
+    <orderEntry type="module" module-name="api-lab" />
+    <orderEntry type="module" module-name="laravelQuoteApi" />
+    <orderEntry type="module" module-name="uemoabacapi-v1" />
+    <orderEntry type="module" module-name="uemoabacapi-v1" />
+    <orderEntry type="module" module-name="uemoabacapi-v1" />
   </component>
 </module>
